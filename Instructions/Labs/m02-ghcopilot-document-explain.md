@@ -97,7 +97,7 @@ This exercise includes the following tasks:
 
 ## Set up the library application in Visual Studio Code
 
-Your colleague has developed an initial version of the library application and has made it available as a .zip file. To prepare for the guided project exercises, you need to perform the following tasks:
+Your colleague has developed an initial version of the library application and has made it available as a .zip file.
 
 - Download the zip file.
 - Extract the code files.
@@ -105,7 +105,7 @@ Your colleague has developed an initial version of the library application and h
 
 Use the following steps to set up the library application:
 
-1. To download the zip file containing your code project, select the following link: [GuidedProjectApp](https://raw.githubusercontent.com/MicrosoftLearning/APL-2007-Accelerate-app-development-by-using-GitHub-Copilot/master/LearnModuleExercises/Downloads/GuidedProjectApp.zip).
+1. To download the zip file containing your code project, select the following URL: [GitHub Copilot lab - Analyze and document code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007M2SamplesZip.zip)
 
 1. Unzip the downloaded project files.
 
@@ -149,14 +149,9 @@ Use the following steps to set up the library application:
 
     You'll see several Warnings, but there shouldn't be any Errors.
 
+## Use GitHub Copilot to explain the library application codebase
 
-## Examine the library application codebase
-
-Before you create a code repository and README file, you should take some time to examine the codebase. It's important to understand the app architecture and key features before documenting the project. You should also run the application to ensure that it performs as expected.
-
-### Use GitHub Copilot to explain the library application codebase
-
-GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution and feature levels.
+It's important to understand an application's architecture and key features before documenting the project. GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution and feature levels.
 
 Use the following steps to complete this section of the exercise:
 
