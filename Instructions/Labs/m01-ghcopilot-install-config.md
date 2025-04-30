@@ -1,90 +1,101 @@
 <!-- ---
 lab:
-    title: 'Exercise - Install and configure GitHub Copilot'
-    description: 'Learn how to install and configure GitHub Copilot in Visual Studio Code.'
+    title: 'Exercise - Examine GitHub Copilot settings and interface basics'
+    description: 'Learn how to configure GitHub Copilot settings and access GitHub Copilot features in Visual Studio Code.'
 --- -->
 
-# Install and configure GitHub Copilot
+# Examine GitHub Copilot settings and interface basics
 
-In this exercise you will <!-- provide a description of what they'll do and why it;s important -->
+In this exercise you examine GitHub Copilot settings and explore the GitHub Copilot user interface in Visual Studio Code.
 
 This exercise should take approximately **15** minutes to complete.
 
 ## Before you start
 
-Your development environment must include the following resources:
+Before you start this exercise, you need to complete the following tasks:
 
-- Git version control software.
-- The .NET SDK 9.0 (or the latest supported version).
-- Visual Studio Code updated to the latest version.
-- The C# Dev Kit extension (from Microsoft) installed in Visual Studio Code.
+1. Verify that your lab environment includes the required tools and resources.
+1. Verify that GitHub Copilot is enabled in Visual Studio Code.
 
-Before you start this exercise, you need to:
+### Verify required tools and resources
 
-1. Verify that Git and the .NET SDK are available in your dev environment. If needed, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a> and the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>
-1. Verify that Visual Studio Code and the C# Dev Kit extension are available in your dev environment. You can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a> and the C# Dev Kit extension using the following URL: <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp-devkit" target="_blank">C# Dev Kit</a>.
+This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is also required.
 
-For additional help configuring the Visual Studio Code environment, see <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank">Install and configure Visual Studio Code for C# development</a>
+Complete the following steps to verify that your lab environment is configured correctly:
 
-## Exercise scenario
+1. Verify that Git version 2.48 or later is installed in your lab environment.
 
-An accident damaged the servers that host the library database and backend services. It'll take weeks for administrators to obtain the funding/authorization required to replace the servers and get the system back online. Your department needs to develop a temporary solution that will enable librarians to perform basic functions.
+    Run `git --version` in a terminal window to check the version of Git installed.
 
-Your team has met with the librarians. They need a minimal solution that enables them to provide library patrons with essential services like book loans and returns. Your team investigates the available resources and develops a plan. Initially, only you and one other coworker will be assigned to the project. The local government has closed the library until your temporary solution is available. You have three days develop a v1 solution that enables the library to reopen.
+    If you're running Windows and you want to update Git, you can use the following command:
 
-While your colleague begins working on the software, you use library records to create JSON files that represent the library's patron accounts, books, and book loans. By the end of the second day you're ready to begin helping with the code. The solution is a console application that can be run on one of the library's laptop computers. The librarians understand that there isn't time for a pretty interface, but stress that the app must be secure and reliable. You have one more day before you need to demonstrate version 1.0 of your app.
+    ```bash
+    git update-git-for-windows
+    ```
 
-You'll use GitHub Copilot to help get the work done as efficiently as possible. If all goes well, your app will be used to support the library's book drives and other offsite functions in the future.
+    If necessary, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>.
 
-This exercise includes the following tasks:
+1. Verify that the latest LTS or STS version of the .NET SDK is installed in your lab environment.
 
-1. Install GitHub Copilot extensions for Visual Studio Code.
-1. Configure GitHub Copilot extensions for Visual Studio Code.
+    Run `dotnet --version` in a terminal window to check the version of the .NET SDK installed.
 
-## Install GitHub Copilot extensions for Visual Studio Code
+    If necessary, you can download the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>.
 
-GitHub Copilot is an AI-powered code completion tool that helps developers write code faster and with fewer errors. The following subscription options are available:
+1. Verify that Visual Studio Code and the C# Dev Kit extension are installed in your lab environment.
 
-- GitHub Copilot Free: This free tier provides limited access to select features of GitHub Copilot, allowing an individual to experience AI-powered coding assistance without a paid subscription. The free tier currently includes 2000 code completions and 50 chat messages per month.
-- GitHub Copilot Pro: This paid tier is available to individual GitHub customers who don't have access to GitHub Copilot through an organization or enterprise. It offers full access to all GitHub Copilot features, including advanced capabilities and unlimited usage, for a comprehensive AI coding experience.
-- GitHub Copilot for Business: This paid tier is available for organizations with a GitHub Free or GitHub Team plan, or enterprises on GitHub Enterprise Cloud. GitHub Copilot Business gives organizations and enterprises control over Copilot policies, including which members can use Copilot.
-- GitHub Copilot Enterprise: This paid tier is available for enterprises on GitHub Enterprise Cloud. In addition to all of the Copilot Business features, Copilot Enterprise provides additional AI features on GitHub. With this subscription plan you can choose to assign either Copilot Enterprise or Copilot Business to each individual organization in the enterprise.
+    If necessary, you can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a>
+
+    You can install the C# Dev Kit extension using the Extensions view in Visual Studio Code.
+
+1. Verify that you have access to a GitHub account and GitHub Copilot subscription.
+
+    You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Check your GitHub account settings to verify that you have access to a GitHub Copilot subscription.
+
+    > [!IMPORTANT]
+    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the GitHub Copilot Free plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+
+### Verify GitHub Copilot access in Visual Studio Code
+
+GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
 Use the following steps to complete this section of the exercise:
 
 1. Open Visual Studio Code.
 
-1. On the left side menu, select **Extensions**.
+1. On the bottom panel of Visual Studio Code, to activate GitHub Copilot, select the GitHub Copilot **Settings** button, and then select **Set up Copilot**.
 
-1. In the Search Extensions in Marketplace text box, type **GitHub Copilot** and then press Enter.
+    ![Screenshot showing the GitHub Copilot Settings button.](./media/m01-github-copilot-settings-button.png)
 
-1. In the filtered list of extensions, select the GitHub Copilot extension authored by GitHub.
+1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
-1. On the GitHub Copilot extension page, select **Install**.
+    The GitHub account sign in page opens in your default web browser.
 
-1. Watch for a GitHub authorization prompt.
+1. On the GitHub sign in page, enter your GitHub account credentials, and then select **Sign in**.
 
-    Your experience with authorization might vary depending on whether you've previously authorized Visual Studio Code for your GitHub account.
+1. Follow the instructions to authenticate your account and authorize access in Visual Studio Code.
 
-    - If you've authorized Visual Studio Code for your account on GitHub, GitHub Copilot is automatically authorized.
+    You will be directed back to Visual Studio Code when the authorization is complete.
 
-    - If you haven't authorized Visual Studio Code in your GitHub account, Visual Studio Code prompts you to sign in to GitHub.
+1. To verify that GitHub Copilot is activated, open Visual Studio Code's **Extensions** view.
 
-    - If you don't receive a prompt asking you to authorize, select the bell icon on the far right side of Visual Studio Code's bottom panel.
+    You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-     GitHub requests the necessary permissions for GitHub Copilot when the browser opens.
+    ![Screenshot showing the GitHub Copilot status menu.](./media/m01-github-copilot-extensions-vscode.png)
 
-1. To approve the authorization request, select **Authorize Visual Studio Code**.
+You're now ready to complete the exercise.
 
-    A dialog box named Visual Studio Code opens in Visual Studio Code.
+## Exercise scenario
 
-1. To confirm your GitHub authorization in the Visual Studio Code dialog box, select **Open**.
+You're a developer working in the IT department of a rural community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
+
+This exercise includes the following tasks:
+
+1. Activate GitHub Copilot Free in Visual Studio Code using your individual GitHub account.
+1. Configure the GitHub Copilot extensions for Visual Studio Code.
 
 ## Configure GitHub Copilot extensions for Visual Studio Code
 
 GitHub Copilot settings are configured in your GitHub.com account and the Visual Studio Code environment. In Visual Studio Code, you access settings for GitHub Copilot and GitHub Copilot Chat using the GitHub Copilot status menu. The settings allow you to enable or disable GitHub Copilot for specific languages, configure the behavior of GitHub Copilot Chat, and customize the GitHub Copilot experience to suit your preferences. You can also configure GitHub Copilot settings on GitHub.com to manage your GitHub Copilot subscription, configure the retention of prompts and suggestions, and allow or block suggestions matching public code.
-
-
 
 ### Enable or disable GitHub Copilot
 

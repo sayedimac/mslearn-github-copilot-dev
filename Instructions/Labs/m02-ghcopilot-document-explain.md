@@ -10,32 +10,145 @@ GitHub Copilot can help you understand and document a codebase by generating exp
 
 This exercise should take approximately **20** minutes to complete.
 
-
 ## Before you start
 
-Your development environment must include the following resources:
+Before you start this exercise, you need to complete the following tasks:
 
-- Git version control software.
-- The .NET SDK 9.0 (or the latest supported version).
-- Visual Studio Code updated to the latest version.
-- The C# Dev Kit extension (from Microsoft) installed in Visual Studio Code.
+1. Verify that your lab environment includes the required tools and resources.
+1. Verify that GitHub Copilot is enabled in Visual Studio Code.
 
-Before you start this exercise, you need to:
+### Verify required tools and resources
 
-1. Verify that Git and the .NET SDK are available in your dev environment. If needed, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a> and the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>
-1. Verify that Visual Studio Code and the C# Dev Kit extension are available in your dev environment. You can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a> and the C# Dev Kit extension using the following URL: <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp-devkit" target="_blank">C# Dev Kit</a>.
+This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is also required.
 
-For additional help configuring the Visual Studio Code environment, see <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank">Install and configure Visual Studio Code for C# development</a>
+Complete the following steps to verify that your lab environment is configured correctly:
+
+1. Verify that Git version 2.48 or later is installed in your lab environment.
+
+    Run `git --version` in a terminal window to check the version of Git installed.
+
+    If you're running Windows and you want to update Git, you can use the following command:
+
+    ```bash
+    git update-git-for-windows
+    ```
+
+    If necessary, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>.
+
+1. Verify that the latest LTS or STS version of the .NET SDK is installed in your lab environment.
+
+    Run `dotnet --version` in a terminal window to check the version of the .NET SDK installed.
+
+    If necessary, you can download the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>.
+
+1. Verify that Visual Studio Code and the C# Dev Kit extension are installed in your lab environment.
+
+    If necessary, you can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a>
+
+    You can install the C# Dev Kit extension using the Extensions view in Visual Studio Code.
+
+1. Verify that you have access to a GitHub account and GitHub Copilot subscription.
+
+    You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Check your GitHub account settings to verify that you have access to a GitHub Copilot subscription.
+
+    > [!IMPORTANT]
+    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the GitHub Copilot Free plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+
+### Verify GitHub Copilot access in Visual Studio Code
+
+GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
+
+Use the following steps to complete this section of the exercise:
+
+1. Open Visual Studio Code.
+
+1. On the bottom panel of Visual Studio Code, to activate GitHub Copilot, select the GitHub Copilot **Settings** button, and then select **Set up Copilot**.
+
+    ![Screenshot showing the GitHub Copilot Settings button.](./media/m01-github-copilot-settings-button.png)
+
+1. On the **Sign in to use Copilot for free** page, select **Sign in**.
+
+    The GitHub account sign in page opens in your default web browser.
+
+1. On the GitHub sign in page, enter your GitHub account credentials, and then select **Sign in**.
+
+1. Follow the instructions to authenticate your account and authorize access in Visual Studio Code.
+
+    You will be directed back to Visual Studio Code when the authorization is complete.
+
+1. To verify that GitHub Copilot is activated, open Visual Studio Code's **Extensions** view.
+
+    You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
+
+    ![Screenshot showing the GitHub Copilot status menu.](./media/m01-github-copilot-extensions-vscode.png)
+
+You're now ready to complete the exercise.
 
 ## Exercise scenario
 
-In this exercise, you'll use GitHub Copilot to analyze and document the library application. You'll also create a GitHub repository for the library application and generate a README file for the repository using GitHub Copilot.
+You're a developer working in the IT department of a rural community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
 
 This exercise includes the following tasks:
 
+- Set up the library application in Visual Studio Code.
 - Use GitHub Copilot to explain the library application codebase.
 - Use Visual Studio Code to create a GitHub repository for the library application.
 - Use GitHub Copilot extensions to analyze the solution and create a README.md file for the repository.
+
+## Set up the library application in Visual Studio Code
+
+Your colleague has developed an initial version of the library application and has made it available as a .zip file. To prepare for the guided project exercises, you need to perform the following tasks:
+
+- Download the zip file.
+- Extract the code files.
+- Ensure that the solution builds in your development environment.
+
+Use the following steps to set up the library application:
+
+1. To download the zip file containing your code project, select the following link: [GuidedProjectApp](https://raw.githubusercontent.com/MicrosoftLearning/APL-2007-Accelerate-app-development-by-using-GitHub-Copilot/master/LearnModuleExercises/Downloads/GuidedProjectApp.zip).
+
+1. Unzip the downloaded project files.
+
+    Unzip the code project in your development environment. For example:
+
+    1. On your local machine, navigate to your downloads folder.
+
+    1. Right-click **GuidedProjectApp.zip**, and then select **Extract all**.
+
+    1. Select **Show extracted files when complete**, and then select **Extract**.
+
+    1. Make note of the extracted folder location.
+
+1. Copy the extracted **GuidedProjectApp** folder to a location that easy to access, such as your Windows Desktop folder.
+
+1. Open the **AccelerateDevGitHubCopilot** folder in Visual Studio Code.
+
+    For example:
+
+    1. Open Visual Studio Code on your PC.
+
+    1. In Visual Studio Code, on the **File** menu, select **Open Folder**.
+
+    1. Navigate to the Windows Desktop folder, open the **GuidedProjectApp** folder, and locate the **AccelerateDevGitHubCopilot** folder.
+
+    1. Select **AccelerateDevGitHubCopilot** and then select **Select Folder**.
+
+1. In the Visual Studio Code SOLUTION EXPLORER view, verify the following solution structure:
+
+    - AccelerateDevGitHubCopilot\
+        - src\
+            - Library.ApplicationCore\
+            - Library.Console\
+            - Library.Infrastructure\
+        - tests\
+            - UnitTests\
+
+1. Ensure that the solution builds successfully.
+
+    For example, in the SOLUTION EXPLORER view, right-click **AccelerateDevGitHubCopilot**, and then select **Build**.
+
+    You'll see several Warnings, but there shouldn't be any Errors.
+
 
 ## Examine the library application codebase
 
