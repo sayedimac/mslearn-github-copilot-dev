@@ -119,9 +119,9 @@ Use the following steps to set up the library application:
 
     1. Select **Show extracted files when complete**, and then select **Extract**.
 
-1. Open the extracted files folder, then copy the **AccelerateDevGHCopilot_M2** folder to a location that's easy to access, such as your Windows Desktop folder.
+1. Open the extracted files folder, then copy the **AccelerateDevGHCopilot** folder to a location that's easy to access, such as your Windows Desktop folder.
 
-1. Open the **AccelerateDevGHCopilot_M2** folder in Visual Studio Code.
+1. Open the **AccelerateDevGHCopilot** folder in Visual Studio Code.
 
     For example:
 
@@ -129,11 +129,11 @@ Use the following steps to set up the library application:
 
     1. In Visual Studio Code, on the **File** menu, select **Open Folder**.
 
-    1. Navigate to the Windows Desktop folder, select **AccelerateDevGHCopilot_M2** and then select **Select Folder**.
+    1. Navigate to the Windows Desktop folder, select **AccelerateDevGHCopilot** and then select **Select Folder**.
 
 1. In the Visual Studio Code SOLUTION EXPLORER view, verify the following solution structure:
 
-    - AccelerateDevGHCopilot_M2\
+    - AccelerateDevGHCopilot\
         - src\
             - Library.ApplicationCore\
             - Library.Console\
@@ -143,7 +143,7 @@ Use the following steps to set up the library application:
 
 1. Ensure that the solution builds successfully.
 
-    For example, in the SOLUTION EXPLORER view, right-click **AccelerateDevGHCopilot_M2**, and then select **Build**.
+    For example, in the SOLUTION EXPLORER view, right-click **AccelerateDevGHCopilot**, and then select **Build**.
 
     You'll see some Warnings, but there shouldn't be any Errors.
 
@@ -153,7 +153,7 @@ It's important to understand an application's architecture and key features befo
 
 Use the following steps to complete this section of the exercise:
 
-1. Ensure that you have the `AccelerateDevGHCopilot_M2` solution open in Visual Studio Code.
+1. Ensure that you have the `AccelerateDevGHCopilot` solution open in Visual Studio Code.
 
 1. Open the Chat view, and then enter a prompt that uses GitHub Copilot's `@workspace` participant to generate a description of the project.
 
@@ -190,7 +190,7 @@ Use the following steps to complete this section of the exercise:
 
     Additionally, there are unit tests located in the UnitTests directory, which test the functionality of the core services using the NSubstitute mocking framework and xUnit.
     
-    The project uses .NET 8.0 and is configured to build and test using GitHub Actions as defined in the build-test.yml file. The solution file is AccelerateDevGHCopilot_M2.sln, which includes all the projects and their configurations.
+    The project uses .NET 8.0 and is configured to build and test using GitHub Actions as defined in the build-test.yml file. The solution file is AccelerateDevGHCopilot.sln, which includes all the projects and their configurations.
     ```
 
 1. Use the Solution Explorer view to expand the project folders.
@@ -430,7 +430,7 @@ Use the following steps to complete this section of the exercise:
 
     The Views and More Actions menu can be opened using the ellipsis in the top-right corner of the Source Control view.
 
-1. Open the Explorer view (not Solution Explorer), and then expand the **AccelerateDevGHCopilot_M2** folder.
+1. Open the Explorer view (not Solution Explorer), and then expand the **AccelerateDevGHCopilot** folder.
 
 1. Open the README.md file.
 
@@ -482,7 +482,7 @@ Use the following steps to complete this section of the exercise:
     Library App is a console-based application for managing library operations such as patron management, book loans, and membership renewals. It uses a JSON-based data storage system and provides various services to handle library functionalities.
     
     ## Project Structure
-    - AccelerateDevGHCopilot_M2.sln
+    - AccelerateDevGHCopilot.sln
     - README.md
     - src
       - `Library.ApplicationCore/`
@@ -563,7 +563,7 @@ Use the following steps to complete this section of the exercise:
     
     ## Usage
     1. Clone the repository.
-    2. Open the solution file AccelerateDevGHCopilot_M2.sln in Visual Studio.
+    2. Open the solution file AccelerateDevGHCopilot.sln in Visual Studio.
     3. Build the solution to restore dependencies.
     4. Run the `Library.Console` project to start the console application.
     5. Follow the on-screen instructions to search for patrons, view patron details, extend loans, return books, and renew memberships.
@@ -592,7 +592,7 @@ Use the following steps to complete this section of the exercise:
 
 To check your work, complete the following steps:
 
-1. Open the GitHub repository for the AccelerateDevGHCopilot_M2 project.
+1. Open the GitHub repository for the AccelerateDevGHCopilot project.
 
 1. Use the **Code** tab to review the updated README.md file.
 

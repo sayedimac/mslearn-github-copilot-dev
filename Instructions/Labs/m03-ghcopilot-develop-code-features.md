@@ -58,7 +58,7 @@ Before you start developing the new "book availability" feature, you need to cre
 
 Use the following steps to complete this section of the exercise:
 
-1. Ensure that you have the AccelerateDevGitHubCopilot solution open in Visual Studio Code.
+1. Ensure that you have the AccelerateDevGHCopilot solution open in Visual Studio Code.
 
 1. Select the Source Control view and ensure that the local repository is synchronized with the remote repository (Pull or Sync).
 
@@ -630,7 +630,7 @@ Use the following steps to complete this section of the exercise:
 
     You'll see Warning messages, but there shouldn't be any errors.
 
-    To build the solution in the Solution Explorer view, right-click **AccelerateDevGitHubCopilot** and then select **Build**.
+    To build the solution in the Solution Explorer view, right-click **AccelerateDevGHCopilot** and then select **Build**.
 
 ## Sync your changes with the remote repository
 
@@ -708,7 +708,7 @@ Use the following steps to complete this section of the exercise:
 
     - If you're using the Visual Studio Code debugger to run the app, the updated `Loans.json` file should be located in the `Library.Console\bin\Debug\net8.0\Json` folder.
 
-    - If you're using a `dotnet run` command from the `AccelerateDevGitHubCopilot\src\Library.Console>` folder to run the app, the updated `Loans.json` file should be located in the `Library.Console\Json` folder.
+    - If you're using a `dotnet run` command from the `AccelerateDevGHCopilot\src\Library.Console>` folder to run the app, the updated `Loans.json` file should be located in the `Library.Console\Json` folder.
 
 1. Verify that loan ID 37 and loan ID 46 are both for Book One (`"BookItemId": 1`).
 
