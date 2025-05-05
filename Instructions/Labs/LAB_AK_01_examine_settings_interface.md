@@ -1,14 +1,14 @@
 ---
 lab:
-    title: 'Exercise - Examine GitHub Copilot settings and Visual Studio Code integration'
+    title: 'Exercise - Examine GitHub Copilot settings and user interface features'
     description: 'Learn how to configure GitHub Copilot settings and how to access GitHub Copilot features in Visual Studio Code.'
 ---
 
-# Examine GitHub Copilot settings and Visual Studio Code integration
+# Examine GitHub Copilot settings and user interface features
 
 In this exercise you examine GitHub Copilot settings and explore the GitHub Copilot user interface in Visual Studio Code.
 
-This exercise should take approximately **15** minutes to complete.
+This exercise should take approximately **25** minutes to complete.
 
 ## Before you start
 
@@ -19,7 +19,7 @@ Before you start this exercise, you need to complete the following tasks:
 
 ### Verify required tools and resources
 
-This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is also required.
+This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is required.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
@@ -54,17 +54,20 @@ Complete the following steps to verify that your lab environment is configured c
     > [!IMPORTANT]
     > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the GitHub Copilot Free plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
 
-### Verify GitHub Copilot access in Visual Studio Code
+### Configure the GitHub Copilot Free plan in Visual Studio Code
 
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
-Use the following steps to complete this section of the exercise:
+> [!NOTE]
+> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+
+Complete the following steps to verify that your lab environment is configured correctly:
 
 1. Open Visual Studio Code.
 
 1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
 
-    ![Screenshot showing the GitHub Copilot Settings button.](./media/m01-github-copilot-setup.png)
+    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
 
 1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
@@ -80,7 +83,7 @@ Use the following steps to complete this section of the exercise:
 
     You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-    ![Screenshot showing the GitHub Copilot status menu.](./media/m01-github-copilot-extensions-vscode.png)
+    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
 
 You're now ready to complete the exercise.
 
@@ -450,9 +453,9 @@ GitHub Copilot provides code completion suggestions based on the context of the 
 
     When you accept a code completion suggestion, GitHub Copilot may suggest additional code lines. When this happens, you can press the **Tab** key to accept the suggestion, press the **Esc** key to reject the suggestion, or enter your own code to override the suggestion.
 
-### Explore Smart Actions
+### Access Smart Actions
 
-Smart Actions are a set of predefined actions that you can use to quickly perform common tasks in Visual Studio Code. Smart Actions are available in the Copilot context menu and can be used to generate code snippets, refactor existing code, or implement new features.
+Smart Actions are a set of predefined actions that are available from the Copilot context menu. You can use Smart Actions to quickly perform common tasks in Visual Studio Code without having to write prompts.
 
 1. In the code editor, select the Main method, right-click the selected code, and then select **Copilot**.
 
@@ -481,6 +484,8 @@ Smart Actions are a set of predefined actions that you can use to quickly perfor
     Notice that the Generate Docs smart action opens an Inline Chat session and submits a prompt asking GitHub Copilot to suggest documentation for the selected code.
 
     ![Screenshot showing the Copilot context menu.](./media/m01-github-copilot-smart-action-generate-docs.png)
+
+1. In the Inline Chat window, select **Accept** to apply the suggested documentation.
 
 ## Summary
 

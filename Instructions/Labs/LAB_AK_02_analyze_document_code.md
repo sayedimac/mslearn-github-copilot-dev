@@ -14,12 +14,12 @@ This exercise should take approximately **20** minutes to complete.
 
 Before you start this exercise, you need to complete the following tasks:
 
-1. Verify that your lab environment includes the required tools and resources.
+1. Verify required tools and resources.
 1. Verify that GitHub Copilot is enabled in Visual Studio Code.
 
 ### Verify required tools and resources
 
-This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is also required.
+This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is required.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
@@ -52,56 +52,54 @@ Complete the following steps to verify that your lab environment is configured c
     You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Check your GitHub account settings to verify that you have access to a GitHub Copilot subscription.
 
     > [!IMPORTANT]
-    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the GitHub Copilot Free plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the **GitHub Copilot Free** plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
 
-### Verify GitHub Copilot access in Visual Studio Code
+### Configure the GitHub Copilot Free plan in Visual Studio Code
 
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
-Use the following steps to complete this section of the exercise:
+> [!NOTE]
+> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+
+Complete the following steps to verify that your lab environment is configured correctly:
 
 1. Open Visual Studio Code.
 
-1. On the bottom panel of Visual Studio Code, to activate GitHub Copilot, select the GitHub Copilot **Settings** button, and then select **Set up Copilot**.
+1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
 
-    ![Screenshot showing the GitHub Copilot Settings button.](./media/m01-github-copilot-settings-button.png)
+    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
 
 1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
     The GitHub account sign in page opens in your default web browser.
 
-1. On the GitHub sign in page, enter your GitHub account credentials, and then select **Sign in**.
+1. On the GitHub sign in page, enter the GitHub account credentials that you'll be using for this exercise, and then select **Sign in**.
 
-1. Follow the instructions to authenticate your account and authorize access in Visual Studio Code.
+1. Follow the online instructions to authenticate your account and authorize access in Visual Studio Code.
 
-    You will be directed back to Visual Studio Code when the authorization is complete.
+    You'll be directed back to Visual Studio Code when the authentication/authorization process is complete.
 
 1. To verify that GitHub Copilot is activated, open Visual Studio Code's **Extensions** view.
 
     You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-    ![Screenshot showing the GitHub Copilot status menu.](./media/m01-github-copilot-extensions-vscode.png)
+    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
 
 You're now ready to complete the exercise.
 
 ## Exercise scenario
 
-You're a developer working in the IT department of a rural community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
+You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
 
 This exercise includes the following tasks:
 
 - Set up the library application in Visual Studio Code.
 - Use GitHub Copilot to explain the library application codebase.
-- Use Visual Studio Code to create a GitHub repository for the library application.
-- Use GitHub Copilot extensions to analyze the solution and create a README.md file for the repository.
+- Use GitHub Copilot to create a README.md file for the library application.
 
 ## Set up the library application in Visual Studio Code
 
-Your colleague has developed an initial version of the library application and has made it available as a .zip file.
-
-- Download the zip file.
-- Extract the code files.
-- Ensure that the solution builds in your lab environment.
+Your colleague has developed an initial version of the library application and has made it available as a .zip file. You'll need to download the zip file, extract the code files, and then open the solution in Visual Studio Code.
 
 Use the following steps to set up the library application:
 
@@ -149,150 +147,198 @@ Use the following steps to set up the library application:
 
 ## Use GitHub Copilot to explain the library application codebase
 
-It's important to understand an application's architecture and key features before documenting the project. GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution and feature levels.
+It's important to understand an application's architecture and key features before documenting the project. GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution, file, and code line levels.
+
+### Analyze code using prompts in the Chat view
+
+GitHub Copilot's Chat view includes a chat-based interface that allows you to interact with GitHub Copilot using natural language prompts. When evaluating an existing codebase for the first time, you can create prompts that generate an explanation at the workspace or project level, or at the code block or code line level. To assist you in specifying the context of your prompt, GitHub Copilot provides chat participants, chat variables, and slash commands.
+
+- Chat participants are used to scope your prompt to a specific domain.
+- Chat variables are used to include specific context in your prompt.
+- Slash commands are used to avoid writing complex prompts for common scenarios.
 
 Use the following steps to complete this section of the exercise:
 
-1. Ensure that you have the `AccelerateDevGHCopilot` solution open in Visual Studio Code.
+1. Ensure that the **AccelerateDevGHCopilot** solution is open in Visual Studio Code.
 
-1. Open the Chat view, and then enter a prompt that uses GitHub Copilot's `@workspace` participant to generate a description of the project.
+1. Open GitHub Copilot's Chat view.
 
-    For example, enter the following prompt in the Chat view:
+    To open the Chat view, select the **Toggle Chat** button at the top of the Visual Studio Code window.
 
-    ```plaintext
-    @workspace Describe this project
-    ```
+    ![Screenshot showing the GitHub Copilot status menu.](./media/m02-github-copilot-toggle-chat.png)
 
-1. Take a couple minutes to review the response.
+    You can also open the Chat view using the **Ctrl+Alt+I** keyboard shortcut.
 
-    You should see a response similar to the following description:
-
-    ```markdown
-    This project is a library management system implemented in C#. It consists of three main components:
-    
-    1. **Library.ApplicationCore**: This is the core application library containing the main business logic, entities, enums, and interfaces. It includes:
-    
-        - Entities such as Book, Patron, Loan, etc.
-        - Enums like MembershipRenewalStatus, LoanReturnStatus, and LoanExtensionStatus.
-        - Services like LoanService and PatronService.
-        - Interfaces like ILoanRepository, IPatronRepository, ILoanService, and IPatronService.
-
-    2. **Library.Console**: This is a console application that interacts with the user. It includes:
-    
-        - The main entry point in Program.cs.
-        - Configuration settings in appSettings.json.
-        - Console interaction logic in ConsoleApp.cs.
-
-    3. **Library.Infrastructure**: This library handles data persistence. It includes:
-    
-        - JSON-based repositories like JsonPatronRepository and JsonLoanRepository.
-        - Data loading and saving logic in JsonData.
-
-    Additionally, there are unit tests located in the UnitTests directory, which test the functionality of the core services using the NSubstitute mocking framework and xUnit.
-    
-    The project uses .NET 8.0 and is configured to build and test using GitHub Actions as defined in the build-test.yml file. The solution file is AccelerateDevGHCopilot.sln, which includes all the projects and their configurations.
-    ```
-
-1. Use the Solution Explorer view to expand the project folders.
-
-1. Locate and open the `ConsoleApp.cs` file.
-
-    The ConsoleApp.cs file is located in the `src/Library.Console` folder.
-
-1. Enter a prompt in the Chat view that generates a description of the `ConsoleApp` class.
+1. In the Chat view, enter a prompt that uses GitHub Copilot's **@workspace** Chat participant to generate a description of the project.
 
     For example, enter the following prompt in the Chat view:
 
     ```plaintext
-    @workspace #editor Describe the ConsoleApp class
+    @workspace describe this project
     ```
 
-1. Take a couple minutes to review the response.
+    Use Chat participants, such as the `@workspace`, to scope your prompt to a specific domain. Chat participants are like domain experts who have a specialty that they can help you with. Use @workspace when you want GitHub Copilot to consider the structure of your project, how different parts of your code interact, or design patterns in your project.
+
+    To see a list of all available chat participants, type **@** in the chat prompt box.
+
+1. Take a few minutes to compare GitHub Copilot's response with the actual project files.
 
     You should see a response similar to the following description:
 
     ```markdown
-    The `ConsoleApp` class in `ConsoleApp.cs` is responsible for managing the console-based user interface of the library management system. It handles user interactions, processes user inputs, and coordinates actions with the underlying services and repositories.
+
+    This project is a .NET solution named AccelerateDevGHCopilot that appears to be a library and application framework with a modular structure. It is organized into three main components under the *src* directory and a unit testing project under the *tests* directory. Here's a breakdown:
+    
+    ## Solution Structure
+
+    - Solution File: AccelerateDevGHCopilot.sln
+
+        - Contains references to the projects in the solution.
+
+    ## Projects
+
+    1. Library.ApplicationCore:
+    
+        - A core library targeting .NET 8.0.
+        - Likely contains core entities, enums, interfaces, and services.
+        - No external dependencies are defined in its project.assets.json.
+
+    2. Library.Infrastructure:
+    
+        - Provides infrastructure-level functionality.
+        - Depends on Library.ApplicationCore and uses Microsoft.Extensions.Configuration and related packages.
+        - Targets .NET 8.0.
+
+    3. Library.Console:
+    
+        - A console application that likely serves as the entry point for the project.
+        - Depends on Library.ApplicationCore and Library.Infrastructure.
+        - Uses Microsoft.Extensions.DependencyInjection, Microsoft.Extensions.Configuration.Json, and other related packages.
+        - Targets .NET 8.0.
+
+    4. UnitTests:
+    
+        - A unit testing project for the solution.
+        - Depends on Library.ApplicationCore.
+        - Uses testing frameworks like xUnit, NSubstitute, and coverlet.collector.
+        - Targets .NET 8.0.
+
+    ## Key Features
+
+    - Dependency Injection: The use of Microsoft.Extensions.DependencyInjection suggests that the project employs dependency injection for managing dependencies.
+    - Configuration Management: The use of Microsoft.Extensions.Configuration and Microsoft.Extensions.Configuration.Json indicates support for configuration management, likely using JSON files.
+    - Unit Testing: The UnitTests project ensures the solution is well-tested with xUnit and mocking frameworks like NSubstitute.
+    - .NET 8.0: All projects target .NET 8.0, leveraging the latest features of the .NET ecosystem.
+
+    ```
+
+1. Use the SOLUTION EXPLORER view to expand the project folders.
+
+1. Locate and open the **ConsoleApp.cs** file.
+
+    The ConsoleApp.cs file is located in the **src/Library.Console** folder.
+
+1. Take a minute to examine the code file.
+
+1. Enter a prompt in the Chat view that generates a description of the **ConsoleApp** class.
+
+    For example, enter the following prompt in the Chat view:
+
+    ```plaintext
+    @workspace #class describe the ConsoleApp class
+    ```
+
+    Use chat variables, such as **#class**, to include specific context in your prompt. To see a list of all available chat variables, type **#** in the chat prompt box.
+
+    > [!NOTE]
+    > GitHub Copilot considers your chat history and the code files you have open in Visual Studio Code when constructing a context for your prompt and generating a response.
+
+1. Take a minute to verify the accuracy of GitHub Copilot's response.
+
+    You should see a response similar to the following description:
+
+    ```markdown
+
+    The ConsoleApp class in ConsoleApp.cs is responsible for managing the console-based user interface of the library management system. It handles user interactions, processes user inputs, and coordinates actions with the underlying services and repositories.
 
     ### Fields
-    - `_currentState`: Tracks the current state of the console application.
-    - `matchingPatrons`: A list of patrons that match a search query.
-    - `selectedPatronDetails`: Holds details of the currently selected patron.
-    - `selectedLoanDetails`: Holds details of the currently selected loan.
-    - `_patronRepository`: An instance of `IPatronRepository` for accessing patron data.
-    - `_loanRepository`: An instance of `ILoanRepository` for accessing loan data.
-    - `_loanService`: An instance of `ILoanService` for performing loan-related operations.
-    - `_patronService`: An instance of `IPatronService` for performing patron-related operations.
+
+    - _currentState: Tracks the current state of the console application.
+    - matchingPatrons: A list of patrons that match a search query.
+    - selectedPatronDetails: Holds details of the currently selected patron.
+    - selectedLoanDetails: Holds details of the currently selected loan.
+    - _patronRepository: An instance of IPatronRepository for accessing patron data.
+    - _loanRepository: An instance of ILoanRepository for accessing loan data.
+    - _loanService: An instance of ILoanService for performing loan-related operations.
+    - _patronService: An instance of IPatronService for performing patron-related operations.
 
     ### Constructor
-    - `ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository)`: Initializes the `ConsoleApp` with the provided services and repositories.
+
+    - ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository): Initializes the ConsoleApp with the provided services and repositories.
 
     ### Methods
-    - `Run()`: The main entry point for running the console application.
-    - `PatronSearch()`: Handles the logic for searching patrons.
-    - `ReadPatronName()`: Reads the patron's name from the console input.
-    - `PrintPatronsList(List<Patron> matchingPatrons)`: Prints a list of matching patrons to the console.
-    - `PatronSearchResults()`: Handles the logic for displaying and selecting from the search results.
-    - `ReadInputOptions(CommonActions options, out int optionNumber)`: Reads input options from the console.
-    - `WriteInputOptions(CommonActions options)`: Writes the available input options to the console.
-    - `PatronDetails()`: Displays details of the selected patron.
-    - `LoanDetails()`: Displays details of the selected loan and handles actions like extending or returning the loan.
+
+    - Run(): The main entry point for running the console application.
+    - PatronSearch(): Handles the logic for searching patrons.
+    - ReadPatronName(): Reads the patron's name from the console input.
+    - PrintPatronsList(List<Patron> matchingPatrons): Prints a list of matching patrons to the console.
+    - PatronSearchResults(): Handles the logic for displaying and selecting from the search results.
+    - ReadInputOptions(CommonActions options, out int optionNumber): Reads input options from the console.
+    - WriteInputOptions(CommonActions options): Writes the available input options to the console.
+    - PatronDetails(): Displays details of the selected patron.
+    - LoanDetails(): Displays details of the selected loan and handles actions like extending or returning the loan.
 
     The class uses a state machine approach to manage different states of the console application, such as searching for patrons, displaying search results, showing patron details, and handling loan details.
+
     ```
 
-1. Open the `Program.cs` file.
+1. Open the **Program.cs** file and examine the code.
 
-1. Enter a prompt in the Chat view that generates a description of the `Program.cs` file.
+1. Enter a prompt in the Chat view that generates an explanation of the Program.cs file.
 
     For example, enter the following prompt in the Chat view:
 
     ```plaintext
-    @workspace #editor Describe the Program.cs file
+    @workspace /explain Explain the Program.cs file
     ```
 
-1. Take a couple minutes to review the response.
+    Use Slash commands, such as **/explain**, to avoid writing complex prompts for common scenarios. To see a list of all available slash commands, type **/** in the chat prompt box. Available slash commands may vary, depending on your environment and the context of your chat.
 
-    You should see a response similar to the following description:
+1. Take a minute to review the detailed response generated by GitHub Copilot.
 
-    ```markdown
-    The `Program.cs` file is the entry point for the console application. It sets up the dependency injection container, configures services, and starts the `ConsoleApp`.
-    
-    1. **Dependency Injection Setup**:
-        - Creates a `ServiceCollection` to register services.
-        - Builds a configuration object from the `appSettings.json` file.
-        - Registers various services and repositories with different lifetimes (singleton, scoped).
-    
-    2. **Service Registration**:
-        - Registers the repositories: JsonPatronRepository and JsonLoanRepository.
-        - Registers the services: LoanService and PatronService.
-        - Registers the JsonData class as a singleton.
-        - Registers the ConsoleApp class as a singleton.
-    
-    3. **Service Provider**:
-        - Builds the service provider from the registered services.
-        - Retrieves the `ConsoleApp` service and runs it asynchronously.
+    You should see a response that breaks down the Program.cs file, practically line-by-line, and explains the purpose of each line or code section.
 
-    This setup ensures that all dependencies are properly injected and configured before the application starts running.
-    ```
+1. Close the Program.cs file.
 
-1. Expand the Library.Infrastructure project folder.
+### Improve chat responses by adding context
 
-1. Add the `JsonData.cs`, `JsonLoanRepository.cs`, and `JsonPatronRepository.cs` files to the Chat context.
+GitHub Copilot uses context to generate more relevant responses. Identifying relevant code files is one way to establish context.
 
-    Use the **Attach Context** button to add the files to the Chat context. You can also use a drag-and-drop operation to add the files to the Chat context.
+Opening files in the code editor is one way to establish context, but you can also add files to the Chat context using drag-and-drop operations or by using the **Attach Context** button in the Chat view.
+
+Use the following steps to complete this section of the exercise:
+
+1. Expand the **Library.Infrastructure** project, and then expand the **Data** folder.
+
+1. Use a drag-and-drop operation to add the following files from the SOLUTION EXPLORER view to the Chat context: **JsonData.cs**, **JsonLoanRepository.cs**, and **JsonPatronRepository.cs**.
+
+    GitHub Copilot uses the Chat Context to understand the code files that are relevant to your prompt. You can add files to the Chat context using drag-and-drop operations, or you can use the **Attach Context** button in the Chat view.
+
+    Instead of adding individual files manually, you can let Copilot find the right files from your codebase automatically. This can be useful when you don't know which files are relevant to your question.
+
+    To let Copilot find the right files automatically, add #codebase in your prompt or select Codebase from the list of context types.
 
 1. Enter a prompt in the Chat view that generates an explanation of the data access classes.
 
     For example, enter the following prompt in the Chat view:
 
     ```plaintext
-    @workspace /explain Explain how the data access classes work
+    @workspace Explain how the data access classes work
     ```
 
 1. Take a couple minutes to review the response.
 
-    You should see a response similar to the following description:
+    You should see a response that includes information similar to the following description:
 
     ```markdown
     The `JsonData` class in `JsonData.cs` is responsible for managing the loading and saving of data from JSON files. It handles various entities such as `Author`, `Book`, `BookItem`, Patron`, and `Loan`. The class uses the `IConfiguration` interface to read file paths from the configuration settings, ensuring that the correct JSON files are loaded.
@@ -321,7 +367,7 @@ Use the following steps to complete this section of the exercise:
 
 ### Build and run the application
 
-Running the application will help you understand the user interface, key features of the application, and how app components interact.
+Running the application helps you understand the user interface, key features of the application, and how app components interact.
 
 Use the following steps to complete this section of the exercise:
 
@@ -373,70 +419,6 @@ Use the following steps to complete this section of the exercise:
 1. At the "Input Options" prompt, type **q** and then press Enter.
 
 1. Stop the debug session.
-
-## Create the GitHub repository for your code
-
-Creating the GitHub repository for your code will enable you to share your work with others and collaborate on the project.
-
-> [!NOTE]
-> You use your own GitHub account to create a private GitHub repository for the library application.
-
-Use the following steps to complete this section of the exercise:
-
-1. Open a browser window and navigate to your GitHub account.
-
-    The GitHub login page is: [https://github.com/login](https://github.com/login).
-
-1. Sign in to your GitHub account.
-
-1. Open your GitHub account menu, and then select **Your repositories**.
-
-1. Switch to the Visual Studio Code window.
-
-1. In Visual Studio Code, open the Source Control view.
-
-1. Select **Publish to GitHub**.
-
-1. Name for the repository **AccelerateDevGHCopilot** and then select **Publish to GitHub private repository**.
-
-    > [!NOTE]
-    > If you're not signed in to GitHub in Visual Studio Code, you'll be prompted to sign in. Once you're signed in, authorize Visual Studio Code with the requested permissions.
-
-1. In the Source Control view, enter a commit message, such as "Initial commit", and then select **Publish Branch**.
-
-1. Notice that Visual Studio Code displays a status messages during the publish process.
-
-    When the publish process is finished, you'll see a message informing you that your code was successfully published to the GitHub repository that you specified.
-
-1. Switch to the browser window for your GitHub account.
-
-1. Open the new AccelerateDevGHCopilot repository in your GitHub account.
-
-    If you don't see your AccelerateDevGHCopilot repository, refresh the page. If you still don't see the repository, try the following steps:
-
-    1. Switch to Visual Studio Code.
-    1. Open your notifications (a notification was generated when the new repository was published).
-    1. Select **Open on GitHub** to open your repository.
-
-1. On the Code tab of your AccelerateDevGHCopilot repository, select **Add a README**.
-
-1. In the README.md editor, type **Coming soon** and then select **Commit changes**.
-
-1. In the `Commit changes` dialog, select **Commit changes**.
-
-1. Switch to Visual Studio Code and ensure that the Source Control view is open.
-
-1. Open the **Views and More Actions** menu, and then select **Pull**.
-
-    The Views and More Actions menu can be opened using the ellipsis in the top-right corner of the Source Control view.
-
-1. Open the Explorer view (not Solution Explorer), and then expand the **AccelerateDevGHCopilot** folder.
-
-1. Open the README.md file.
-
-    You should see the message "Coming soon".
-
-You'll be using GitHub Copilot Chat to update your repository's README file in the next section of this exercise.
 
 ## Create the project documentation for the README file
 

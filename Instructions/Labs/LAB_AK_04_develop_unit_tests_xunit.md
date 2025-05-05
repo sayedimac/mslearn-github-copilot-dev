@@ -12,23 +12,88 @@ This exercise should take approximately **20** minutes to complete.
 
 ## Before you start
 
-Your development environment must include the following resources:
+Before you start this exercise, you need to complete the following tasks:
 
-- Git version control software.
-- The .NET SDK 9.0 (or the latest supported version).
-- Visual Studio Code updated to the latest version.
-- The C# Dev Kit extension (from Microsoft) installed in Visual Studio Code.
+1. Verify required tools and resources.
+1. Verify that GitHub Copilot is enabled in Visual Studio Code.
 
-Before you start this exercise, you need to:
+### Verify required tools and resources
 
-1. Verify that Git and the .NET SDK are available in your dev environment. If needed, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a> and the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>
-1. Verify that Visual Studio Code and the C# Dev Kit extension are available in your dev environment. You can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a> and the C# Dev Kit extension using the following URL: <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp-devkit" target="_blank">C# Dev Kit</a>.
+This exercise requires a lab environment (either a hosted environment or a local PC) that's configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is required.
 
-For additional help configuring the Visual Studio Code environment, see <a href="https://learn.microsoft.com/training/modules/install-configure-visual-studio-code/" target="_blank">Install and configure Visual Studio Code for C# development</a>
+Complete the following steps to verify that your lab environment is configured correctly:
+
+1. Verify that Git version 2.48 or later is installed in your lab environment.
+
+    Run `git --version` in a terminal window to check the version of Git installed.
+
+    If you're running Windows and you want to update Git, you can use the following command:
+
+    ```bash
+    git update-git-for-windows
+    ```
+
+    If necessary, you can download Git using the following URL: <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>.
+
+1. Verify that the latest LTS or STS version of the .NET SDK is installed in your lab environment.
+
+    Run `dotnet --version` in a terminal window to check the version of the .NET SDK installed.
+
+    If necessary, you can download the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>.
+
+1. Verify that Visual Studio Code and the C# Dev Kit extension are installed in your lab environment.
+
+    If necessary, you can download Visual Studio Code using the following URL: <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a>
+
+    You can install the C# Dev Kit extension using the Extensions view in Visual Studio Code.
+
+1. Verify that you have access to a GitHub account and GitHub Copilot subscription.
+
+    You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Check your GitHub account settings to verify that you have access to a GitHub Copilot subscription.
+
+    > [!IMPORTANT]
+    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the **GitHub Copilot Free** plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+
+### Configure the GitHub Copilot Free plan in Visual Studio Code
+
+GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
+
+> [!NOTE]
+> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+
+Complete the following steps to verify that your lab environment is configured correctly:
+
+1. Open Visual Studio Code.
+
+1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
+
+    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
+
+1. On the **Sign in to use Copilot for free** page, select **Sign in**.
+
+    The GitHub account sign in page opens in your default web browser.
+
+1. On the GitHub sign in page, enter the GitHub account credentials that you'll be using for this exercise, and then select **Sign in**.
+
+1. Follow the online instructions to authenticate your account and authorize access in Visual Studio Code.
+
+    You'll be directed back to Visual Studio Code when the authentication/authorization process is complete.
+
+1. To verify that GitHub Copilot is activated, open Visual Studio Code's **Extensions** view.
+
+    You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
+
+    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
+
+You're now ready to complete the exercise.
 
 ## Exercise scenario
 
-GitHub Copilot can help you write unit tests for your code. There are several ways to use GitHub Copilot to generate unit tests:
+You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
+
+You have an initial version of the library application that includes a unit test project named UnitTests. You need to develop additional unit tests using GitHub Copilot to help speed up the development process.
+
+There are several ways to use GitHub Copilot to generate unit tests:
 
 - **Generate test cases**: You can use GitHub Copilot to generate test cases for your code. Copilot can suggest test cases based on the code you have written. You can then use these test cases to create unit tests for your code.
 - **Generate test methods**: Copilot can also generate test methods for your code. You can use these test methods to create unit tests for your code.
@@ -38,9 +103,9 @@ GitHub Copilot can help you write unit tests for your code. There are several wa
 - **Generate test setup code**: Copilot can generate setup code for your unit tests. This code can help you set up the test environment before running your tests.
 - **Generate test teardown code**: Copilot can generate teardown code for your unit tests. This code can help you clean up the test environment after running your tests.
 
-Your existing solution includes a unit test project named UnitTests. This project already contains unit tests that partially cover the service classes in the ApplicationCore project.
+This exercise includes the following tasks:
 
-In this exercise, you use GitHub Copilot to complete the following tasks:
+1. Set up the library application in Visual Studio Code.
 
 1. Examine the approach to unit testing implemented by the UnitTests project.
 
