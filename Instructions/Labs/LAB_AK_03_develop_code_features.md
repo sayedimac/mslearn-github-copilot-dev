@@ -6,10 +6,9 @@ lab:
 
 # Develop code features using GitHub Copilot
 
+GitHub Copilot helps developers write code faster and with fewer errors. It provides suggestions for code snippets, functions, and even entire classes based on the context of the code being written.
 
-
-This exercise should take approximately **20** minutes to complete.
-
+This exercise should take approximately **30** minutes to complete.
 
 ## Before you start
 
@@ -60,7 +59,7 @@ Complete the following steps to verify that your lab environment is configured c
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
 > [!NOTE]
-> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+> If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
@@ -92,11 +91,11 @@ You're now ready to complete the exercise.
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
 
-You have an initial version of the library application, but you need to improve the user experience for the librarians and patrons. Your team identified several new features that could be added to the application. You agree to work on the following features:
+An initial version of your library application was tested by end users and several additional features were requested. Your team agreed to work on the following features:
 
-- Book availability: Enable a librarian to determine the availability status of a book. This feature should display a message indicating if a book is available for loan or the return due date if the book is currently on loan to another patron.
+- Book availability: Enable a librarian to determine the availability status of a book. This feature should display a message indicating that a book is available for loan or the return due date if the book is currently on loan to another patron.
 
-- Book loans: Enable a librarian to loan a book to a patron (if the book is available). This feature should display the option for a patron to receive a book on loan, update Loans.json with the new loan, and display updated the loan details for the patron.
+- Book loans: Enable a librarian to loan a book to a patron (if the book is available). This feature should display the option for a patron to receive a book on loan, update Loans.json with the new loan, and display updated loan details for the patron.
 
 - Book reservations: Enable a librarian to reserve a book for a patron (unless the book is already reserved). This feature should implement a new book reservation process. This feature may require creating a new Reservations.json file along with the new classes and interfaces required to support the reservation process.
 
@@ -119,25 +118,21 @@ This exercise includes the following tasks:
 
 ## Set up the library application in Visual Studio Code
 
-Your colleague has developed an initial version of the library application and has made it available as a .zip file.
-
-- Download the zip file.
-- Extract the code files.
-- Ensure that the solution builds in your lab environment.
+You need to download the existing application, extract the code files, and then open the solution in Visual Studio Code.
 
 Use the following steps to set up the library application:
 
-1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - Analyze and document code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM2.zip)
+1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - develop code features](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM3.zip)
 
-    The zip file is named **AZ2007LabAppM2.zip**.
+    The zip file is named **AZ2007LabAppM3.zip**.
 
-1. Extract the files from the **AZ2007LabAppM2.zip** file.
+1. Extract the files from the **AZ2007LabAppM3.zip** file.
 
     For example:
 
     1. Navigate to the downloads folder in your lab environment.
 
-    1. Right-click **AZ2007LabAppM2.zip**, and then select **Extract all**.
+    1. Right-click **AZ2007LabAppM3.zip**, and then select **Extract all**.
 
     1. Select **Show extracted files when complete**, and then select **Extract**.
 
@@ -168,8 +163,6 @@ Use the following steps to set up the library application:
     For example, in the SOLUTION EXPLORER view, right-click **AccelerateDevGHCopilot**, and then select **Build**.
 
     You'll see some Warnings, but there shouldn't be any Errors.
-
-
 
 ## Create the GitHub repository for your code
 
@@ -234,8 +227,6 @@ Use the following steps to complete this section of the exercise:
     You should see the message "Coming soon".
 
 You'll be using GitHub Copilot Chat to update your repository's README file in the next section of this exercise.
-
-
 
 ## Create a new branch in the repository
 

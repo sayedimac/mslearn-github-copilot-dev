@@ -59,7 +59,7 @@ Complete the following steps to verify that your lab environment is configured c
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
 > [!NOTE]
-> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+> If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
@@ -110,6 +110,54 @@ This exercise includes the following tasks:
 1. Examine the approach to unit testing implemented by the UnitTests project.
 
 1. Extend the UnitTests project to begin testing the data access classes in the `Library.Infrastructure` project.
+
+## Set up the library application in Visual Studio Code
+
+You need to download the existing application, extract the code files, and then open the solution in Visual Studio Code.
+
+Use the following steps to set up the library application:
+
+1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - develop unit tests](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM4.zip)
+
+    The zip file is named **AZ2007LabAppM4.zip**.
+
+1. Extract the files from the **AZ2007LabAppM4.zip** file.
+
+    For example:
+
+    1. Navigate to the downloads folder in your lab environment.
+
+    1. Right-click **AZ2007LabAppM4.zip**, and then select **Extract all**.
+
+    1. Select **Show extracted files when complete**, and then select **Extract**.
+
+1. Open the extracted files folder, then copy the **AccelerateDevGHCopilot** folder to a location that's easy to access, such as your Windows Desktop folder.
+
+1. Open the **AccelerateDevGHCopilot** folder in Visual Studio Code.
+
+    For example:
+
+    1. Open Visual Studio Code in your lab environment.
+
+    1. In Visual Studio Code, on the **File** menu, select **Open Folder**.
+
+    1. Navigate to the Windows Desktop folder, select **AccelerateDevGHCopilot** and then select **Select Folder**.
+
+1. In the Visual Studio Code SOLUTION EXPLORER view, verify the following solution structure:
+
+    - AccelerateDevGHCopilot\
+        - src\
+            - Library.ApplicationCore\
+            - Library.Console\
+            - Library.Infrastructure\
+        - tests\
+            - UnitTests\
+
+1. Ensure that the solution builds successfully.
+
+    For example, in the SOLUTION EXPLORER view, right-click **AccelerateDevGHCopilot**, and then select **Build**.
+
+    You'll see some Warnings, but there shouldn't be any Errors.
 
 ## Examine the approach to unit testing implemented by the UnitTests project
 

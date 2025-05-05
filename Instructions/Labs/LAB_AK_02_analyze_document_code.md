@@ -59,7 +59,7 @@ Complete the following steps to verify that your lab environment is configured c
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
 > [!NOTE]
-> If you've already verified access to a GitHub Copilot subscription i your lab environment, you can skip this section and proceed to the exercise scenario.
+> If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
@@ -101,7 +101,7 @@ This exercise includes the following tasks:
 
 ## Set up the library application in Visual Studio Code
 
-Your colleague has developed an initial version of the library application and has made it available as a .zip file. You'll need to download the zip file, extract the code files, and then open the solution in Visual Studio Code.
+Your colleague has developed an initial version of the library application and has made it available as a .zip file. You need to download the zip file, extract the code files, and then open the solution in Visual Studio Code.
 
 Use the following steps to set up the library application:
 
