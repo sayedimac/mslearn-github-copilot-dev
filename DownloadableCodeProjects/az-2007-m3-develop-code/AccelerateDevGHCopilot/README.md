@@ -55,7 +55,9 @@ Library App is a modular application designed to manage library operations such 
    ```
 
 2. Open the solution file `AccelerateDevGHCopilot.sln` in Visual Studio.
+
 3. Build the solution to restore dependencies and compile the code.
+
 4. Run the console application:
 
    ```bash
