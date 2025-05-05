@@ -91,6 +91,8 @@ You're now ready to complete the exercise.
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
 
+Your colleague has developed an initial version of the library application, but due to time constraints, they haven't had a chance to document the code. You need to analyze the codebase and create documentation for the project.
+
 This exercise includes the following tasks:
 
 - Set up the library application in Visual Studio Code.
@@ -422,9 +424,9 @@ Use the following steps to complete this section of the exercise:
 
 ## Create the project documentation for the README file
 
-The README file is an essential part of any GitHub repository. The README provides information based on the needs of the project, project contributors, and stakeholders.
+Readme files provide project contributors and stakeholders with essential information about a code repository. They help users understand the purpose of the project, how to use it, and how to contribute. A well-structured README file can significantly improve the usability and maintainability of a project.
 
-For this guided project exercise, your README file should include the following sections:
+You need a README file that includes the following sections:
 
 - **Project Title**: A brief, clear title for the project.
 - **Description**: A detailed explanation of what the project is and what it does.
@@ -433,18 +435,20 @@ For this guided project exercise, your README file should include the following 
 - **Usage**: Instructions on how to use the project, often including code examples.
 - **License**: The license that the project is under.
 
-In this section of the exercise, you'll use GitHub Copilot to create project documentation and add it to your `README.md` file.
+In this section of the exercise, you'll use GitHub Copilot to create project documentation and add it to a `README.md` file.
 
 Use the following steps to complete this section of the exercise:
 
-1. Open the Chat view.
+1. Add a new file named **README.md** to the root folder of the **AccelerateDevGHCopilot** solution.
 
-    When you're interested in specific code or files, you can use drag-and-drop operations to add files to the Chat view context. In this case, you're interested in the overall solution, so you'll use the `@workspace` participant rather than adding individual files.
+1. Open the Chat view.
 
 1. To generate project documentation for your README file, enter the following prompt:
 
     ```plaintext
-    @workspace Generate the contents of a README.md file for the code repository. Use "Library App" as the project title. The README file should include the following sections: Description, Project Structure, Key Classes and Interfaces, Usage, License. Format all sections as raw markdown. Use a bullet list with indents to represent the project structure. Do not include ".gitignore" or the ".github", "bin", and "obj" folders.
+
+    @workspace Generate the contents of a README.md file for a code repository. Use "Library App" as the project title. The README file should include the following sections: Description, Project Structure, Key Classes and Interfaces, Usage, License. Format all sections as raw markdown. Use a bullet list with indents to represent the project structure. Do not include ".gitignore" or the ".github", "bin", and "obj" folders.
+
     ```
 
     > [!NOTE]
@@ -455,129 +459,88 @@ Use the following steps to complete this section of the exercise:
     > [!NOTE]
     > You can update sections individually to provide more detailed information or if they aren't formatted correctly. You can also copy GitHub Copilot's response to the README file and then make corrections directly in the markdown file.
 
-1. Copy the suggested documentation sections to the README.md file.
+1. Copy the suggested documentation, and then paste it into the README.md file.
+
+    To copy the entire response, scroll to the bottom of the response, right-click in the empty space to the right of the "thumbs-up" icon, and then select **Copy All**
+
+1. Format the README.md file as needed.
+
+    You should have a README.md file that looks similar to the following example:
 
     ```markdown
+
     # Library App
     
     ## Description
-    Library App is a console-based application for managing library operations such as patron management, book loans, and membership renewals. It uses a JSON-based data storage system and provides various services to handle library functionalities.
+    
+    Library App is a modular application designed to manage library operations such as book loans, patron management, and inventory tracking. It is built using .NET and follows a clean architecture approach to ensure scalability and maintainability.
     
     ## Project Structure
-    - AccelerateDevGHCopilot.sln
-    - README.md
-    - src
+    
+    - `AccelerateDevGHCopilot.sln` - Solution file for the project.
+    - `src/`
       - `Library.ApplicationCore/`
-        - `Entities/`
-          - `Author.cs`
-          - `Book.cs`
-          - `BookItem.cs`
-          - `Loan.cs`
-          - `Patron.cs`
-        - `Enums/`
-          - `LoanExtensionStatus.cs`
-          - `LoanReturnStatus.cs`
-          - `MembershipRenewalStatus.cs`
-        - `Interfaces/`
-          - `IPatronRepository.cs`
-          - `IPatronService.cs`
-          - `ILoanRepository.cs`
-          - `ILoanService.cs`
-        - `Library.ApplicationCore.csproj`
-        - `Services/`
-          - `PatronService.cs`
-          - `LoanService.cs`
+        - `Entities/` - Contains core domain entities.
+        - `Enums/` - Defines enumerations used across the application.
+        - `Interfaces/` - Declares interfaces for core abstractions.
+        - `Services/` - Implements business logic and domain services.
+        - `Library.ApplicationCore.csproj` - Project file for the Application Core.
       - `Library.Console/`
-        - `appSettings.json`
-        - `CommonActions.cs`
-        - `ConsoleApp.cs`
-        - `ConsoleState.cs`
-        - `Library.Console.csproj`
-        - `Program.cs`
+        - `appSettings.json` - Configuration file for the console application.
+        - `CommonActions.cs` - Contains reusable actions for the console app.
+        - `ConsoleApp.cs` - Main application logic for the console interface.
+        - `ConsoleState.cs` - Manages the state of the console application.
+        - `Program.cs` - Entry point for the console application.
+        - `Json/` - Contains JSON-related utilities or data.
+        - `Library.Console.csproj` - Project file for the Console application.
       - `Library.Infrastructure/`
-        - `Data/`
-          - `JsonData.cs`
-          - `JsonLoanRepository.cs`
-          - `JsonPatronRepository.cs`
-        - `Library.Infrastructure.csproj`
-    - tests
+        - `Data/` - Contains data access implementations.
+        - `Library.Infrastructure.csproj` - Project file for the Infrastructure layer.
+    - `tests/`
       - `UnitTests/`
-        - `ApplicationCore/`
-          - `LoanService/`
-            - `ReturnLoan.cs`
-            - `ExtendLoan.cs`
-          - `PatronService/`
-            - `RenewMembership.cs`
-        - `UnitTests.csproj`
+        - `LoanFactory.cs` - Factory for creating test data related to loans.
+        - `PatronFactory.cs` - Factory for creating test data related to patrons.
+        - `ApplicationCore/` - Contains unit tests for the Application Core.
+        - `UnitTests.csproj` - Project file for unit tests.
     
     ## Key Classes and Interfaces
+    
     - **Entities**
-      - **Author**: Represents an author with properties like `Id` and `Name`.
-      - **Book**: Represents a book with properties like `Id`, `Title`, `AuthorId`, `Genre`, `ImageName`, and `ISBN`.
-      - **BookItem**: Represents a specific copy of a book with properties like `Id`, `BookId`, `AcquisitionDate`, and `Condition`.
-      - **Loan**: Represents a loan with properties like `Id`, `BookItemId`, `PatronId`, `LoanDate`, `DueDate`, and `ReturnDate`.
-      - **Patron**: Represents a library patron with properties like `Id`, `Name`, `MembershipStart`, `MembershipEnd`, and `Loans`.
-    
-    - **Enums**
-      - **LoanExtensionStatus**: Enum for loan extension statuses.
-      - **LoanReturnStatus**: Enum for loan return statuses.
-      - **MembershipRenewalStatus**: Enum for membership renewal statuses.
-    
+      - `Book` - Represents a book in the library.
+      - `Patron` - Represents a library patron.
+      - `Loan` - Represents a loan transaction.
     - **Interfaces**
-      - **IPatronRepository**: Interface for patron repository with methods like `GetPatron`, `SearchPatrons`, and `UpdatePatron`.
-      - **IPatronService**: Interface for patron service with method `RenewMembership`.
-      - **ILoanRepository**: Interface for loan repository with methods like `GetLoan` and `UpdateLoan`.
-      - **ILoanService**: Interface for loan service with methods like `ReturnLoan` and `ExtendLoan`.
-    
+      - `IBookRepository` - Interface for book-related data operations.
+      - `IPatronRepository` - Interface for patron-related data operations.
+      - `ILoanService` - Interface for managing loan operations.
     - **Services**
-      - **PatronService**: Implements `IPatronService` to handle patron-related operations.
-      - **LoanService**: Implements `ILoanService` to handle loan-related operations.
-    
-    - **Console**
-      - **ConsoleApp**: Main console application class that handles user interactions and application flow.
-      - **ConsoleState**: Enum for different states of the console application.
-      - **CommonActions**: Enum for common actions in the console application.
-    
-    - **Infrastructure**
-      - **JsonData**: Handles loading and saving data to JSON files.
-      - **JsonLoanRepository**: Implements `ILoanRepository` to manage loan data.
-      - **JsonPatronRepository**: Implements `IPatronRepository` to manage patron data.
+      - `LoanService` - Implements loan-related business logic.
+      - `NotificationService` - Handles notifications for overdue loans.
     
     ## Usage
-    1. Clone the repository.
+    
+    1. Clone the repository:
+    
+       ```bash
+       git clone <repository-url>
+        ```
+    
     2. Open the solution file AccelerateDevGHCopilot.sln in Visual Studio.
-    3. Build the solution to restore dependencies.
-    4. Run the `Library.Console` project to start the console application.
-    5. Follow the on-screen instructions to search for patrons, view patron details, extend loans, return books, and renew memberships.
+    3. Build the solution to restore dependencies and compile the code.
+    4. Run the console application:
+    
+        ```dotnetcli
+        dotnet run --project src/Library.Console/Library.Console.csproj
+        ```
+    
+    5. Execute unit tests:
+    
+        ```dotnetcli
+        dotnet run --project src/Library.Console/Library.Console.csproj
+        ```
     
     ## License
-    This project is licensed under the MIT License.
+    
+    This project is licensed under the MIT License. See the LICENSE file for details.
+
     ```
-
-1. Adjust the formatting manually if needed, and then save the updated README.md file.
-
-1. Open Visual Studio Code's Source Control view.
-
-1. To have GitHub Copilot generate a commit message, select the icon on the right side of the message box.
-
-    You should see a commit message similar to the following message:
-
-    ```plaintext
-    chore: Update README.md with project description and usage instructions
-    ```
-
-1. Stage and Commit the file updates.
-
-1. Sync (or Push) your updates to the GitHub repository.
-
-## Check your work
-
-To check your work, complete the following steps:
-
-1. Open the GitHub repository for the AccelerateDevGHCopilot project.
-
-1. Use the **Code** tab to review the updated README.md file.
-
-1. Ensure that the project structure described in the README file aligns the folder structure of the repository.
-
-1. Review the commit history and locate the commit message generated by GitHub Copilot.

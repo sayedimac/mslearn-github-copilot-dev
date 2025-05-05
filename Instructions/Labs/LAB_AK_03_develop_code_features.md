@@ -92,7 +92,7 @@ You're now ready to complete the exercise.
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
 
-You have a proof of concept version of the library application. You and your coworker want to improve the user experience for the librarians and patrons. You discuss several new features that could be added to the application. You agree to work on the following features:
+You have an initial version of the library application, but you need to improve the user experience for the librarians and patrons. Your team identified several new features that could be added to the application. You agree to work on the following features:
 
 - Book availability: Enable a librarian to determine the availability status of a book. This feature should display a message indicating if a book is available for loan or the return due date if the book is currently on loan to another patron.
 
@@ -100,7 +100,7 @@ You have a proof of concept version of the library application. You and your cow
 
 - Book reservations: Enable a librarian to reserve a book for a patron (unless the book is already reserved). This feature should implement a new book reservation process. This feature may require creating a new Reservations.json file along with the new classes and interfaces required to support the reservation process.
 
-Each of you will work on one of the new features and then regroup. You'll work on the feature to determine the availability status of a book. Your coworker will work on the feature to loan a book to a patron. The final feature, to reserve a book for a patron, will be developed after the other two features are completed.
+Each team member will work on one of the new features and then regroup. You'll work on the feature to determine the availability status of a book. Your coworker will work on the feature to loan a book to a patron. The final feature, to reserve a book for a patron, will be developed after the other two features are completed.
 
 This exercise includes the following tasks:
 
@@ -116,9 +116,6 @@ This exercise includes the following tasks:
     - Sync your code updates to the "book availability" branch of your remote repository.
 
 1. Create a pull request to merge your changes into the main branch of the repository.
-
-
-
 
 ## Set up the library application in Visual Studio Code
 
