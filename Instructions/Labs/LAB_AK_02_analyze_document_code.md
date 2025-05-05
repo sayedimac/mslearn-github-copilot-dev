@@ -1,8 +1,8 @@
-<!-- ---
+---
 lab:
     title: 'Exercise - Analyze and document code using GitHub Copilot'
     description: 'Learn how to install and configure GitHub Copilot in Visual Studio Code.'
---- -->
+---
 
 # Analyze and document code using GitHub Copilot
 
