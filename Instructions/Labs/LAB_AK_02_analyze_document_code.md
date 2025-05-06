@@ -89,7 +89,7 @@ You're now ready to complete the exercise.
 
 ## Exercise scenario
 
-You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
+You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
 Your colleague has developed an initial version of the library application, but due to time constraints, they haven't had a chance to document the code. You need to analyze the codebase and create documentation for the project.
 

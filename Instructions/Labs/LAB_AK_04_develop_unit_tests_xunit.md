@@ -89,7 +89,7 @@ You're now ready to complete the exercise.
 
 ## Exercise scenario
 
-You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to help speed up the development process.
+You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
 You have an initial version of the library application that includes a unit test project named UnitTests. You need GitHub Copilot to help accelerate the development of additional unit tests.
 
