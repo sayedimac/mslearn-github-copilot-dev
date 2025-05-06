@@ -58,8 +58,7 @@ Complete the following steps to verify that your lab environment is configured c
 
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
-> [!NOTE]
-> If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
+> **NOTE**: If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 

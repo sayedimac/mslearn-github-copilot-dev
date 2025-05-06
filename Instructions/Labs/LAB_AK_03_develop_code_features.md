@@ -1,8 +1,8 @@
-<!-- ---
+---
 lab:
     title: 'Exercise - Develop code features using GitHub Copilot'
     description: 'Learn how to accelerate the development of new code features using GitHub Copilot in Visual Studio Code.'
---- -->
+---
 
 # Develop code features using GitHub Copilot
 
@@ -51,15 +51,13 @@ Complete the following steps to verify that your lab environment is configured c
 
     You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Check your GitHub account settings to verify that you have access to a GitHub Copilot subscription.
 
-    > [!IMPORTANT]
-    > If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the **GitHub Copilot Free** plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+    > **IMPORTANT**: If you don't have a GitHub account, you can create an individual account from the GitHub login page (select **Create an account**), and then activate the **GitHub Copilot Free** plan in the next section. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within the lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
 
 ### Configure the GitHub Copilot Free plan in Visual Studio Code
 
 GitHub offers three Copilot plans for individual developers, and two plans for organizations and enterprises. The plans are designed to meet the needs of individual developers, teams, and organizations. The GitHub Copilot Free plan is available to all individual GitHub users, while the paid plans are available to individuals and organizations that require additional features and capabilities.
 
-> [!NOTE]
-> If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
+> **NOTE**: If you've already verified access to a GitHub Copilot subscription in your lab environment, you can skip this section and proceed to the exercise scenario.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
