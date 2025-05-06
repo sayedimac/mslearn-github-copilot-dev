@@ -606,26 +606,6 @@ Use the following steps to complete this section of the exercise:
     - The SearchBooks method must be updated with logic that determines the availability of the book title and displays an appropriate message. The suggested code uses LINQ queries to check the loan status.
     - The Program.cs file must be updated to pass the JsonData object to the ConsoleApp class.
 
-    The initial section of the response should look similar to the following description:
-
-    ```plaintext
-
-    To update the SearchBooks method and the ConsoleApp class to find a matching book title in the Books.json file and check its availability using Loans.json, follow these steps:
-    
-    1. Inject JsonData into the ConsoleApp Class
-    
-        The JsonData class provides access to the Books, BookItems, and Loans data. Update the ConsoleApp constructor to accept a JsonData instance.
-    
-    2. Update the SearchBooks Method
-    
-        Modify the SearchBooks method to:
-    
-        - Search for a book in Books.json using the user-supplied title.
-        - Retrieve the corresponding BookItem from BookItems.json.
-        - Check the Loans.json file to determine if the book is on loan or available.
-
-    ```
-
     The final section of the response should look similar to the following explanation:
 
     ```plaintext
@@ -658,7 +638,11 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. Use the explanation section to construct a new prompt.
+    You can use the Chat view's **Ask** mode to analyze code updates, then use the **Edit** mode to implement the code updates.
+
+1. Use GitHub Copilot's response to construct a new prompt.
+
+    For example, you can use the explanation section to create the following prompt:
 
     ```plaintext
 
@@ -666,7 +650,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    You can ensure the displayed message format matches your earlier specification by adding the original requirement to the prompt. The prompt would look similar to the following example:
+    You can adjust the prompt to achieve specific requirements. For example, if you want a specific message displayed to the end user, you could add your requirement to the prompt:
 
     ```plaintext
 
@@ -674,9 +658,9 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. In the Chat view, select **Set Mode**, and then select **Edit**.
+1. To switch the Chat view to the Edit mode, select **Set Mode**, and then select **Edit**.
 
-1. When prompted to start a new session, select **Yes**.
+    When prompted to start a new session, select **Yes**.
 
 1. Use drag-and-drop operations to add the following files to the Chat context:
 
@@ -702,6 +686,8 @@ Use the following steps to complete this section of the exercise:
     ```
 
 1. Take a minute to review the suggested updates in the ConsoleApp.cs and Program.cs files.
+
+    Notice that the ConsoleApp.cs file includes several code update suggestions. You can
 
     Notice that the Program.cs file has been opened in a new editor tab, and that the suggested code updates are visible in the editor.
 

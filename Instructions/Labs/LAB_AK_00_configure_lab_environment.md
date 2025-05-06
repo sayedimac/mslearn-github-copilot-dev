@@ -12,7 +12,11 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. Verify that Git version 2.48 or later is installed in your lab environment.
 
-    Run `git --version` in a terminal window to check the version of Git installed.
+    Run the following command in a terminal window to check the installed version of Git:
+
+    ```bash
+    git --version
+    ```
 
     If you're running Windows and you want to update Git, you can use the following command:
 
@@ -24,7 +28,11 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. Verify that the latest LTS or STS version of the .NET SDK is installed in your lab environment.
 
-    Run `dotnet --version` in a terminal window to check the version of the .NET SDK installed.
+    Run the following command in a terminal window to check the installed version of the .NET SDK:
+
+    ```dotnetcli
+    dotnet --version
+    ```
 
     If necessary, you can download the .NET SDK using the following URL: <a href="https://dotnet.microsoft.com/download/dotnet" target="_blank">Download .NET SDK</a>.
 
@@ -36,9 +44,11 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. Verify that you have access to a GitHub account and GitHub Copilot subscription.
 
-    You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>. Open your GitHub account settings and verify that you have access to a GitHub Copilot subscription. If you have access to a GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business, or GitHub Copilot Enterprise subscription that you can use for training exercises, you can use your existing GitHub Copilot subscription to complete the GitHub Copilot exercises.
+    You can log in to your GitHub account using the following URL: <a href="https://github.com/login" target="_blank">GitHub login</a>.
 
     If you don't have a GitHub account, you can create an individual account from the GitHub login page. On the login page, select **Create an account**.
+
+    Open the settings/profile page of your GitHub account and verify that you have access to a GitHub Copilot subscription. If you have an active subscription for GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business, or GitHub Copilot Enterprise that you can use for training, you can use your existing GitHub Copilot subscription to complete the GitHub Copilot exercises.
 
     If you have an individual GitHub account, but you don't have a GitHub Copilot subscription, you can set up a GitHub Copilot Free plan from Visual Studio Code during a training exercise.
 
