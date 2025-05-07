@@ -544,3 +544,11 @@ Use the following steps to complete this section of the exercise:
     This project is licensed under the MIT License. See the LICENSE file for details.
 
     ```
+
+## Summary
+
+In this exercise, you learned how to use GitHub Copilot to analyze and document a codebase. You used GitHub Copilot to generate explanations for the project structure, key classes, and data access classes. You also used GitHub Copilot to create a README.md file for the project.
+
+## Clean up
+
+Now that you've finished the exercise, take a minute to ensure that you haven't made changes to your GitHub account or GitHub Copilot subscription that you don't want to keep. If you made any changes, revert them now.

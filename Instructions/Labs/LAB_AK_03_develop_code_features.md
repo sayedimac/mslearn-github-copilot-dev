@@ -914,3 +914,11 @@ Use the following steps to complete this section of the exercise:
 1. Open the Source Control view, and then **Pull** the changes from the remote repository.
 
 1. Verify that the book-availability feature is available in the **main** branch.
+
+## Summary
+
+In this exercise, you learned how to use GitHub Copilot to develop a new code feature for a C# application. You developed the feature in a new branch using GitHub Copilot's inline chat and Chat view, tested you code, and then merged your changes into the main branch of the repository. You also used GitHub Copilot to generate a commit message and a pull request summary.
+
+## Clean up
+
+Now that you've finished the exercise, take a minute to ensure that you haven't made changes to your GitHub account or GitHub Copilot subscription that you don't want to keep. If you made any changes, revert them now.

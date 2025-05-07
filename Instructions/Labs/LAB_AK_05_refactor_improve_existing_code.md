@@ -929,3 +929,11 @@ Use the following steps to check your work:
 1. At the "Input Options" prompt, type **q** and then press Enter.
 
 1. Stop the application.
+
+## Summary
+
+In this exercise, you learned how to
+
+## Clean up
+
+Now that you've finished the exercise, take a minute to ensure that you haven't made changes to your GitHub account or GitHub Copilot subscription that you don't want to keep. If you made any changes, revert them now.

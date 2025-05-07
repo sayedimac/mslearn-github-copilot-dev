@@ -1,8 +1,8 @@
-<!-- ---
+---
 lab:
     title: 'Exercise - Develop unit tests using GitHub Copilot'
     description: 'Learn how to accelerate the development of unit tests using GitHub in Visual Studio Code.'
---- -->
+---
 
 # Develop unit tests using GitHub Copilot
 
@@ -770,3 +770,10 @@ Use the following steps to complete this section of the exercise:
 
     Ensure that the **JsonLoanRepository.GetLoan: Returns null when loan ID is not found** test passes. You should see a green checkmark to the left of both tests.
 
+## Summary
+
+In this exercise, you learned how to use GitHub Copilot to accelerate the development of unit tests in a C# application. You used GitHub Copilot's Chat view in Ask mode, Agent mode, and Edit mode. You used Ask mode to examine the existing unit testing approach, Agent mode to create project folders and a new test class, and Edit mode to create unit tests. You also used GitHub Copilot's code completion feature to create a unit test.
+
+## Clean up
+
+Now that you've finished the exercise, take a minute to ensure that you haven't made changes to your GitHub account or GitHub Copilot subscription that you don't want to keep. If you made any changes, revert them now.
