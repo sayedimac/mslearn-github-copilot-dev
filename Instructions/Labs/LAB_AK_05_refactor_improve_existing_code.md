@@ -6,7 +6,7 @@ lab:
 
 # Refactor and improve existing code sections using GitHub Copilot
 
-GitHub Copilot can help you update your code by suggesting changes that improve the code's quality, reliability, performance, and security.
+GitHub Copilot can be used to evaluate your entire codebase and suggest changes that improve code quality, reliability, performance, and security. In this exercise, you use GitHub Copilot to refactor and improve specified sections of a C# application.
 
 This exercise should take approximately **15** minutes to complete.
 

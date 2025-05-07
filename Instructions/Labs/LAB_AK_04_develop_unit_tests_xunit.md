@@ -6,7 +6,7 @@ lab:
 
 # Develop unit tests using GitHub Copilot
 
-
+The large language models behind GitHub Copilot are trained on a variety of code testing frameworks and scenarios. GitHub Copilot is a great tool for generating test cases, test methods, test assertions and mocks, and test data. In this exercise, you use GitHub Copilot to accelerate the development of unit tests for a C# application.
 
 This exercise should take approximately **20** minutes to complete.
 

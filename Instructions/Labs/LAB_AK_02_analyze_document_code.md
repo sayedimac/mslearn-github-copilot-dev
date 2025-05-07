@@ -6,7 +6,7 @@ lab:
 
 # Analyze and document code using GitHub Copilot
 
-GitHub Copilot can help you understand and document a codebase by generating explanations and documentation.
+GitHub Copilot can help you understand and document a codebase by generating explanations and documentation. In this exercise, you use GitHub Copilot to analyze a codebase and generate documentation for the project.
 
 This exercise should take approximately **20** minutes to complete.
 

@@ -6,7 +6,7 @@ lab:
 
 # Examine GitHub Copilot settings and user interface features
 
-In this exercise you examine GitHub Copilot settings and explore the GitHub Copilot user interface in Visual Studio Code.
+GitHub Copilot integrates naturally into Visual Studio Code, providing a seamless and customizable experience for developers. In this exercise you examine GitHub Copilot settings and explore the GitHub Copilot user interface in Visual Studio Code.
 
 This exercise should take approximately **25** minutes to complete.
 

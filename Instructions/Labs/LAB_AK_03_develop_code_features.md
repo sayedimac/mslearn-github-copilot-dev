@@ -6,7 +6,7 @@ lab:
 
 # Develop code features using GitHub Copilot
 
-GitHub Copilot helps developers write code faster and with fewer errors. It provides suggestions for code snippets, functions, and even entire classes based on the context of the code being written.
+GitHub Copilot's code completion and interactive chat features help developers write code faster and with fewer errors. It provides suggestions for code snippets, functions, and even entire classes based on the context of the code being written. In this exercise, you use GitHub Copilot to accelerate the development of new code features in Visual Studio Code.
 
 This exercise should take approximately **30** minutes to complete.
 
