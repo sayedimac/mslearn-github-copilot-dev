@@ -73,3 +73,4 @@ Library App is a modular application designed to manage library operations such 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
