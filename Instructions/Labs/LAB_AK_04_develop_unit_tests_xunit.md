@@ -83,25 +83,14 @@ Complete the following steps to verify that your lab environment is configured c
 
     You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
-
+c
 You're now ready to complete the exercise.
 
 ## Exercise scenario
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
-You have an initial version of the library application that includes a unit test project named UnitTests. You need GitHub Copilot to help accelerate the development of additional unit tests.
-
-There are several ways to use GitHub Copilot to generate unit tests:
-
-- **Generate test cases**: You can use GitHub Copilot to generate test cases for your code. Copilot can suggest test cases based on the code you have written. You can then use these test cases to create unit tests for your code.
-- **Generate test methods**: Copilot can also generate test methods for your code. You can use these test methods to create unit tests for your code.
-- **Generate test assertions**: Copilot can suggest assertions that you can use in your unit tests. These assertions can help you verify the behavior of your code.
-- **Generate test mocks**: Copilot can generate mock objects that you can use in your unit tests. These mock objects can help you isolate the code you're testing from its dependencies.
-- **Generate test data**: Copilot can generate test data that you can use in your unit tests. This test data can help you test your code with different inputs.
-- **Generate test setup code**: Copilot can generate setup code for your unit tests. This code can help you set up the test environment before running your tests.
-- **Generate test teardown code**: Copilot can generate teardown code for your unit tests. This code can help you clean up the test environment after running your tests.
+You have an initial version of the library application that includes a unit test project named UnitTests. You need to accelerate the development of additional unit tests using GitHub Copilot.
 
 This exercise includes the following tasks:
 
@@ -109,7 +98,7 @@ This exercise includes the following tasks:
 
 1. Examine the approach to unit testing implemented by the UnitTests project.
 
-1. Extend the UnitTests project to begin testing the data access classes in the `Library.Infrastructure` project.
+1. Extend the UnitTests project to begin testing the data access classes in the Library.Infrastructure project.
 
 ## Set up the library application in Visual Studio Code
 
@@ -161,74 +150,145 @@ Use the following steps to set up the library application:
 
 ## Examine the approach to unit testing implemented by the UnitTests project
 
-Your existing codebase includes a UnitTests project that implements the following folder structure:
-
-- UnitTests\
-  - ApplicationCore\
-    - LoanService\
-      - `ExtendLoan.cs`
-      - `ReturnLoan.cs`
-    - PatronService\
-      - `RenewMembership.cs`
-  - LoanFactory.cs
-  - PatronFactory.cs
-
-This structure mirrors and supports the `Services` portion of the `ApplicationCore` project.
-
-- ApplicationCore\
-  - Services\
-    - LoanService.cs: Contains the `ExtendLoan` and `ReturnLoan` methods.
-    - PatronService.cs: Contains the `RenewMembership` method.
-
 In this section of the exercise, you use GitHub Copilot to examine the unit testing approach implemented by the UnitTests project.
 
 Use the following steps to complete this section of the exercise:
 
+1. Expand the **UnitTests** project in the SOLUTION EXPLORER view.
+
+    Your existing codebase includes a UnitTests project that implements the following folder structure:
+
+    - UnitTests\
+      - ApplicationCore\
+        - LoanService\
+          - `ExtendLoan.cs`
+          - `ReturnLoan.cs`
+        - PatronService\
+          - `RenewMembership.cs`
+      - LoanFactory.cs
+      - PatronFactory.cs
+
+    The test project structure mirrors and supports the `Services` portion of the `ApplicationCore` project.
+
+    - ApplicationCore\
+      - Services\
+        - LoanService.cs: Contains the `ExtendLoan` and `ReturnLoan` methods.
+        - PatronService.cs: Contains the `RenewMembership` method.
+
 1. Open the Chat view.
 
-1. Add the following files to the Chat context: `LoanFactory.cs`, `PatronFactory.cs`, `ExtendLoan.cs`, `ReturnLoan.cs`, `RenewMembership.cs`, `LoanService.cs`, `PatronService.cs`.
+1. Add the following files to the Chat context:
 
-    The files are located in the `tests/UnitTests`, `tests/UnitTests/ApplicationCore/LoanService`, `tests/UnitTests/ApplicationCore/PatronService`, and `src/Library.ApplicationCore/Services` folders.
+    (under the Library.ApplicationCore project)
 
-1. Enter the following prompt:
+    - LoanService.cs
+    - PatronService.cs
+
+    (under UnitTests project)
+
+    - ExtendLoan.cs
+    - ReturnLoan.cs
+    - RenewMembership.cs
+    - LoanFactory.cs
+    - PatronFactory.cs
+
+1. To learn about the existing unit test project, enter the following prompt:
 
     ```plaintext
     @workspace Explain the approach to unit testing that's been implemented in this workspace.
     ```
 
-    This prompt asks GitHub Copilot to explain the approach to unit testing in the context of the workspace. Several files are included in the prompt to provide context for the response.
+    This prompt asks GitHub Copilot to explain the approach to unit testing in the context of the workspace. Adding relevant files to the Chat context improves the response.
 
-1. Take a minute to review the response from GitHub Copilot.
+1. Take a few minutes to review GitHub Copilot's response.
 
-    You should see an explanation that's similar to the following description:
+    You should see a detailed description that's similar to the following example:
 
-    - Mocking dependencies: The tests use `NSubstitute` to create mock implementations of interfaces.
-    - Test organization: Tests are organized into separate files based on the methods being tested. For example, `ExtendLoan` and `ReturnLoan` methods are tested in separate files under the `LoanService` folder.
-    - Assertions: Assertions are used to verify the expected outcome of each test.
-    - Test scenarios: The tests cover various scenarios for each method, such as returning different statuses based on the input.
-    - Isolation: Each test is isolated from others to prevent side effects.
-    - Factory methods: Factory methods are used to create test data consistently.
+    ```markdown
 
-1. Enter the following prompt:
+    The unit testing approach in this workspace follows a structured and comprehensive methodology to ensure the correctness of the application's core business logic. Here's an overview of the approach:
+    
+    1. **Use of Test Factories**
+       - **Factories like `PatronFactory` and `LoanFactory`** are used to create test data. These factories provide reusable methods to generate consistent and meaningful test objects, such as patrons with specific membership statuses or loans with different states (e.g., returned, current, expired).
+       - This approach reduces boilerplate code in test cases and ensures that test data is consistent across different tests.
+    
+    2. **Mocking Dependencies**
+       - **NSubstitute** is used to mock dependencies like repositories (`IPatronRepository`, `ILoanRepository`). This allows tests to isolate the behavior of the services being tested without relying on actual database or external dependencies.
+       - Mocked methods are configured to return specific data or simulate certain behaviors, enabling precise control over test scenarios.
+    
+    3. **Service-Oriented Testing**
+       - Unit tests are focused on the core services (`PatronService` and `LoanService`), which encapsulate the business logic of the application.
+       - Each service method is tested for various scenarios, including success cases, edge cases, and error conditions.
+    
+    4. **Comprehensive Test Coverage**
+       - Tests cover a wide range of scenarios for each service method:
+         - **`PatronService.RenewMembership`:**
+           - Success cases (e.g., renewing with or without loans, expired membership).
+           - Failure cases (e.g., patron not found, too early to renew, overdue loans).
+         - **`LoanService.ReturnLoan`:**
+           - Success cases (e.g., returning a loan with valid conditions).
+           - Failure cases (e.g., loan not found, already returned).
+         - **`LoanService.ExtendLoan`:**
+           - Success cases (e.g., extending a valid loan).
+           - Failure cases (e.g., loan not found, membership expired, loan already returned or expired).
+       - This ensures that all possible paths in the business logic are tested.
+    
+    5. **Assertions for Expected Behavior**
+       - Each test uses assertions to validate the expected outcomes:
+         - **Return values**: Ensuring the correct status is returned (e.g., `MembershipRenewalStatus.Success`, `LoanReturnStatus.LoanNotFound`).
+         - **State changes**: Verifying that object properties (e.g., `MembershipEnd`, `ReturnDate`, `DueDate`) are updated correctly.
+         - **Error handling**: Ensuring exceptions or errors are handled gracefully.
+    
+    6. **Descriptive Test Names**
+       - Test methods use descriptive names and `Fact` attributes with `DisplayName` to clearly indicate the scenario being tested. This improves readability and makes it easier to understand the purpose of each test.
+    
+    7. **Focus on Business Logic**
+       - Tests are designed to validate the business rules implemented in the services, such as:
+         - Not allowing membership renewal if it's too early or if there are overdue loans.
+         - Preventing loan extensions for expired memberships or already returned loans.
+       - This ensures that the core functionality of the application behaves as expected under various conditions.
+    
+    8. **Error Simulation**
+       - Tests simulate error scenarios, such as repository methods returning `null` or throwing exceptions, to verify that the services handle these cases appropriately.
+    
+    9. **Constants for Configurable Logic**
+       - Constants like `LoanService.ExtendByDays` are used in the logic and verified in tests to ensure consistency and maintainability.
+    
+    **Summary**
+    This workspace implements a robust unit testing strategy by leveraging test factories, mocking, and comprehensive test coverage. The focus is on isolating and validating the business logic of core services, ensuring that all possible scenarios are accounted for. This approach enhances the reliability and maintainability of the application.
+
+    ```
+
+1. To analyze the benefits of the current approach, enter the following prompt:
 
     ```plaintext
     @workspace What are the benefits of this approach to unit testing?
     ```
 
-1. Take a minute to review the response from GitHub Copilot.
+1. Take a minute to review GitHub Copilot's response.
 
-    You should see an explanation that identifies a list of benefits that's similar to the following list:
+    You can continue the conversation and ask for more details about specific aspects of the unit testing approach. For example, you can ask about the benefits of using test factories, mocking dependencies, or the overall structure of the tests.
 
-    - Isolation of Dependencies: Using mocks isolates the unit of work from its dependencies.
-    - Repeatability and Consistency: Factory methods provide a consistent way to create test data.
-    - Readability and Maintainability: Descriptive test methods and clear arrangement of test steps improve the readability of tests.
-    - Comprehensive Coverage: Testing various scenarios ensures that the code is robust and handles different edge cases.
-    - Separation of Concerns: The separation of test data creation from the test logic itself keeps the tests clean and focused on the behavior being tested.
-    - Immediate Feedback: Running unit tests provides immediate feedback on the correctness of the code.
+1. Take a minute to consider how you would extend the existing approach to test the Library.Infrastructure project.
 
-1. Add the following files to the Chat context: `ExtendLoan.cs`, `ReturnLoan.cs`, `RenewMembership.cs`, `LoanFactory.cs`, `PatronFactory.cs`, `LoanService.cs`, `PatronService.cs`.
+    The `Library.Infrastructure` project contains data access classes that interact with the file system to load and save data.
 
-1. Enter the following prompt:
+1. Add the following files to the Chat context:
+
+    (under the Library.ApplicationCore project)
+
+    - LoanService.cs
+    - PatronService.cs
+
+    (under UnitTests project)
+
+    - ExtendLoan.cs
+    - ReturnLoan.cs
+    - RenewMembership.cs
+    - LoanFactory.cs
+    - PatronFactory.cs
+
+1. To ask GitHub Copilot for help extending the UnitTests project, enter the following prompt:
 
     ```plaintext
     @workspace How can I extend the `UnitTests` project to begin testing methods in the `Library.Infrastructure` project? Provide a process overview.
@@ -238,7 +298,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to review the response from GitHub Copilot.
 
-    You should see an explanation that's similar to the following description:
+    You should see an explanation that's similar to the following example:
 
     ```markdown
     1. Add Project Reference:
@@ -262,11 +322,12 @@ Use the following steps to complete this section of the exercise:
 
       - Use Visual Studio Code's integrated terminal or the Test Explorer to run the tests.
       - Ensure that the tests are discovered and executed correctly.
+
     ```
 
-## Extend the UnitTests project to begin testing data access classes
+    > **TIP**: Use GitHub Copilot's **Ask** mode to investigate your approach to testing. Use the responses to plan, develop, or extend your unit tests.
 
-In this section of the exercise, you use GitHub Copilot to help you create unit tests for the `Library.Infrastructure` project.
+## Extend the UnitTests project to begin testing data access classes
 
 The `Library.Infrastructure` project contains data access classes that interact with the file system to load and save data. The project includes the following classes:
 
@@ -274,49 +335,74 @@ The `Library.Infrastructure` project contains data access classes that interact 
 - JsonLoanRepository: A class that implements the ILoanRepository interface and uses the JsonData class to load and save loan data.
 - JsonPatronRepository: A class that implements the IPatronRepository interface and uses the JsonData class to load and save patron data.
 
-You'll start by writing unit tests for the `JsonLoanRepository` class.
+### Use Agent mode to create a new test class
+
+You can use the Chat view's Agent mode when you have a specific task in mind and want to enable Copilot to autonomously edit your code. For example, you can use Agent mode to create and edit files, or to invoke tools to accomplish tasks. In Agent mode, GitHub Copilot can autonomously plan the work needed and determine the relevant files and context. It then makes edits to your codebase and invokes tools to accomplish the request you made.
+
+> **NOTE**: The Agent mode is only available in Visual Studio Code. If you're using GitHub Copilot in a different environment, you can use the Chat mode to accomplish similar tasks.
+
+In this section of the exercise, you use GitHub Copilot's Agent mode to create a new test class for the GetLoan method of the JsonLoanRepository class.
 
 Use the following steps to complete this section of the exercise:
 
-1. Add the following project file to the Chat context: `UnitTests.csproj`.
+1. In the Chat view, select the **Set Mode** button, and then select **Agent**.
 
-1. Enter the following prompt in the Chat view:
+1. To start an automated task that creates a test class for the JsonLoanRepository.GetLoan method, enter the following prompt:
 
     ```plaintext
-    @workspace Explain how to add a reference to the Library.Infrastructure project inside `UnitTests.csproj`.
+    Add `Infrastructure\JsonLoanRepository` folders to the UnitTests project and then create a class file named `GetLoan.cs` in the `JsonLoanRepository` folder. Add a reference to the Library.Infrastructure project inside UnitTests.csproj.
     ```
 
-    This prompt asks GitHub Copilot to explain how to add a reference to the `Library.Infrastructure` project inside the `UnitTests.csproj` file.
+    This prompt asks GitHub Copilot to create a new folder structure and class file in the UnitTests project.
 
-1. Use the GitHub Copilot response to update the UnitTests.csproj file.
+    - UnitTests\
+      - Infrastructure\
+        - JsonLoanRepository\
+          - GetLoan.cs
 
-    The updated UnitTests.csproj file should look similar to the following XML code:
+    The prompt also asks GitHub Copilot to add a reference to the Library.Infrastructure project inside the UnitTests.csproj file.
 
-    ```xml
-    <Project Sdk="Microsoft.NET.Sdk">
-      <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <IsPackable>false</IsPackable>
-        <IsTestProject>true</IsTestProject>
-      </PropertyGroup>
-      <ItemGroup>
-        <PackageReference Include="coverlet.collector" Version="6.0.0" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-        <PackageReference Include="NSubstitute" Version="5.1.0" />
-        <PackageReference Include="xunit" Version="2.5.3" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
-      </ItemGroup>
-      <ItemGroup>
-        <Using Include="Xunit" />
-      </ItemGroup>
-      <ItemGroup>
-        <ProjectReference Include="..\..\src\Library.ApplicationCore\Library.ApplicationCore.csproj" />
-        <ProjectReference Include="..\..\src\Library.Infrastructure\Library.Infrastructure.csproj" />
-      </ItemGroup>
-    </Project>
-    ```
+1. Take a minute to review the response from GitHub Copilot.
+
+    Notice the following updates in the Chat view and code editor:
+
+    - The Chat view displays a message indicating that it wants to run a command in the terminal:
+
+        ![Screenshot showing the Chat view in Agent mode.](./media/m04-github-copilot-agent-mode-terminal-command-mkdir.png)
+
+    - The UnitTests.csproj file is open in the code editor with the following changes:
+
+        ![Screenshot showing updates to the UnitTests.csproj file in the code editor.](./media/m04-github-copilot-agent-mode-code-editor-update.png)
+
+1. In the Chat view, to run the command in the terminal, select **Continue**.
+
+    When you select **Continue**, GitHub Copilot completes the following actions:
+
+    - Runs the mkdir command in the terminal to create the `Infrastructure\JsonLoanRepository` folders in the UnitTests project.
+    - Creates a new file named `GetLoan.cs` in the `JsonLoanRepository` folder.
+
+1. Take a moment to review the updates.
+
+1. In the Chat view, to accept all changes, select **Keep**, and then select **Done**.
+
+1. In the SOLUTION EXPLORER view, expand the `Infrastructure\JsonLoanRepository` folder structure.
+
+    The folder structure should look like this:
+
+    - UnitTests\
+      - Infrastructure\
+        - JsonLoanRepository\
+          - GetLoan.cs
+
+### Use the Edit mode to create unit tests for the GetLoan method
+
+In this section of the exercise, you use GitHub Copilot's Edit mode to create unit tests for the `GetLoan` method in the `JsonLoanRepository` class.
+
+Use the following steps to complete this section of the exercise:
+
+1. In the Chat view, select the **Set Mode** button, and then select **Edit**.
+
+    The Chat view is now in Edit mode.
 
 1. Open the `JsonLoanRepository.cs` file.
 
@@ -387,18 +473,7 @@ Use the following steps to complete this section of the exercise:
     - The `JsonLoanRepository` class contains two methods: `GetLoan` and `UpdateLoan`.
     - The `JsonLoanRepository` class uses a `JsonData` object to load and save loan data.
 
-    You'll start by writing unit tests for the `GetLoan` method.
-
-1. Create the following folder structure under the `UnitTests` project.
-
-    - Infrastructure\
-        - JsonLoanRepository\
-
-    This folder structure mirrors the approach used for the `Library.ApplicationCore` unit tests.
-
-1. Create a class file named `GetLoan` in the `JsonLoanRepository` folder.
-
-1. Take a minute to consider the field and class constructor requirements for the `GetLoan` unit tests.
+1. Take a minute to consider the field and constructor requirements for the `GetLoan` test class.
 
     The `JsonLoanRepository.GetLoan` method receives a loan ID parameter when it's called. The method uses `_jsonData.EnsureDataLoaded` to get the latest JSON data, and `_jsonData.Loans` to search for a matching loan. If the method finds a matching loan ID, it returns a populated loan object (`populated`). If the method is unable to find a matching loan ID, it returns `null`.
 
@@ -410,7 +485,15 @@ Use the following steps to complete this section of the exercise:
 
     - You'll need a `JsonData` object to create a non-mock `JsonLoanRepository` object. Since the `UnitTests` project doesn't have access to the `JsonData` object created by the `ConsoleApp` project, you'll need to create one using the `IConfiguration` interface.
 
-1. Add the following files to the Chat context: `JsonLoanRepository.cs`, `ReturnLoan.cs`, `LoanService.cs`, `LoanFactory.cs`, `JsonData.cs`.
+1. Open the GetLoan.cs test file and select the GetLoan class.
+
+1. Add the following files to the Chat context:
+
+    - JsonLoanRepository.cs
+    - ReturnLoan.cs
+    - LoanService.cs
+    - LoanFactory.cs
+    - JsonData.cs
 
 1. Enter the following prompt:
 
@@ -422,7 +505,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to review the response from GitHub Copilot.
 
-    You should see a code suggestion that's similar to the following code snippet:
+    You may see a code suggestion that's similar to the following code snippet:
 
     ```csharp
     using NSubstitute;
@@ -455,11 +538,13 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-1. Use the code suggestion provided by GitHub Copilot to update `GetLoan.cs`.
+1. In the Chat view, to accept all updates, select **Keep**.
 
-1. Notice the following issues:
+1. After accepting the updates, check for the following issues:
 
-    - There is a conflict between the namespace and the use of `JsonLoanRepository` in the code. You should update the namespace in GetLoans.cs to follow the pattern used in the `ReturnLoan.cs` and `RenewMembership.cs` files.
+    > **NOTE**: Sample code in the following step shows updates that correct the following issues:
+  
+    - If there's a conflict between the `UnitTests.Infrastructure.JsonLoanRepository` namespace and the `JsonLoanRepository` type specified in the code, you should update the namespace in GetLoans.cs to eliminate the conflict. The pattern used in the `ReturnLoan.cs` and `RenewMembership.cs` files.
 
     - If `ILoanRepository` isn't recognized in your code, you may need to add a `using` directive for `Library.ApplicationCore` to the top of the file.
 
@@ -496,7 +581,14 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-1. Add the following files to the Chat context: `JsonLoanRepository.cs`, `ReturnLoan.cs`, `LoanService.cs`, `LoanFactory.cs`, `JsonData.cs`, `Loans.json`.
+1. Add the following files to the Chat context:
+
+    - JsonLoanRepository.cs
+    - ReturnLoan.cs
+    - LoanService.cs
+    - LoanFactory.cs
+    - JsonData.cs
+    - Loans.json.
 
 1. Select the contents of the `GetLoan.cs` file, and then enter the following prompt in the Chat view:
 
@@ -506,7 +598,7 @@ Use the following steps to complete this section of the exercise:
 
     This prompt asks GitHub Copilot to suggest a unit test for the `JsonLoanRepository.GetLoan` method. The unit test should test the case where a loan ID is found in the data. The test should use `_mockLoanRepository` to arrange the expected return loan, `_jsonLoanRepository` to return an actual loan, and asserts to verify that the return loan ID matches the expected loan ID. The loan ID should exist in the `Loans.json` file.
 
-1. Take a minute to review the response from GitHub Copilot.
+1. Take a minute to review the updates suggested by GitHub Copilot.
 
     You should see a code suggestion that's similar to the following code snippet:
 
@@ -540,10 +632,18 @@ Use the following steps to complete this section of the exercise:
         {
             // Arrange
             var loanId = 1; // Use a loan ID that exists in the Loans.json file
-            var expectedLoan = new Loan { Id = loanId, BookItemId = 101, PatronId = 202, LoanDate = DateTime.Now, DueDate = DateTime.Now.AddDays(14) };
+            var expectedLoan = new Loan
+            {
+                Id = loanId,
+                BookItemId = 17,
+                PatronId = 22,
+                LoanDate = DateTime.Parse("2023-12-08T00:40:43.1808862"),
+                DueDate = DateTime.Parse("2023-12-22T00:40:43.1808862"),
+                ReturnDate = null
+            };
+
             _mockLoanRepository.GetLoan(loanId).Returns(expectedLoan);
-            await _jsonData.EnsureDataLoaded(); // Ensure data is loaded
-    
+
             // Act
             var actualLoan = await _jsonLoanRepository.GetLoan(loanId);
     
@@ -554,11 +654,9 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-1. Use the code suggestion provided by GitHub Copilot to update `GetLoan.cs`.
+1. In the Chat view, to accept all updates, select **Keep**.
 
-    The `JsonLoanRepository.GetLoan` method calls `_jsonData.EnsureDataLoaded` to ensure that the JSON data is loaded. You can delete the code line that calls `_jsonData.EnsureDataLoaded` in the test method if it's included.
-
-    If the `Loan` class isn't recognized in your code, ensure that you have a `using Library.ApplicationCore.Entities` statement at the top of the GetLoan.cs file. The `Loan` class is located in the `Library.ApplicationCore.Entities` namespace.
+    If the `Loan` class isn't recognized in your code, ensure that you have a `using Library.ApplicationCore.Entities;` statement at the top of the GetLoan.cs file. The `Loan` class is located in the `Library.ApplicationCore.Entities` namespace.
 
 1. Build the `AccelerateDevGitHubCopilot` solution to ensure there are no errors.
 
@@ -568,11 +666,32 @@ Use the following steps to complete this section of the exercise:
 
     Accept the autocompletion suggestions to create a new test method.
 
-1. Take a minute to review the response from GitHub Copilot.
+    > **NOTE**: Code completions may appear one line at a time. You may need to press **Tab** or **Enter** several times to get the completed unit test code.
 
-    GitHub Copilot's autocompletion feature will probably mock an expected loan even though it isn't needed. You can delete the code that mocks an expected loan, but you need a loan ID that doesn't exist in the `Loans.json` file.
+1. Take a minute to review the new unit text.
 
-    You should see a code suggestion that's similar to one of the following code snippets:
+    You should see a suggested unit text that's similar to the following code snippets:
+
+    ```csharp
+
+        [Fact(DisplayName = "JsonLoanRepository.GetLoan: Returns null when ID is not found")]
+        public async Task GetLoan_ReturnsNullWhenIdIsNotFound()
+        {
+            // Arrange
+            var loanId = 999; // Loan ID that does not exist in Loans.json
+
+            _mockLoanRepository.GetLoan(loanId).Returns((Loan?)null);
+
+            // Act
+            var actualLoan = await _jsonLoanRepository.GetLoan(loanId);
+
+            // Assert
+            Assert.Null(actualLoan);
+        }
+
+    ```
+
+    GitHub Copilot's autocompletion feature may mock an expected loan even though it isn't needed, so you could get the following code snippet:
 
     ```csharp
     [Fact(DisplayName = "JsonLoanRepository.GetLoan: Returns null when loan ID is not found")]
@@ -592,9 +711,9 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. Accept the autocompletion suggestion that assigns a `loanId` value that isn't in the data set.
+    You can delete the code that mocks an expected loan, but you need a loan ID that doesn't exist in the `Loans.json` file.
 
-    If none of the suggestions assign `loanId` numbers that aren't in the data set, you can use the **Ctrl+Enter** keyboard shortcut to list additional suggestions.
+    Ensure that your "Returns null when loan ID is not found" unit test assigns a `loanId` value that isn't in the data set.
 
 1. Notice that the unit tests require access to the JSON data files.
 
@@ -615,7 +734,7 @@ Use the following steps to complete this section of the exercise:
 
     This ensures that the JSON data files are copied to the output directory when the tests are run.
 
-## Check your work
+## Run the unit tests
 
 There are several ways to run the unit tests for the `JsonLoanRepository` class. You can use Visual Studio Code's Test Explorer, the integrated terminal, or the `dotnet test` command.
 
@@ -639,16 +758,15 @@ Use the following steps to complete this section of the exercise:
 
 1. Run the **JsonLoanRepository.GetLoan: Returns loan when loan ID is found** test case.
 
-1. Notice the test results in the Test Explorer view and the Editor.
+1. Notice that the test results are displayed in the Test Explorer view and the code Editor.
 
     You should see a green checkmark that indicates the test passed.
 
-1. Use the Editor to run the **JsonLoanRepository.GetLoan: Returns null when loan ID is not found** test case.
+1. Use the code Editor to run the **JsonLoanRepository.GetLoan: Returns null when loan ID is not found** test case.
 
-1. Notice the test results in the Test Explorer view and the Editor.
+    To run the test from the code Editor, select the green play button to the left of the test method.
 
-    To run the test from the Editor, select the green play button to the left of the test method.
+    Notice that the test results are displayed in the Test Explorer view and the code Editor.
 
-1. Ensure that the **JsonLoanRepository.GetLoan: Returns null when loan ID is not found** test passes.
+    Ensure that the **JsonLoanRepository.GetLoan: Returns null when loan ID is not found** test passes. You should see a green checkmark to the left of both tests.
 
-    You should see a green checkmark to the left of both tests.
