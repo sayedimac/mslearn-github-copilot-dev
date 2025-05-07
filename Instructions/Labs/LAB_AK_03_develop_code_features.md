@@ -685,11 +685,76 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. Take a minute to review the suggested updates in the ConsoleApp.cs and Program.cs files.
+1. Take a minute to review the suggested updates in the ConsoleApp.cs file.
 
-    Notice that the ConsoleApp.cs file includes several code update suggestions. You can
+    You can use **Previous** and **Next** to navigate through the suggested code updates, or you can scroll manually through the file.
 
-    Notice that the Program.cs file has been opened in a new editor tab, and that the suggested code updates are visible in the editor.
+    **ConsoleApp.cs**
+
+    Code updates that add the `JsonData` dependency to the `ConsoleApp` constructor can be found near the top of the ConsoleApp class.
+
+    ```csharp
+
+    JsonData _jsonData;
+
+    public ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository, JsonData jsonData)
+    {
+        _patronRepository = patronRepository;
+        _loanRepository = loanRepository;
+        _loanService = loanService;
+        _patronService = patronService;
+        _jsonData = jsonData;
+    }
+
+    ```
+
+    Code updates that check if a book is available for loan can be found in the `SearchBooks` method.
+
+    ```csharp
+
+    async Task<ConsoleState> SearchBooks()
+    {
+        string? bookTitle = null;
+        while (string.IsNullOrWhiteSpace(bookTitle))
+        {
+            Console.Write("Enter a book title to search for: ");
+            bookTitle = Console.ReadLine();
+        }
+
+        await _jsonData.EnsureDataLoaded();
+
+        var book = _jsonData.Books!.FirstOrDefault(b => string.Equals(b.Title, bookTitle, StringComparison.OrdinalIgnoreCase));
+        if (book == null)
+        {
+            Console.WriteLine($"No book found with the title \"{bookTitle}\".");
+            return ConsoleState.PatronDetails;
+        }
+
+        var bookItem = _jsonData.BookItems!.FirstOrDefault(bi => bi.BookId == book.Id);
+        if (bookItem == null)
+        {
+            Console.WriteLine($"No book item found for the title \"{book.Title}\".");
+            return ConsoleState.PatronDetails;
+        }
+
+        var loan = _jsonData.Loans!.FirstOrDefault(l => l.BookItemId == bookItem.Id && l.ReturnDate == null);
+        if (loan == null)
+        {
+            Console.WriteLine($"\"{book.Title}\" is available for loan.");
+        }
+        else
+        {
+            Console.WriteLine($"\"{book.Title}\" is on loan to another patron. The return due date is {loan.DueDate.ToString("d", CultureInfo.InvariantCulture)}.");
+        }
+
+        return ConsoleState.PatronDetails;
+    }
+
+    ```
+
+    **Program.cs**
+
+    Code to register JsonData and ConsoleApp for dependency injection was already available in the Program.cs file.
 
     ```csharp
 
@@ -700,7 +765,13 @@ Use the following steps to complete this section of the exercise:
 
 1. In the Chat view, to keep all edits, select **Keep**.
 
-1. Scroll to the top of the ConsoleApp.cs file.
+1. Scroll to the top of the ConsoleApp.cs file and locate the following code line:
+
+    ```csharp
+
+    JsonData _jsonData;
+
+    ```
 
 1. If JsonData isn't recognized in the ConsoleApp class, add the following using statement above the ConsoleApp class.
 
@@ -710,281 +781,13 @@ Use the following steps to complete this section of the exercise:
     
     ```
 
+1. Open Visual Studio Code's SOLUTION EXPLORER view.
 
+1. Build the solution and ensure that no errors were introduced by your code updates.
 
+    You'll see Warning messages, but there shouldn't be any errors.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    GitHub Copilot should propose updates similar to the following suggestions:
-
-    To update the `SearchBooks` method and `ConsoleApp` class to find a matching book title in the `Books.json` file and check if the book is available for loan, follow these steps:
-
-    a. Add a method to search for books by title in the `JsonData` class.
-    b. Update the `SearchBooks` method in the `ConsoleApp` class to use this new method.
-    c. Check the loan status of the book and display the appropriate message.
-
-    Here is the updated code:
-
-    Step 1: Add a method to search for books by title in the JsonData class
-
-    ```csharp
-    public class JsonData
-    {
-        // Existing code...
-    
-        public Book? SearchBookByTitle(string title)
-        {
-            return Books?.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
-        }
-    }
-    ```
-
-    Step 2: Update the SearchBooks method in the ConsoleApp class
-
-    ```csharp
-    public class ConsoleApp
-    {
-        // Existing fields...
-    
-        JsonData _jsonData;
-    
-        public ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository, JsonData jsonData)
-        {
-            _patronRepository = patronRepository;
-            _loanRepository = loanRepository;
-            _loanService = loanService;
-            _patronService = patronService;
-            _jsonData = jsonData;
-        }
-    
-        // Existing methods...
-    
-        async Task<ConsoleState> SearchBooks()
-        {
-            string bookTitle = ReadBookTitle();
-    
-            Book? book = _jsonData.SearchBookByTitle(bookTitle);
-    
-            if (book == null)
-            {
-                Console.WriteLine($"No book found with title: {bookTitle}");
-                return ConsoleState.PatronDetails;
-            }
-    
-            Loan? loan = _jsonData.Loans?.FirstOrDefault(l => l.BookItemId == book.Id && l.ReturnDate == null);
-    
-            if (loan == null)
-            {
-                Console.WriteLine($"{book.Title} is available for loan.");
-            }
-            else
-            {
-                Console.WriteLine($"{book.Title} is on loan to another patron. The return due date is {loan.DueDate}.");
-            }
-    
-            return ConsoleState.PatronDetails;
-        }
-    
-        // Existing methods...
-    }
-    ```
-
-    Step 3: Update the Program.cs to pass JsonData to ConsoleApp
-
-    ```csharp
-    using Microsoft.Extensions.DependencyInjection;
-    using Library.Infrastructure.Data;
-    using Library.ApplicationCore;
-    using Microsoft.Extensions.Configuration;
-    
-    var services = new ServiceCollection();
-    
-    var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appSettings.json")
-    .Build();
-    
-    services.AddSingleton<IConfiguration>(configuration);
-    
-    services.AddScoped<IPatronRepository, JsonPatronRepository>();
-    services.AddScoped<ILoanRepository, JsonLoanRepository>();
-    services.AddScoped<ILoanService, LoanService>();
-    services.AddScoped<IPatronService, PatronService>();
-    
-    services.AddSingleton<JsonData>();
-    services.AddSingleton<ConsoleApp>();
-    
-    var servicesProvider = services.BuildServiceProvider();
-    
-    var consoleApp = servicesProvider.GetRequiredService<ConsoleApp>();
-    consoleApp.Run().Wait();
-    ```
-
-    With these changes, the `SearchBooks` method in the `ConsoleApp` class will now search for a book by title in the `Books.json` file and check its loan status in the `Loans.json` file. If the book is available for loan, it will display a message stating that the book is available. If the book is on loan, it will display a message stating that the book is on loan and provide the return due date.
-
-1. Add the suggested method to the end of the `JsonData` class.
-
-    ```csharp
-    public Book? SearchBookByTitle(string title)
-    {
-        return Books?.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
-    }
-    ```
-
-1. Update the Program.cs file using the suggested updates.
-
-    ```csharp
-    using Microsoft.Extensions.DependencyInjection;
-    using Library.Infrastructure.Data;
-    using Library.ApplicationCore;
-    using Microsoft.Extensions.Configuration;
-    
-    var services = new ServiceCollection();
-    
-    var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appSettings.json")
-    .Build();
-    
-    services.AddSingleton<IConfiguration>(configuration);
-    
-    services.AddScoped<IPatronRepository, JsonPatronRepository>();
-    services.AddScoped<ILoanRepository, JsonLoanRepository>();
-    services.AddScoped<ILoanService, LoanService>();
-    services.AddScoped<IPatronService, PatronService>();
-    
-    services.AddSingleton<JsonData>();
-    services.AddSingleton<ConsoleApp>();
-    
-    var servicesProvider = services.BuildServiceProvider();
-    
-    var consoleApp = servicesProvider.GetRequiredService<ConsoleApp>();
-    consoleApp.Run().Wait();
-    ```
-
-1. Add the `JsonData _jsonData;` field declaration to the `ConsoleApp` class before the class constructor.
-
-1. Add a `JsonData jsonData` parameter to the `ConsoleApp` class constructor and use it to initialize the `_jsonData` field inside the constructor.
-
-    The updated class constructor should look like the following code snippet:
-
-    ```csharp
-    public ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository, JsonData jsonData)
-    {
-        _patronRepository = patronRepository;
-        _loanRepository = loanRepository;
-        _loanService = loanService;
-        _patronService = patronService;
-        _jsonData = jsonData;
-    }
-    ```
-
-1. Notice that JsonData isn't recognized in the `ConsoleApp` class.
-
-    You need to add `using Library.Infrastructure.Data;` to the top of the `ConsoleApp.cs` file.
-
-1. Ensure that the `using Library.Infrastructure.Data;` statement is added to the top of the `ConsoleApp.cs` file.
-
-1. Use the code suggestions to update the `SearchBooks` method:
-
-    The suggested code should use a LINQ query to search for the book by title. If the book is found, another LINQ query is used to determine if the book is on loan. The code also includes logic to display the availability status of the book based on the search results. The logic used to display response messages can be implemented in several ways. An example is provided in the code snippet below.
-
-    The following code snippet shows one possible implementation of the `SearchBooks` method:
-
-    ```csharp
-    async Task<ConsoleState> SearchBooks()
-    {
-        string bookTitle = ReadBookTitle();
-
-        Book? book = _jsonData.SearchBookByTitle(bookTitle);
-
-        if (book == null)
-        {
-            Console.WriteLine($"No book found with title: {bookTitle}");
-            return ConsoleState.PatronDetails;
-        }
-
-        Loan? loan = _jsonData.Loans?.FirstOrDefault(l => l.BookItemId == book.Id && l.ReturnDate == null);
-
-        if (loan == null)
-        {
-            Console.WriteLine($"{book.Title} is available for loan.");
-        }
-        else
-        {
-            Console.WriteLine($"{book.Title} is on loan to another patron. The return due date is {loan.DueDate}.");
-        }
-
-        return ConsoleState.PatronDetails;
-    }
-    ```
-
-1. Select the `SearchBooks` method.
-
-1. Open the Chat view, and then enter the following prompt:
-
-    ```plaintext
-    Explain the LINQ queries and the evaluation of the book's availability status.
-    ```
-
-1. Take a minute to review the explanation provided by GitHub Copilot.
-
-    For the query that checks whether the book is on loan, you should see a description that's similar to the following explanation:
-
-    ```markdown
-    **Search for the Loan Status of the Book**
-    ```
-
-    ```csharp
-    Loan? loan = _jsonData.Loans?.FirstOrDefault(l => l.BookItemId == book.Id && l.ReturnDate == null);
-    ```
-
-    ```markdown
-    - _jsonData.Loans: Accesses the list of loans from the JsonData class.
-
-    - ?.: The null-conditional operator ensures that if _jsonData.Loans is null, the entire expression will return null without throwing a NullReferenceException.
-
-    - FirstOrDefault: A LINQ method that returns the first element in the collection that matches the specified condition, or null if no such element is found.
-
-    - Lambda Expression: l => l.BookItemId == book.Id && l.ReturnDate == null
-
-        - l.BookItemId == book.Id: Checks if the BookItemId of the loan matches the Id of the book being searched.
-
-        - l.ReturnDate == null: Checks if the loan's ReturnDate is null, indicating that the book is currently on loan and has not been returned.
-
-    - Result: If a matching loan is found, it is assigned to the loan variable. If no matching loan is found, loan is null.
-
-    **Evaluation of the Book's Availability Status**
-
-    After executing the LINQ queries, the method evaluates the availability status of the book:
-
-      - If `loan` is `null`, the book has been returned. The method prints that the book is available for loan.
-      - If `loan` is not `null`, the book is currently on loan (no return date). The method prints that the book is on loan and provides the date when the book should be returned.
-
-    ```
-
-1. Verify the logic implemented by the **Check if the Book is on Loan** query.
-
-    Null-Conditional Operator: The `?.` operator is a null-conditional operator. It ensures that if `_jsonData.Loans` is `null`, the entire expression will evaluate to `null` without throwing a `NullReferenceException`.
-
-    Lambda Expression: The lambda expression `l => l.BookItemId == book.Id && l.ReturnDate == null` defines the condition for the `FirstOrDefault` method. It checks each `loan` object `l` to see if its `BookItemId` matches the `Id` of the `book` object and if its `ReturnDate` is `null`.
-
-    This code attempts to find the first `loan` in the `_jsonData.Loans` collection where the `BookItemId` matches the `Id` of the given `book` and the `ReturnDate` is `null`. If no such `loan` is found or if `_jsonData.Loans` is `null`, `loan` will be set to `null`.
-
-    > [!NOTE]
-    > Most modern libraries have multiple copies of the same book. This code assumes that there is only one copy of each book. If the library has multiple copies of the same book, the code will need to be updated to handle multiple loans for the same book. For the purposes of this training, we are assuming that there is only one copy of each book and that the logic provided is sufficient.
+    To build the solution using the SOLUTION EXPLORER view, right-click **AccelerateDevGHCopilot**, and then select **Build**.
 
 ## Merge your "book availability" updates into the main branch of the repository
 
@@ -1001,14 +804,6 @@ In this section of the exercise, you complete the following tasks:
 Manual testing can be used to verify that the new feature works as expected. Using a data source that can be verified is important. In this case, you use the `Books.json` and `Loans.json` files to verify that the new feature reports the availability status of a book correctly.
 
 Use the following steps to complete this section of the exercise:
-
-1. Open the Solution Explorer view.
-
-1. Build the solution to ensure that there are no errors.
-
-    You'll see Warning messages, but there shouldn't be any errors.
-
-    To build the solution in the Solution Explorer view, right-click **AccelerateDevGHCopilot** and then select **Build**.
 
 1. To run the application, right-click **Library.Console**, select **Debug**, and then select **Start New Instance**.
 
@@ -1034,16 +829,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Verify that the application displays a message indicating that the book is on loan to another patron.
 
-1. Verify that **Book Nine** has been returned by **Patron One**.
-
-    In the previous exercise, during a test of the Library application, you had **Patron One** return **Book Nine**. If the application shows that **Book Nine** hasn't been returned by **Patron One**, use the input options to select and return **Book Nine** before continuing.
-
-    > [!NOTE]
-    > The `Library.Console.csproj` file ensures that the JSON data files are copied to the output directory when the application is built. However, performing Clean or Rebuild operations will essentially reset the data. Repeated Build operations do not reset the data in the output directory (`/bin/Debug/net8.0/`).
-
 1. At the "Input Options" prompt, type **b** and then press Enter.
 
-1. Type **Book Nine** and then press Enter.
+1. Type **Book Three** and then press Enter.
 
 1. Verify that the application displays a message indicating that the book is available for loan.
 
@@ -1053,7 +841,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Open the `Loans.json` file.
 
-    The `Loans.json` file is used to track the loan status of each book. You can use the `Loans.json` file to verify that the availability status of Book One and Book Nine is correct.
+    The `Loans.json` file is used to track the loan status of each book. You can use the `Loans.json` file to verify that the availability status of Book One and Book Two is correct.
 
     The updated `Loans.json` file should be located in either the `Library.Console\bin\Debug\net8.0\Json` folder or `Library.Console\Json` folder.
 
@@ -1063,14 +851,12 @@ Use the following steps to complete this section of the exercise:
 
 1. Verify that loan ID 37 and loan ID 46 are both for Book One (`"BookItemId": 1`).
 
-    - Loan ID 37 should have a `ReturnDate` value (2024-01-17)
-    - Loan ID 46 shouldn't have a `ReturnDate` value. The `ReturnDate` value should be `null`.
+    - Loan ID 37 should have a `ReturnDate` value of `2024-01-17`, indicating that the book was returned on that date.
+    - Loan ID 46 should have a `ReturnDate` value `null`, indicating that the book is currently on loan (loaned on `2024-07-09` but not returned).
 
-    The `ReturnDate` value is used to determine whether the book is currently on loan. If the `ReturnDate` value is `null`, the book is considered to be on loan.
+    The `ReturnDate` value is used to determine whether the book is currently on loan. If the `ReturnDate` value is `null`, the book is currently on loan.
 
-1. Verify that loan ID 22 is for Book Nine (`"BookItemId": 9`) and that the `ReturnDate` value is set to today's date.
-
-    If you're running in the debugger and you cleaned the solution after making changes to the `Loans.json` file, those changes are lost. After you clean the solution, the `Loans.json` file is reset to the original data the next time you run the application. You can manually update the `Loans.json` file to test the availability status of Book One and Book Nine.
+1. Verify that loan ID 50 is for Book Three (`"BookItemId": 3`) and that the `ReturnDate` value is set to `2023-12-29`.
 
 ### Sync your changes with the remote repository
 
@@ -1078,60 +864,53 @@ Use the following steps to complete this section of the exercise:
 
 1. Ensure that the files you updated are listed under **Changes**.
 
+    You should see the CommonActions.cs and ConsoleApp.cs files listed under **Changes**.
+
 1. Use GitHub Copilot to generate a message for the **Commit**.
+
+    ![Screenshot showing the Generate Commit Message with Copilot button.](./media/m03-github-copilot-commit-message.png)
 
 1. To stage and commit your changes, select **Commit** and then select **Yes**.
 
-1. Sync (or Push) changes to the remote repository.
+1. To synchronize changes to the remote repository, select **Sync Changes**.
 
 ### Create a pull request to merge your changes into the main branch
 
-You completed the new feature that enables a librarian to determine the availability status of a book. Now you need to merge your changes into the main branch of the repository. You can create a pull request to merge your changes into the main branch.
+You've implemented the feature that enables a librarian to determine the availability status of a book. Now you need to merge your changes into the main branch of the repository. You can create a pull request to merge your changes into the main branch.
 
 Use the following steps to complete this section of the exercise:
 
 1. Open your GitHub repository in a web browser.
 
-1. Open the **Pull requests** tab.
+    To open your GitHub repository from Visual Studio Code:
 
-1. Select **New pull request**.
+    1. In the bottom-left corner of of the Visual Studio Code window, select **book-availability**.
+    1. On the context menu, to the right of the **book-availability** branch, select the **Open in GitHub** icon.
 
-1. Under **Compare changes**, ensure that **base** is configured for the **main** branch.
+1. On your GitHub repository page, select the **Compare & pull request** tab.
 
-1. Ensure that **compare** is configured for the **book-availability** branch.
+1. Ensure that **Base** specifies **main**, **compare** specifies **book-availability**, and **Able to merge** is checked.
 
-    After you configure the branches, a comparison of the changes between **main** and **book-availability** is displayed. You should see the changes for each of the files you updated.
+1. Under **Add a description**, select the Copilot Actions button (the GitHub Copilot icon), and then select the option to generate a summary.
+
+1. Once the summary is generated, select **Preview**.
+
+1. Take a minute to review the summary.
+
+    The generated pull request summary should be similar to the following example:
+
+    ![Screenshot showing a pull request summary generated using a GitHub Copilot Enterprise account.](./media/m03-github-copilot-pull-request-summary.png)
 
 1. Select **Create pull request**.
 
-1. Enter a title and description for the pull request.
+1. If all checks pass and there are no conflicts with the base branch, select **Merge pull request**, and then select **Confirm merge**.
 
-    You can use the following title and description:
+    Notice that you can delete the `book-availability` branch after merging the changes. To delete the branch, select **Delete branch**.
 
-    - **Title**: feat: Add search functionality for books in ConsoleApp
-    - **Description**: This pull request adds a new feature that enables a librarian to determine the availability status of a book. The feature includes a new `SearchBooks` action in `CommonActions`, updates to the `WriteInputOptions`, `ReadInputOptions`, and `PatronDetails` methods in `ConsoleApp`, and adds a new `SearchBooks` method in `ConsoleApp`.
-
-    > [!NOTE]
-    > Members of an enterprise with a subscription to GitHub Copilot Enterprise, can use GitHub Copilot to generate a summary of a pull request on GitHub.com. You can use the summary to help reviewers understand your changes, or to quickly understand the changes in a pull request you're reviewing. Select **GitHub Actions** and then select **Summary** to generate a summary of the pull request.
-
-    Here's an example of a pull request summary that was generated using a GitHub Copilot Enterprise account:
-
-    ![Screenshot showing a pull request summary generated using a GitHub Copilot Enterprise account.](../media/pull-request-summary.png)
-
-1. Ensure that the title and description reflect your code updates, and then select **Create pull request**.
-
-1. Wait for the checks to complete, and then verify that all checks passed and that there are no conflicts with the base branch.
-
-    It can take a minute for the checks to complete. You need to address any issues that are identified before you can merge the changes into the main branch.
-
-1. To merge your changes into the main branch, select **Merge pull request**, and then select **Confirm merge**.
-
-    Notice that you can delete the `book-availability` branch after merging the changes.
-
-1. Open Visual Studio Code.
+1. Switch back to the Visual Studio Code window.
 
 1. Switch to the **main** branch of the repository.
 
-1. **Pull** the changes from the remote repository.
+1. Open the Source Control view, and then **Pull** the changes from the remote repository.
 
-1. Verify that the changes you made in the **book-availability** branch are now in the **main** branch.
+1. Verify that the book-availability feature is available in the **main** branch.
