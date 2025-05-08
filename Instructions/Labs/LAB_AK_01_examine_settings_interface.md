@@ -204,7 +204,7 @@ Use the following steps to complete this section of the exercise:
 
 1. To open the Chat view, select the **Toggle Chat** button.
 
-    The Toggle Chat button is located in the Visual Studio Code Status Bar, just to the right of the Copilot icon.
+    The Toggle Chat button is located at the top of the Visual Studio Code window, just to the right of the search textbox.
 
     ![Screenshot showing the Copilot Toggle Chat button.](./media/m01-github-copilot-toggle-chat.png)
 

@@ -6,7 +6,7 @@ lab:
 
 # Refactor and improve existing code sections using GitHub Copilot
 
-GitHub Copilot can be used to evaluate your entire codebase and suggest changes that improve code quality, reliability, performance, and security. In this exercise, you use GitHub Copilot to refactor and improve specified sections of a C# application.
+GitHub Copilot can be used to evaluate your entire codebase and suggest changes that refactor and/or improve your code. In this exercise, you use GitHub Copilot to refactor specified sections of a C# application while making improvements to code quality, reliability, performance, and security.
 
 This exercise should take approximately **15** minutes to complete.
 
@@ -91,11 +91,19 @@ You're now ready to complete the exercise.
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
-You've created an initial version of the library application, but there are sill opportunities to improve performance, readability, maintainability, and security. During a code review, the team identified the following issues:
+You handed off an initial version of the library application for review. The review team identified opportunities to improve code quality, performance, readability, maintainability, and security. 
 
-- Refactor the EnumHelper class to use dictionaries instead of reflection. Using dictionaries improves performance by reducing the overhead of reflection. Eliminating reflection also improves code readability, maintainability, and security.
+The following updates are assigned to you:
 
-- Refactor the data access methods to use LINQ (Language Integrated Query) rather than foreach loops. Using LINQ provides a more concise and readable way to query collections, databases, and XML documents. Using LINQ can improve code readability, maintainability, and performance.
+1. Refactor the EnumHelper class to use static dictionaries instead of reflection.
+
+    - Using static dictionaries will improve performance (removes the overhead of reflection).
+    - Eliminating reflection also improves code readability, maintainability, and security.
+
+1. Refactor the data access methods to use LINQ (Language Integrated Query) rather than foreach loops.
+
+    - Using LINQ provides a more concise and readable way to query collections, databases, and XML documents.
+    - Using LINQ can improve code readability, maintainability, and performance.
 
 This exercise includes the following tasks:
 
@@ -151,18 +159,19 @@ Use the following steps to set up the library application:
 
     You'll see some Warnings, but there shouldn't be any Errors.
 
-
 ## Use GitHub Copilot to refactor the EnumHelper class
 
 Reflection is a powerful feature that allows you to inspect and manipulate objects at runtime. However, reflection can be slow and there are potential security risks associated with reflection that should be considered.
 
-The existing EnumHelper class uses reflection to retrieve the description attribute of an enum value. You can refactor the EnumHelper class to use dictionaries instead of reflection. Using dictionaries can improve performance and eliminate any security concerns associated with using reflection.
+The existing EnumHelper class uses reflection to retrieve the description attribute of an enum value. You need to refactor the EnumHelper class to use dictionaries instead of reflection. Using dictionaries can improve performance and eliminate any security concerns associated with using reflection.
 
 In this exercise, you use GitHub Copilot to help you refactor the EnumHelper class.
 
 Use the following steps to complete this section of the exercise:
 
-1. Use the Solution Explorer view to open the EnumHelper.cs file.
+1. Use Visual Studio Code's SOLUTION EXPLORER view to expand the **Library.ApplicationCore** folder, and then expand the **Enums** folder.
+
+1. Open the EnumHelper.cs file and review the code.
 
     ```csharp
     using System.ComponentModel;
@@ -194,21 +203,59 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-1. Open the Chat view, and then add the following files to the Chat context: `EnumHelper.cs`, `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, `MembershipRenewalStatus.cs`.
+    The `GetDescription` method uses reflection to retrieve the description attribute of an enum value. The method checks if the `value` parameter is null. If it is, the method returns an empty string. Otherwise, it uses reflection to get the field information for the enum value and retrieves the custom attributes of type `DescriptionAttribute`. If any attributes are found, it returns the description; otherwise, it returns the string representation of the enum value.
+
+1. Open the GitHub Copilot Chat view.
+
+    The Chat view provides a managed conversational interface for interacting with GitHub Copilot.
+
+    You can toggle the Chat view between open and closed using the **Toggle Chat** button, which is located at the top of the Visual Studio Code window, just to the right of the search textbox.
+
+    ![Screenshot showing the Copilot Toggle Chat button.](./media/m01-github-copilot-toggle-chat.png)
+
+    You can also use the keyboard shortcut **Ctrl+Alt+I** to toggle the Chat view.
+
+1. Notice that the Chat view opens in **Ask** mode by default.
+
+    The Chat mode is displayed near the bottom-right corner of the Chat view.
+
+    The Set Mode menu includes three chat modes: **Ask**, **Edit**, and **Agent**. Each mode is designed for different types of interactions with GitHub Copilot.
+
+    - **Ask**: Use this mode to ask GitHub Copilot questions about your codebase. You can ask GitHub Copilot to explain code, suggest changes, or provide information about the codebase.
+    - **Edit**: Use this mode to edit code in your workspace. You can use GitHub Copilot to refactor code, add comments, or make other changes to your code.
+    - **Agent**: Use this mode to run GitHub Copilot as an agent. You can use GitHub Copilot to run commands, execute code, or perform other tasks in your workspace.
+
+1. Ensure that the Chat mode is set to **Ask**.
+
+   GitHub Copilot's responses are displayed in the Chat view wen you're working in **Ask** mode.
+
+1. Add the following files to the Chat context:
+
+    - EnumHelper.cs
+    - LoanExtensionStatus.cs
+    - LoanReturnStatus.cs
+    - MembershipRenewalStatus.cs
+
+    You can use a drag-and-drop operation to add the files from Visual Studio Code's explorer view to the Chat view. You can also use the **Add Context** button in the Chat view to add the files.
+
+    > **NOTE**: Adding files to the Chat context ensures that GitHub Copilot considers those files when generating a response. The relevance and accuracy of responses increase when GitHub Copilot understands the context associated with your prompts.
 
 1. Enter the following prompt:
 
     ```plaintext
-    @workspace I want to refactor the `EnumHelper` class using dictionaries rather than reflection to get enum description attributes. I want a separate dictionary for each enum. The enum values are in the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files. Explain how to update the EnumHelper class to use dictionaries and provide the updated code.
+    @workspace I need to refactor the `EnumHelper` class and remove any code that uses reflection. Use static dictionaries to supply enum description attributes. Use a separate dictionary for each enum. The dictionaries should use values from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files. Explain how to update the EnumHelper class using dictionaries rather than reflection and provide the updated code.
     ```
 
-    This prompt asks GitHub Copilot to provide an explanation of how to update the EnumHelper class to use dictionaries instead of reflection. It also asks for the updated code that uses dictionaries for each enum value.
+    When writing a prompt that asks GitHub Copilot how to solve a problem, be sure explain the problem that you're trying to solve. Use concise sentences to provide details and specify constraints. Also, be sure to tell GitHub Copilot what to include in the response.
 
-1. Take a minute to review the explanation provided by GitHub Copilot.
+    In this case, your prompt begins by explaining the problem. You tell GitHub Copilot that you need to refactor the `EnumHelper` class and remove any code that uses reflections. You tell GitHub Copilot that you want to use dictionaries to supply enum description attributes. You specify that you want a separate dictionary for each enum, and you tell GitHub Copilot that the enum values should be sourced from specific files that you specify by name. You finish by asking GitHub Copilot to explain how to update the `EnumHelper` class, and you ask for a code sample containing the updated code.
 
-    The explanation should be similar to the following description:
+1. Take a minute to review the response provided by GitHub Copilot.
+
+    The response should be similar to the following example:
 
     ```markdown
+
     To refactor the `EnumHelper` class to use dictionaries for each enum, you need to create a dictionary for each enum type that maps the enum values to their descriptions. This will eliminate the need for reflection at runtime.
 
     Here's how you can update the `EnumHelper` class:
@@ -222,55 +269,56 @@ Use the following steps to complete this section of the exercise:
     ```
 
     ```csharp
+
     using System.ComponentModel;
     using System.Collections.Generic;
     
-    namespace Library.ApplicationCore.Enums
+    namespace Library.ApplicationCore.Enums;
+
+    public static class EnumHelper
     {
-        public static class EnumHelper
+        private static readonly Dictionary<MembershipRenewalStatus, string> MembershipRenewalStatusDescriptions = new()
         {
-            private static readonly Dictionary<MembershipRenewalStatus, string> MembershipRenewalStatusDescriptions = new()
+            { MembershipRenewalStatus.Success, "Membership renewal was successful." },
+            { MembershipRenewalStatus.PatronNotFound, "Patron not found." },
+            { MembershipRenewalStatus.TooEarlyToRenew, "It is too early to renew the membership." },
+            { MembershipRenewalStatus.LoanNotReturned, "Cannot renew membership due to an outstanding loan." },
+            { MembershipRenewalStatus.Error, "Cannot renew membership due to an error." }
+        };
+
+        private static readonly Dictionary<LoanReturnStatus, string> LoanReturnStatusDescriptions = new()
+        {
+            { LoanReturnStatus.Success, "Book was successfully returned." },
+            { LoanReturnStatus.LoanNotFound, "Loan not found." },
+            { LoanReturnStatus.AlreadyReturned, "Cannot return book as the book is already returned." },
+            { LoanReturnStatus.Error, "Cannot return book due to an error." }
+        };
+
+        private static readonly Dictionary<LoanExtensionStatus, string> LoanExtensionStatusDescriptions = new()
+        {
+            { LoanExtensionStatus.Success, "Book loan extension was successful." },
+            { LoanExtensionStatus.LoanNotFound, "Loan not found." },
+            { LoanExtensionStatus.LoanExpired, "Cannot extend book loan as it already has expired. Return the book instead." },
+            { LoanExtensionStatus.MembershipExpired, "Cannot extend book loan due to expired patron's membership." },
+            { LoanExtensionStatus.LoanReturned, "Cannot extend book loan as the book is already returned." },
+            { LoanExtensionStatus.Error, "Cannot extend book loan due to an error." }
+        };
+
+        public static string GetDescription(Enum value)
+        {
+            if (value == null)
+                return string.Empty;
+
+            return value switch
             {
-                { MembershipRenewalStatus.Success, "Membership renewal was successful." },
-                { MembershipRenewalStatus.PatronNotFound, "Patron not found." },
-                { MembershipRenewalStatus.TooEarlyToRenew, "It is too early to renew the membership." },
-                { MembershipRenewalStatus.LoanNotReturned, "Cannot renew membership due to an outstanding loan." },
-                { MembershipRenewalStatus.Error, "Cannot renew membership due to an error." }
+                MembershipRenewalStatus status => MembershipRenewalStatusDescriptions[status],
+                LoanReturnStatus status => LoanReturnStatusDescriptions[status],
+                LoanExtensionStatus status => LoanExtensionStatusDescriptions[status],
+                _ => value.ToString()
             };
-    
-            private static readonly Dictionary<LoanReturnStatus, string> LoanReturnStatusDescriptions = new()
-            {
-                { LoanReturnStatus.Success, "Book was successfully returned." },
-                { LoanReturnStatus.LoanNotFound, "Loan not found." },
-                { LoanReturnStatus.AlreadyReturned, "Cannot return book as the book is already returned." },
-                { LoanReturnStatus.Error, "Cannot return book due to an error." }
-            };
-    
-            private static readonly Dictionary<LoanExtensionStatus, string> LoanExtensionStatusDescriptions = new()
-            {
-                { LoanExtensionStatus.Success, "Book loan extension was successful." },
-                { LoanExtensionStatus.LoanNotFound, "Loan not found." },
-                { LoanExtensionStatus.LoanExpired, "Cannot extend book loan as it already has expired. Return the book instead." },
-                { LoanExtensionStatus.MembershipExpired, "Cannot extend book loan due to expired patron's membership." },
-                { LoanExtensionStatus.LoanReturned, "Cannot extend book loan as the book is already returned." },
-                { LoanExtensionStatus.Error, "Cannot extend book loan due to an error." }
-            };
-    
-            public static string GetDescription(Enum value)
-            {
-                if (value == null)
-                    return string.Empty;
-    
-                return value switch
-                {
-                    MembershipRenewalStatus status => MembershipRenewalStatusDescriptions[status],
-                    LoanReturnStatus status => LoanReturnStatusDescriptions[status],
-                    LoanExtensionStatus status => LoanExtensionStatusDescriptions[status],
-                    _ => value.ToString()
-                };
-            }
         }
     }
+
     ```
 
     ```markdown
@@ -279,12 +327,31 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    > [!NOTE]
-    > If GitHub Copilot doesn't populate the dictionaries with the correct descriptions, ensure that the GitHub Copilot extension isn't requesting a restart. If it is, restart the extension and try the prompt again.
+1. In the Chat view, hover the mouse pointer over the code snippet included in the response.
 
-1. Use GitHub Copilot's suggested `EnumHelper` class to update your EnumHelper.cs file.
+1. Notice the three buttons that appear in the top-right corner of the code snippet.
 
-1. Ensure that your updated `EnumHelper` class is using the enum values from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files.
+1. Hover the mouse pointer over each of the buttons to see a tooltip that describes the action.
+
+    These buttons can the used to either insert the code into the code editor or copy the code to the clipboard.
+
+1. In the Chat view, select **Set Mode**, and then select **Edit**.
+
+    When prompted to confirm the change, select **Yes**.
+
+    In **Edit** more, GitHub Copilot displays responses as code update suggestions in code editor. The Edit mode is generally used when implementing a new feature, fixing a bug, or refactoring code.
+
+1. Enter the following prompt:
+
+    ```plaintext
+    @workspace Refactor the `EnumHelper` class using dictionaries rather than reflection to get enum description attributes. Use a separate dictionary for each enum. Use the enum values in the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files.
+    ```
+
+    This prompt tells GitHub Copilot to refactor the `EnumHelper` class using dictionaries rather than reflection to get enum description attributes. It also specifies that a separate dictionary should be used for each enum, and that the enum values should be taken from the specified files.
+
+1. Take a minute to review the suggested code updates.
+
+    Review the suggested updates to ensure that the enum values are coming from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files.
 
     Open each of the enum files and verify that the enum values in the dictionaries are correct. If there are discrepancies, have GitHub Copilot update the dictionaries for each enum individually. For example, you can use the following prompt for the `LoanExtensionStatus` enum:
 
