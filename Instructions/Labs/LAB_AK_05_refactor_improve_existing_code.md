@@ -1,8 +1,8 @@
-<!-- ---
+---
 lab:
     title: 'Exercise - Refactor and improve existing code sections using GitHub Copilot'
     description: 'Learn how to refactor and improve existing code sections using GitHub Copilot in Visual Studio Code.'
---- -->
+---
 
 # Refactor and improve existing code sections using GitHub Copilot
 
