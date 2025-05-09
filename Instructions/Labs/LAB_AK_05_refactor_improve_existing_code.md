@@ -4,9 +4,9 @@ lab:
     description: 'Learn how to refactor and improve existing code sections using GitHub Copilot in Visual Studio Code.'
 ---
 
-# Refactor and improve existing code sections using GitHub Copilot
+# Refactor existing code using GitHub Copilot
 
-GitHub Copilot can be used to evaluate your entire codebase and suggest changes that refactor and/or improve your code. In this exercise, you use GitHub Copilot to refactor specified sections of a C# application while making improvements to code quality, reliability, performance, and security.
+GitHub Copilot can be used to evaluate your entire codebase and suggest updates that help you to refactor and improve your code. In this exercise, you use GitHub Copilot to refactor specified sections of a C# application while making improvements to code quality, reliability, performance, and security.
 
 This exercise should take approximately **15** minutes to complete.
 
