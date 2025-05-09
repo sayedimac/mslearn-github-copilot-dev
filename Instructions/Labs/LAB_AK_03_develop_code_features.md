@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Exercise - Develop code features using GitHub Copilot'
+    title: 'Exercise - Develop new code features using GitHub Copilot'
     description: 'Learn how to accelerate the development of new code features using GitHub Copilot in Visual Studio Code.'
 ---
 
