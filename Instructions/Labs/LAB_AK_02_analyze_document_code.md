@@ -67,7 +67,7 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
 
-    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
+    ![Screenshot showing the GitHub Copilot Settings button.](./Media/m00-github-copilot-setup.png)
 
 1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
@@ -83,7 +83,7 @@ Complete the following steps to verify that your lab environment is configured c
 
     You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
+    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./Media/m00-github-copilot-extensions-vscode.png)
 
 You're now ready to complete the exercise.
 
@@ -167,7 +167,7 @@ Use the following steps to complete this section of the exercise:
 
     To open the Chat view, select the **Toggle Chat** button at the top of the Visual Studio Code window.
 
-    ![Screenshot showing the GitHub Copilot status menu.](./media/m02-github-copilot-toggle-chat.png)
+    ![Screenshot showing the GitHub Copilot status menu.](./Media/m02-github-copilot-toggle-chat.png)
 
     You can also open the Chat view using the **Ctrl+Alt+I** keyboard shortcut.
 

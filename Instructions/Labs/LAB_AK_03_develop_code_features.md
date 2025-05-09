@@ -65,7 +65,7 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
 
-    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
+    ![Screenshot showing the GitHub Copilot Settings button.](./Media/m00-github-copilot-setup.png)
 
 1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
@@ -81,7 +81,7 @@ Complete the following steps to verify that your lab environment is configured c
 
     You should see the GitHub Copilot and GitHub Copilot Chat extensions listed in the **Installed** section of the Extensions view.
 
-    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./media/m00-github-copilot-extensions-vscode.png)
+    ![Screenshot showing GitHub Copilot the Visual Studio Code Extensions view.](./Media/m00-github-copilot-extensions-vscode.png)
 
 You're now ready to complete the exercise.
 
@@ -868,7 +868,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Use GitHub Copilot to generate a message for the **Commit**.
 
-    ![Screenshot showing the Generate Commit Message with Copilot button.](./media/m03-github-copilot-commit-message.png)
+    ![Screenshot showing the Generate Commit Message with Copilot button.](./Media/m03-github-copilot-commit-message.png)
 
 1. To stage and commit your changes, select **Commit** and then select **Yes**.
 
@@ -899,7 +899,7 @@ Use the following steps to complete this section of the exercise:
 
     The generated pull request summary should be similar to the following example:
 
-    ![Screenshot showing a pull request summary generated using a GitHub Copilot Enterprise account.](./media/m03-github-copilot-pull-request-summary.png)
+    ![Screenshot showing a pull request summary generated using a GitHub Copilot Enterprise account.](./Media/m03-github-copilot-pull-request-summary.png)
 
 1. Select **Create pull request**.
 

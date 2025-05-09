@@ -67,7 +67,7 @@ Complete the following steps to verify that your lab environment is configured c
 
 1. On the Visual Studio Code Status Bar, to activate GitHub Copilot, hover the mouse pointer over the Copilot icon, and then select **Set up Copilot**.
 
-    ![Screenshot showing the GitHub Copilot Settings button.](./media/m00-github-copilot-setup.png)
+    ![Screenshot showing the GitHub Copilot Settings button.](./Media/m00-github-copilot-setup.png)
 
 1. On the **Sign in to use Copilot for free** page, select **Sign in**.
 
@@ -368,11 +368,11 @@ Use the following steps to complete this section of the exercise:
 
     - The Chat view displays a message indicating that it wants to run a command in the terminal:
 
-        ![Screenshot showing the Chat view in Agent mode.](./media/m04-github-copilot-agent-mode-terminal-command-mkdir.png)
+        ![Screenshot showing the Chat view in Agent mode.](./Media/m04-github-copilot-agent-mode-terminal-command-mkdir.png)
 
     - The UnitTests.csproj file is open in the code editor with the following changes:
 
-        ![Screenshot showing updates to the UnitTests.csproj file in the code editor.](./media/m04-github-copilot-agent-mode-code-editor-update.png)
+        ![Screenshot showing updates to the UnitTests.csproj file in the code editor.](./Media/m04-github-copilot-agent-mode-code-editor-update.png)
 
 1. In the Chat view, to run the command in the terminal, select **Continue**.
 
