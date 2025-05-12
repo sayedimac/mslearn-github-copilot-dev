@@ -79,23 +79,27 @@ Use the following steps to complete this section of the exercise:
 
     The GitHub Copilot extension has the following setting options:
 
-    - GitHub.Copilot.Advanced: Configure advanced settings for GitHub Copilot in settings.json.
+    - **GitHub.Copilot.Advanced**: Configure advanced settings for GitHub Copilot in settings.json.
 
         Selecting **Edit in settings.json** opens the settings.json file, which is a JSON file that contains the settings for GitHub Copilot. The settings are organized into sections, and each section contains a list of settings.
 
         ![Screenshot showing the settings.json file open in the editor.](./Media/m01-github-copilot-extension-settings-advanced-options.png)
 
-    - GitHub.Copilot.Enable: Enable or disable Copilot completions for specified languages.
+    - **GitHub.Copilot.Enable**: Enable or disable Copilot completions for specified languages.
 
         The term *languages* refers to programming languages, but accommodates other file formats as well. The languages are specified using a list of languages and a value of **true** or **false** to enable or disable GitHub Copilot for each language. By default, GitHub Copilot is enabled for all languages. This setting is specified with the wildcard character `*` on the first row and the value **true**. The subsequent rows specify languages for which GitHub Copilot is enabled or disabled. For example, GitHub Copilot is enabled for **C#**, **JavaScript**, and **Python** and disabled for **Plaintext** and **Markdown**.
 
-        ![Screenshot showing the settings.json file open in the editor.](./Media/m01-github-copilot-extension-settings-enable-languages.png)
+        ![Screenshot showing the enable languages setting open in the editor.](./Media/m01-github-copilot-extension-settings-enable-languages.png)
 
-    - GitHub.Copilot.SelectedCompletionModel: Select the model to use for Copilot completions.
+    - **GitHub.Copilot.SelectedCompletionModel**: Select the model to use for Copilot completions.
 
-        ![Screenshot showing the setting for the GitHub Copilot extension.](./Media/m01-github-copilot-extension-settings-change-completions-model-menu.png)
+        You can use the **Change Completions Model** menu option to select a model.
 
-        ![Screenshot showing the setting for the GitHub Copilot extension.](./Media/m01-github-copilot-extension-settings-change-completions-model.png)
+        ![Screenshot showing the Change Completions Model menu option.](./Media/m01-github-copilot-extension-settings-change-completions-model-menu.png)
+
+        The list of models may be limited by your GitHub Copilot subscription, the models available in your region, and the models available for your organization.
+
+        ![Screenshot showing a list of completion models.](./Media/m01-github-copilot-extension-settings-change-completions-model.png)
 
 1. Under **Enable or disable Copilot completions for specified languages**, select **markdown**.
 
@@ -111,7 +115,7 @@ Use the following steps to complete this section of the exercise:
 
     The GitHub Copilot Chat extension has a long list of available settings and it's updated regularly. The GitHub Copilot Chat extension also includes preview and experimental settings that are subject to change and could be discontinued. The preview and experimental settings are included at the end of the list and they're tagged as either **Preview** or **Experimental**.
 
-    ![Screenshot showing the GitHub Copilot Chat settings.](./Media/m01-github-copilot-chat-extension-settings-preview-experimental.png)
+    ![Screenshot showing the Preview and Experimental labels for GitHub Copilot Chat settings.](./Media/m01-github-copilot-chat-extension-settings-preview-experimental.png)
 
 1. Take a few minutes to review the settings for GitHub Copilot Chat.
 
@@ -332,7 +336,7 @@ The Chat view has three modes: **Ask**, **Edit**, and **Agent**. The Ask mode is
 
 1. Take a minute to review response displayed in the Chat view.
 
-    ![Screenshot showing an Inline Chat session with a response in the code editor.](./Media/m01-github-copilot-chat-view-response-ask-mode.png)
+    ![Screenshot showing code management options in the Chat view.](./Media/m01-github-copilot-chat-view-response-ask-mode.png)
 
     Notice that when you hover the mouse pointer over the code, the Chat view displays the following options:
 
@@ -402,7 +406,7 @@ Smart Actions are a set of predefined actions that are available from the Copilo
 
     Notice that the Explain smart action constructs a prompt that's based on the code selection and submits the prompt in the Chat view.
 
-    ![Screenshot showing the Copilot context menu.](./Media/m01-github-copilot-smart-action-explain.png)
+    ![Screenshot showing the Chat view with Explain smart action text displayed.](./Media/m01-github-copilot-smart-action-explain.png)
 
     The explanation includes a detailed description of the selected code, and may include suggested updates.
 
@@ -412,7 +416,7 @@ Smart Actions are a set of predefined actions that are available from the Copilo
 
     Notice that the Generate Docs smart action opens an Inline Chat session and submits a prompt asking GitHub Copilot to suggest documentation for the selected code.
 
-    ![Screenshot showing the Copilot context menu.](./Media/m01-github-copilot-smart-action-generate-docs.png)
+    ![Screenshot showing the results of the Generate Docs smart action.](./Media/m01-github-copilot-smart-action-generate-docs.png)
 
 1. In the Inline Chat window, select **Accept** to apply the suggested documentation.
 
