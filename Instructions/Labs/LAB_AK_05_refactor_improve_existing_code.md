@@ -41,7 +41,7 @@ The following updates are assigned to you:
 This exercise includes the following tasks:
 
 1. Set up the library application in Visual Studio Code.
-1. Analyze and refactor code using the Chat view in Ask and Edit mode.
+1. Analyze and refactor code using the Chat view in Ask and Edit modes.
 1. Refactor code using inline chat and the Chat view in Edit and Agent modes.
 
 ## Set up the library application in Visual Studio Code
@@ -972,8 +972,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
     You should see a list of patrons that match the search query.
 
-    > [!NOTE]
-    > The application uses a case-sensitive search process.
+    > **NOTE**: The application uses a case-sensitive search process.
 
 1. At the "Input Options" prompt, type **2** and then press Enter.
 

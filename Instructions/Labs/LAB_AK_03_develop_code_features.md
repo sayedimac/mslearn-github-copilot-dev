@@ -101,8 +101,7 @@ Use the following steps to set up the library application:
 
 Creating the GitHub repository for your code will enable you to share your work with others and collaborate on the project.
 
-> [!NOTE]
-> You use your own GitHub account to create a private GitHub repository for the library application.
+> **NOTE**: You use your own GitHub account to create a private GitHub repository for the library application.
 
 Use the following steps to complete this section of the exercise:
 
@@ -122,8 +121,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Name for the repository **AccelerateDevGHCopilot** and then select **Publish to GitHub private repository**.
 
-    > [!NOTE]
-    > If you're not signed in to GitHub in Visual Studio Code, you'll be prompted to sign in. Once you're signed in, authorize Visual Studio Code with the requested permissions.
+    > **NOTE**: If you're not signed in to GitHub in Visual Studio Code, you'll be prompted to sign in. Once you're signed in, authorize Visual Studio Code with the requested permissions.
 
 1. In the Source Control view, enter a commit message, such as "Initial commit", and then select **Publish Branch**.
 
@@ -423,8 +421,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    > [!NOTE]
-    > The code suggested by Inline chat may include stub code for the `SearchBooks` method. You can accept that code. You'll implement the `SearchBooks` method in the next section.
+    > **NOTE**: The code suggested by Inline chat may include stub code for the `SearchBooks` method. You can accept that code. You'll implement the `SearchBooks` method in the next section.
 
 ### Implement a SearchBooks method using the Chat view
 
@@ -471,8 +468,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    > [!NOTE]
-    > Be sure to remove any code comments created by GitHub Copilot. Unnecessary and inaccurate comments can negatively influence GitHub Copilot's suggestions.
+    > **NOTE**: Be sure to remove any code comments created by GitHub Copilot. Unnecessary and inaccurate comments can negatively influence GitHub Copilot's suggestions.
 
 1. Select the `SearchBooks` method.
 

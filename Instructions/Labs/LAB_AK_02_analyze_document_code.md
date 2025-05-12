@@ -185,8 +185,7 @@ Use the following steps to complete this section of the exercise:
 
     Use chat variables, such as **#class**, to include specific context in your prompt. To see a list of all available chat variables, type **#** in the chat prompt box.
 
-    > [!NOTE]
-    > GitHub Copilot considers your chat history and the code files you have open in Visual Studio Code when constructing a context for your prompt and generating a response.
+    > **NOTE**: GitHub Copilot considers your chat history and the code files you have open in Visual Studio Code when constructing a context for your prompt and generating a response.
 
 1. Take a minute to verify the accuracy of GitHub Copilot's response.
 
@@ -297,8 +296,7 @@ Use the following steps to complete this section of the exercise:
 
     The data files use ID properties to link entities. For example, a `Loan` object has a `PatronId` property that links to a `Patron` object with the same ID. The JSON files contain data for authors, books, book items, patrons, and loans.
 
-    > [!NOTE]
-    > Notice that Author names, book titles, and patron names have been anonymized for the purposes of this guided project.
+    > **NOTE**: Notice that Author names, book titles, and patron names have been anonymized for the purposes of this guided project.
 
 ### Build and run the application
 
@@ -320,8 +318,7 @@ Use the following steps to complete this section of the exercise:
 
     You should see a list of patrons that match the search query.
 
-    > [!NOTE]
-    > The application uses a case-sensitive search process.
+    > **NOTE**: The application uses a case-sensitive search process.
 
 1. At the "Input Options" prompt, type **2** and then press Enter.
 
@@ -384,13 +381,11 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    > [!NOTE]
-    > Using multiple prompts, one for each section of the README file would produce more detailed results. A single prompt is used in this exercise to simplify the process.
+    > **NOTE**: Using multiple prompts, one for each section of the README file would produce more detailed results. A single prompt is used in this exercise to simplify the process.
 
 1. Review the response to ensure each section is formatted as markdown.
 
-    > [!NOTE]
-    > You can update sections individually to provide more detailed information or if they aren't formatted correctly. You can also copy GitHub Copilot's response to the README file and then make corrections directly in the markdown file.
+    > **NOTE**: You can update sections individually to provide more detailed information or if they aren't formatted correctly. You can also copy GitHub Copilot's response to the README file and then make corrections directly in the markdown file.
 
 1. Copy the suggested documentation, and then paste it into the README.md file.
 

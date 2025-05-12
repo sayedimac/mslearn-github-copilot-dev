@@ -53,8 +53,7 @@ If you want to test the enable/disable options, you can select the disable optio
 
 Default settings are configured for you when you activate GitHub Copilot in Visual Studio Code. The settings are organized under the Extensions label, which includes settings for both GitHub Copilot and GitHub Copilot Chat. You can customize settings for the GitHub Copilot extensions using Visual Studio Code's settings tab.
 
-> [!TIP]
-> You can use the Copilot menu to open a Settings tab that's filtered for GitHub Copilot.
+> **TIP**: You can use the Copilot menu to open a Settings tab that's filtered for GitHub Copilot.
 
 Use the following steps to complete this section of the exercise:
 
@@ -160,8 +159,7 @@ Use the following steps to complete this section of the exercise:
 
     - Chat with Extension button: The Chat with Extension button is located below the Chat Mode button. GitHub Copilot Extensions are a type of GitHub App that integrates the power of external tools into GitHub Copilot Chat. You can use this button to select from a list of Copilot Extensions. The default extensions provide a combination of Chat participants and Slash commands that provide context for your prompts.
 
-        > [!NOTE]
-        > Anyone with a Copilot Pro, Copilot Pro+, or Copilot Free plan can use Copilot Extensions. For organizations or enterprises with a Copilot Business or Copilot Enterprise plan, organization owners and enterprise administrators can grant access to Copilot Extensions. Copilot Extensions is not available for GitHub Enterprise Server.
+        > **NOTE**: Anyone with a Copilot Pro, Copilot Pro+, or Copilot Free plan can use Copilot Extensions. For organizations or enterprises with a Copilot Business or Copilot Enterprise plan, organization owners and enterprise administrators can grant access to Copilot Extensions. Copilot Extensions is not available for GitHub Enterprise Server.
 
     - Start Voice Chat button: The Start Voice Chat button is located to the right of the Chat with Extension button. You can use this button to enable or disable voice interactions with GitHub Copilot. When voice interactions are enabled, you can use your voice to ask GitHub Copilot questions or request code suggestions.
 
@@ -231,8 +229,7 @@ The Quick Chat window is a simplified interface for interacting with GitHub Copi
 
 1. Notice that the Quick Chat window now includes **Program.cs** to the right of the **Add Context** button.
 
-    > [!TIP]
-    > Adding project files to the Chat context (Chat view, Quick Chat, or Inline Chat) helps GitHub Copilot provide more relevant suggestions. When adding project files to the Chat context, it's often easier to use a drag-and-drop operation rather than the Add Context button.
+    > **TIP**: Adding project files to the Chat context (Chat view, Quick Chat, or Inline Chat) helps GitHub Copilot provide more relevant suggestions. When adding project files to the Chat context, it's often easier to use a drag-and-drop operation rather than the Add Context button.
 
 1. Scroll to the top of the Quick Chat window and resubmit the same prompt:
 
@@ -248,8 +245,7 @@ The Quick Chat window is a simplified interface for interacting with GitHub Copi
 
     Switching to the Chat view is useful when you need to extend and manage a chat session that started in the Quick Chat window.
 
-    > [!TIP]
-    > The Quick Chat window is great for quick questions and simple tasks. However, if you want a more dedicated Chat environment, you should use the Chat view. The Chat view provides a more comprehensive interface for interacting with GitHub Copilot and includes features like chat history, file management, and more advanced options for managing your chat sessions.
+    > **TIP**: The Quick Chat window is great for quick questions and simple tasks. However, if you want a more dedicated Chat environment, you should use the Chat view. The Chat view provides a more comprehensive interface for interacting with GitHub Copilot and includes features like chat history, file management, and more advanced options for managing your chat sessions.
 
 ### Explore the Inline Chat features
 
