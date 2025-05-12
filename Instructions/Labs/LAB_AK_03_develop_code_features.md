@@ -168,26 +168,26 @@ In this section of the exercise, you use GitHub Copilot to develop a new feature
 
 To implement the book availability feature, you'll need to complete the following updates:
 
-- Add a new `SearchBooks` action to the `CommonActions` enum in CommonActions.cs.
+- Add a new **SearchBooks** action to the **CommonActions** enum in CommonActions.cs.
 
-- Update the `WriteInputOptions` method in ConsoleApp.cs.
+- Update the **WriteInputOptions** method in ConsoleApp.cs.
 
-    - Add support for the new `CommonActions.SearchBooks` option.
+    - Add support for the new **CommonActions.SearchBooks** option.
     - Display the option to check if a book is available for loan.
 
-- Update the `ReadInputOptions` method in ConsoleApp.cs.
+- Update the **ReadInputOptions** method in ConsoleApp.cs.
 
-    - Add support for the new `CommonActions.SearchBooks` option.
+    - Add support for the new **CommonActions.SearchBooks** option.
 
-- Update the `PatronDetails` method in ConsoleApp.cs.
+- Update the **PatronDetails** method in ConsoleApp.cs.
 
-    - Add `CommonActions.SearchBooks` to `options` before calling `ReadInputOptions`.
-    - Add an `else if` to handle the `SearchBooks` action.
-    - The `else if` block should call a new method named `SearchBooks`.
+    - Add **CommonActions.SearchBooks** to **options** before calling **ReadInputOptions**.
+    - Add an **else if** to handle the **SearchBooks** action.
+    - The **else if** block should call a new method named **SearchBooks**.
 
-- Create a new `SearchBooks` method in ConsoleApp.cs.
+- Create a new **SearchBooks** method in ConsoleApp.cs.
 
-    - The `SearchBooks` method should read a user provided book title.
+    - The **SearchBooks** method should read a user provided book title.
     - Check if a book is available for loan, and display a message stating either:
 
         - "`book.title` is available for loan", or
@@ -208,9 +208,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Expand the **Library.Console** project.
 
-1. Open the CommonActions.cs file, and then select the `CommonActions` enum.
+1. Open the CommonActions.cs file, and then select the **CommonActions** enum.
 
-    You need to add a new `SearchBooks` action to `CommonActions`.
+    You need to add a new **SearchBooks** action to **CommonActions**.
 
 1. Open the inline chat and then enter the following prompt:
 
@@ -218,7 +218,7 @@ Use the following steps to complete this section of the exercise:
     Update selection to include a new `SearchBooks` action.
     ```
 
-    GitHub Copilot should suggest a code update that adds the new `SearchBooks` action to the `CommonActions` enum.
+    GitHub Copilot should suggest a code update that adds the new **SearchBooks** action to the **CommonActions** enum.
 
 1. Review the suggested update and then select **Accept**.
 
@@ -242,9 +242,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Open the ConsoleApp.cs file.
 
-1. Find and then select the `WriteInputOptions` method.
+1. Find and then select the **WriteInputOptions** method.
 
-    You need to add support for the new `CommonActions.SearchBooks` option. If the `SearchBooks` option is flagged, display the option to check if a book is available for loan.
+    You need to add support for the new **CommonActions.SearchBooks** option. If the **SearchBooks** option is flagged, display the option to check if a book is available for loan.
 
 1. Open the inline chat and then enter the following prompt:
 
@@ -252,7 +252,7 @@ Use the following steps to complete this section of the exercise:
     Update selection to include an option for the `CommonActions.SearchBooks` action. Use the letter "b" and the message "to check for book availability".
     ```
 
-    GitHub Copilot should suggest a code update that adds a new `if` block for the `SearchBooks` action.
+    GitHub Copilot should suggest a code update that adds a new **if** block for the **SearchBooks** action.
 
 1. Review the suggested update and then select **Accept**.
 
@@ -295,9 +295,9 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. Scroll up slightly to find and then select the `ReadInputOptions` method.
+1. Scroll up slightly to find and then select the **ReadInputOptions** method.
 
-    Once again, you need to add support for the new `CommonActions.SearchBooks` option. Include a case that handles the user selecting the `SearchBooks` action.
+    Once again, you need to add support for the new **CommonActions.SearchBooks** option. Include a case that handles the user selecting the **SearchBooks** action.
 
 1. Open the inline chat and then enter the following prompt:
 
@@ -305,7 +305,7 @@ Use the following steps to complete this section of the exercise:
     Update selection to include an option for the `CommonActions.SearchBooks` action.
     ```
 
-    GitHub Copilot should suggest an update that adds a new `case` that handles the user selecting the `SearchBooks` action.
+    GitHub Copilot should suggest an update that adds a new **case** that handles the user selecting the **SearchBooks** action.
 
 1. Review the suggested update and then select **Accept**.
 
@@ -345,12 +345,12 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-1. Scroll down to find and then select the `PatronDetails` method.
+1. Scroll down to find and then select the **PatronDetails** method.
 
     There are two things that you need to accomplish:
 
-    - You need to add `CommonActions.SearchBooks` to `options` before calling `ReadInputOptions`.
-    - You also need to add an `else if` to handle the `SearchBooks` action. The `else if` block should call a new method named `SearchBooks`.
+    - You need to add **CommonActions.SearchBooks** to **options** before calling **ReadInputOptions**.
+    - You also need to add an **else if** to handle the **SearchBooks** action. The **else if** block should call a new method named **SearchBooks**.
 
     You can address both requirements with the same prompt.
 
@@ -360,7 +360,7 @@ Use the following steps to complete this section of the exercise:
     Update selection to add `CommonActions.SearchBooks` to `options` before calling `ReadInputOptions`. Add an `else if` block to handle the `SearchBooks` action. The `else if` block should call a new method named `SearchBooks`.
     ```
 
-    GitHub Copilot should suggest a code update that adds `CommonActions.SearchBooks` to `options` before calling `ReadInputOptions`.
+    GitHub Copilot should suggest a code update that adds **CommonActions.SearchBooks** to **options** before calling **ReadInputOptions**.
 
 1. Review the suggested update and then select **Accept**.
 
@@ -421,11 +421,11 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    > **NOTE**: The code suggested by Inline chat may include stub code for the `SearchBooks` method. You can accept that code. You'll implement the `SearchBooks` method in the next section.
+    > **NOTE**: The code suggested by Inline chat may include stub code for the **SearchBooks** method. You can accept that code. You'll implement the **SearchBooks** method in the next section.
 
 ### Implement a SearchBooks method using the Chat view
 
-There's one step remaining to implement the "book availability" updates, create the `SearchBooks` method. The `SearchBooks` method will read a user provided book title, check if a book is available for loan, and display a message indicating the book's availability status. You'll use the Chat view to evaluate the requirements and implement the `SearchBooks` method.
+There's one step remaining to implement the "book availability" updates, create the **SearchBooks** method. The **SearchBooks** method will read a user provided book title, check if a book is available for loan, and display a message indicating the book's availability status. You'll use the Chat view to evaluate the requirements and implement the **SearchBooks** method.
 
 GitHub Copilot's Chat view provides a conversational and interactive environment that isn't available when using inline chat. You can use the Chat view to ask questions, request code suggestions, and get explanations for the code generated by GitHub Copilot. The Chat view supports the following three modes:
 
@@ -433,15 +433,15 @@ GitHub Copilot's Chat view provides a conversational and interactive environment
 - Edit mode: Edit mode is used to make changes to your code, such as refactoring or adding new features. Edit mode can make edits across multiple files in your project.
 - Agent mode: Agent mode is used to define a high-level task and to start an agentic code editing session to accomplish that task. In agent mode, Copilot autonomously plans the work needed and determines the relevant files and context. The agent can make changes to your code, run tests, and even deploy your application.
 
-You'll be u the Ask and Edit modes to implement the `SearchBooks` method.
+You'll be u the Ask and Edit modes to implement the **SearchBooks** method.
 
 Use the following steps to complete this section of the exercise:
 
-1. Take a minute to consider the process requirements for the `SearchBooks` method.
+1. Take a minute to consider the process requirements for the **SearchBooks** method.
 
     What's the process that the method needs to complete? What's the return type for this method? Does it require parameters?
 
-    The `SearchBooks` method should implement the following process:
+    The **SearchBooks** method should implement the following process:
 
     1. Prompt the user for a book title.
     1. Read the user provided book title.
@@ -449,14 +449,14 @@ Use the following steps to complete this section of the exercise:
     1. Display a message stating one of the following options:
 
         - "`book.title` is available for loan"
-        - "`book.title` is on loan to another patron. The return due date is `loan.DueDate`.
+        - "`book.title` is on loan to another patron. The return due date is `loan.DueDate`."
 
     To build the message options, your code will need to access the following JSON files:
 
-    - `Books.json` is needed to find the matching `Title` and `BookId`.
-    - `Loans.json` is needed to find the `ReturnDate` and `DueDate` for the matching `BookItemId`. The `BookItemId` is the same as the `BookId` in `Books.json`.
+    - **Books.json** is needed to find the matching **Title** and **BookId**.
+    - **Loans.json** is needed to find the **ReturnDate** and **DueDate** for the matching **BookItemId**. The **BookItemId** is the same as the **BookId** in **Books.json**.
 
-1. Ensure that you have the following `SearchBooks` method created in the ConsoleApp.cs file:
+1. Ensure that you have the following **SearchBooks** method created in the ConsoleApp.cs file:
 
     ```csharp
 
@@ -507,7 +507,7 @@ Use the following steps to complete this section of the exercise:
 
 1. In the code editor, to accept the suggested code, select **Keep**.
 
-1. Select the `SearchBooks` method.
+1. Select the **SearchBooks** method.
 
 1. Use drag-and-drop operations to add the following files to the Chat context:
 
@@ -606,7 +606,7 @@ Use the following steps to complete this section of the exercise:
     - JsonData.cs
     - JsonLoanRepository.cs
 
-1. Select the `SearchBooks` method.
+1. Select the **SearchBooks** method.
 
 1. Enter the following prompt:
 
@@ -622,7 +622,7 @@ Use the following steps to complete this section of the exercise:
 
     **ConsoleApp.cs**
 
-    Code updates that add the `JsonData` dependency to the `ConsoleApp` constructor can be found near the top of the ConsoleApp class.
+    Code updates that add the **JsonData** dependency to the **ConsoleApp** constructor can be found near the top of the ConsoleApp class.
 
     ```csharp
 
@@ -639,7 +639,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    Code updates that check if a book is available for loan can be found in the `SearchBooks` method.
+    Code updates that check if a book is available for loan can be found in the **SearchBooks** method.
 
     ```csharp
 
@@ -732,7 +732,7 @@ In this section of the exercise, you complete the following tasks:
 
 ### Test the "book availability" feature
 
-Manual testing can be used to verify that the new feature works as expected. Using a data source that can be verified is important. In this case, you use the `Books.json` and `Loans.json` files to verify that the new feature reports the availability status of a book correctly.
+Manual testing can be used to verify that the new feature works as expected. Using a data source that can be verified is important. In this case, you use the **Books.json** and **Loans.json** files to verify that the new feature reports the availability status of a book correctly.
 
 Use the following steps to complete this section of the exercise:
 
@@ -770,24 +770,24 @@ Use the following steps to complete this section of the exercise:
 
 1. Stop the debug session.
 
-1. Open the `Loans.json` file.
+1. Open the **Loans.json** file.
 
-    The `Loans.json` file is used to track the loan status of each book. You can use the `Loans.json` file to verify that the availability status of Book One and Book Two is correct.
+    The Loans.json file is used to track the loan status of each book. You can use the Loans.json file to verify that the availability status of Book One and Book Two is correct.
 
-    The updated `Loans.json` file should be located in either the `Library.Console\bin\Debug\net8.0\Json` folder or `Library.Console\Json` folder.
+    The updated Loans.json file should be located in either the **Library.Console\bin\Debug\net8.0\Json** folder or **Library.Console\Json** folder.
 
-    - If you're using the Visual Studio Code debugger to run the app, the updated `Loans.json` file should be located in the `Library.Console\bin\Debug\net8.0\Json` folder.
+    - If you're using the Visual Studio Code debugger to run the app, the updated Loans.json file should be located in the **Library.Console\bin\Debug\net8.0\Json** folder.
 
-    - If you're using a `dotnet run` command from the `AccelerateDevGHCopilot\src\Library.Console>` folder to run the app, the updated `Loans.json` file should be located in the `Library.Console\Json` folder.
+    - If you're using a **dotnet run** command from the **AccelerateDevGHCopilot\src\Library.Console** folder to run the app, the updated Loans.json file should be located in the **Library.Console\Json** folder.
 
-1. Verify that loan ID 37 and loan ID 46 are both for Book One (`"BookItemId": 1`).
+1. Verify that loan ID 37 and loan ID 46 are both for Book One (**"BookItemId": 1**).
 
-    - Loan ID 37 should have a `ReturnDate` value of `2024-01-17`, indicating that the book was returned on that date.
-    - Loan ID 46 should have a `ReturnDate` value `null`, indicating that the book is currently on loan (loaned on `2024-07-09` but not returned).
+    - Loan ID 37 should have a **ReturnDate** value of **2024-01-17**, indicating that the book was returned on that date.
+    - Loan ID 46 should have a **ReturnDate** value **null**, indicating that the book is currently on loan (loaned on **2024-07-09** but not returned).
 
-    The `ReturnDate` value is used to determine whether the book is currently on loan. If the `ReturnDate` value is `null`, the book is currently on loan.
+    The **ReturnDate** value is used to determine whether the book is currently on loan. If the **ReturnDate** value is **null**, the book is currently on loan.
 
-1. Verify that loan ID 50 is for Book Three (`"BookItemId": 3`) and that the `ReturnDate` value is set to `2023-12-29`.
+1. Verify that loan ID 50 is for Book Three (**"BookItemId": 3**) and that the **ReturnDate** value is set to **2023-12-29**.
 
 ### Sync your changes with the remote repository
 
@@ -836,7 +836,7 @@ Use the following steps to complete this section of the exercise:
 
 1. If all checks pass and there are no conflicts with the base branch, select **Merge pull request**, and then select **Confirm merge**.
 
-    Notice that you can delete the `book-availability` branch after merging the changes. To delete the branch, select **Delete branch**.
+    Notice that you can delete the **book-availability** branch after merging the changes. To delete the branch, select **Delete branch**.
 
 1. Switch back to the Visual Studio Code window.
 

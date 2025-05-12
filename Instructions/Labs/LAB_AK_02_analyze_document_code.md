@@ -112,7 +112,7 @@ Use the following steps to complete this section of the exercise:
     @workspace describe this project
     ```
 
-    Use Chat participants, such as the `@workspace`, to scope your prompt to a specific domain. Chat participants are like domain experts who have a specialty that they can help you with. Use @workspace when you want GitHub Copilot to consider the structure of your project, how different parts of your code interact, or design patterns in your project.
+    Use Chat participants, such as the **@workspace**, to scope your prompt to a specific domain. Chat participants are like domain experts who have a specialty that they can help you with. Use @workspace when you want GitHub Copilot to consider the structure of your project, how different parts of your code interact, or design patterns in your project.
 
     To see a list of all available chat participants, type **@** in the chat prompt box.
 
@@ -338,7 +338,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Verify that the message "Book was successfully returned." is displayed.
 
-    The message "Book was successfully returned." should be followed by the book details. Returned books are marked with `Returned: True`.
+    The message "Book was successfully returned." should be followed by the book details. Returned books are marked with **Returned: True**.
 
 1. To begin a new search, type **s** and then press Enter.
 
@@ -346,7 +346,7 @@ Use the following steps to complete this section of the exercise:
 
 1. At the "Input Options" prompt, type **2** and then press Enter.
 
-1. Verify that first book loan is marked `Returned: True`.
+1. Verify that first book loan is marked **Returned: True**.
 
 1. At the "Input Options" prompt, type **q** and then press Enter.
 
@@ -365,7 +365,7 @@ You need a README file that includes the following sections:
 - **Usage**: Instructions on how to use the project, often including code examples.
 - **License**: The license that the project is under.
 
-In this section of the exercise, you'll use GitHub Copilot to create project documentation and add it to a `README.md` file.
+In this section of the exercise, you'll use GitHub Copilot to create project documentation and add it to a **README.md** file.
 
 Use the following steps to complete this section of the exercise:
 

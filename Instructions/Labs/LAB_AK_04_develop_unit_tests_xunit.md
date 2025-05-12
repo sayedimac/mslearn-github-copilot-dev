@@ -95,19 +95,19 @@ Use the following steps to complete this section of the exercise:
     - UnitTests\
       - ApplicationCore\
         - LoanService\
-          - `ExtendLoan.cs`
-          - `ReturnLoan.cs`
+          - **ExtendLoan.cs**
+          - **ReturnLoan.cs**
         - PatronService\
-          - `RenewMembership.cs`
+          - **RenewMembership.cs**
       - LoanFactory.cs
       - PatronFactory.cs
 
-    The test project structure mirrors and supports the `Services` portion of the `ApplicationCore` project.
+    The test project structure mirrors and supports the **Services** portion of the **ApplicationCore** project.
 
     - ApplicationCore\
       - Services\
-        - LoanService.cs: Contains the `ExtendLoan` and `ReturnLoan` methods.
-        - PatronService.cs: Contains the `RenewMembership` method.
+        - LoanService.cs: Contains the **ExtendLoan** and **ReturnLoan** methods.
+        - PatronService.cs: Contains the **RenewMembership** method.
 
 1. Open the Chat view.
 
@@ -143,38 +143,38 @@ Use the following steps to complete this section of the exercise:
     The unit testing approach in this workspace follows a structured and comprehensive methodology to ensure the correctness of the application's core business logic. Here's an overview of the approach:
     
     1. **Use of Test Factories**
-       - **Factories like `PatronFactory` and `LoanFactory`** are used to create test data. These factories provide reusable methods to generate consistent and meaningful test objects, such as patrons with specific membership statuses or loans with different states (e.g., returned, current, expired).
+       - Factories like PatronFactory and LoanFactory are used to create test data. These factories provide reusable methods to generate consistent and meaningful test objects, such as patrons with specific membership statuses or loans with different states (e.g., returned, current, expired).
        - This approach reduces boilerplate code in test cases and ensures that test data is consistent across different tests.
     
     2. **Mocking Dependencies**
-       - **NSubstitute** is used to mock dependencies like repositories (`IPatronRepository`, `ILoanRepository`). This allows tests to isolate the behavior of the services being tested without relying on actual database or external dependencies.
+       - **NSubstitute** is used to mock dependencies like repositories (IPatronRepository, ILoanRepository). This allows tests to isolate the behavior of the services being tested without relying on actual database or external dependencies.
        - Mocked methods are configured to return specific data or simulate certain behaviors, enabling precise control over test scenarios.
     
     3. **Service-Oriented Testing**
-       - Unit tests are focused on the core services (`PatronService` and `LoanService`), which encapsulate the business logic of the application.
+       - Unit tests are focused on the core services (PatronService and LoanService), which encapsulate the business logic of the application.
        - Each service method is tested for various scenarios, including success cases, edge cases, and error conditions.
     
     4. **Comprehensive Test Coverage**
        - Tests cover a wide range of scenarios for each service method:
-         - **`PatronService.RenewMembership`:**
+         - **PatronService.RenewMembership:**
            - Success cases (e.g., renewing with or without loans, expired membership).
            - Failure cases (e.g., patron not found, too early to renew, overdue loans).
-         - **`LoanService.ReturnLoan`:**
+         - **LoanService.ReturnLoan:**
            - Success cases (e.g., returning a loan with valid conditions).
            - Failure cases (e.g., loan not found, already returned).
-         - **`LoanService.ExtendLoan`:**
+         - **LoanService.ExtendLoan:**
            - Success cases (e.g., extending a valid loan).
            - Failure cases (e.g., loan not found, membership expired, loan already returned or expired).
        - This ensures that all possible paths in the business logic are tested.
     
     5. **Assertions for Expected Behavior**
        - Each test uses assertions to validate the expected outcomes:
-         - **Return values**: Ensuring the correct status is returned (e.g., `MembershipRenewalStatus.Success`, `LoanReturnStatus.LoanNotFound`).
-         - **State changes**: Verifying that object properties (e.g., `MembershipEnd`, `ReturnDate`, `DueDate`) are updated correctly.
+         - **Return values**: Ensuring the correct status is returned (e.g., MembershipRenewalStatus.Success, LoanReturnStatus.LoanNotFound).
+         - **State changes**: Verifying that object properties (e.g., MembershipEnd, ReturnDate, DueDate) are updated correctly.
          - **Error handling**: Ensuring exceptions or errors are handled gracefully.
     
     6. **Descriptive Test Names**
-       - Test methods use descriptive names and `Fact` attributes with `DisplayName` to clearly indicate the scenario being tested. This improves readability and makes it easier to understand the purpose of each test.
+       - Test methods use descriptive names and Fact attributes with DisplayName to clearly indicate the scenario being tested. This improves readability and makes it easier to understand the purpose of each test.
     
     7. **Focus on Business Logic**
        - Tests are designed to validate the business rules implemented in the services, such as:
@@ -183,10 +183,10 @@ Use the following steps to complete this section of the exercise:
        - This ensures that the core functionality of the application behaves as expected under various conditions.
     
     8. **Error Simulation**
-       - Tests simulate error scenarios, such as repository methods returning `null` or throwing exceptions, to verify that the services handle these cases appropriately.
+       - Tests simulate error scenarios, such as repository methods returning null or throwing exceptions, to verify that the services handle these cases appropriately.
     
     9. **Constants for Configurable Logic**
-       - Constants like `LoanService.ExtendByDays` are used in the logic and verified in tests to ensure consistency and maintainability.
+       - Constants like LoanService.ExtendByDays are used in the logic and verified in tests to ensure consistency and maintainability.
     
     **Summary**
     This workspace implements a robust unit testing strategy by leveraging test factories, mocking, and comprehensive test coverage. The focus is on isolating and validating the business logic of core services, ensuring that all possible scenarios are accounted for. This approach enhances the reliability and maintainability of the application.
@@ -205,7 +205,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to consider how you would extend the existing approach to test the Library.Infrastructure project.
 
-    The `Library.Infrastructure` project contains data access classes that interact with the file system to load and save data.
+    The Library.Infrastructure project contains data access classes that interact with the file system to load and save data.
 
 1. Add the following files to the Chat context:
 
@@ -228,7 +228,7 @@ Use the following steps to complete this section of the exercise:
     @workspace How can I extend the `UnitTests` project to begin testing methods in the `Library.Infrastructure` project? Provide a process overview.
     ```
 
-    This prompt asks GitHub Copilot to provide a process overview for extending the `UnitTests` project to begin testing methods in the `Library.Infrastructure` project. Several files are included in the prompt to provide context for the response.
+    This prompt asks GitHub Copilot to provide a process overview for extending the UnitTests project to begin testing methods in the Library.Infrastructure project. Several files are included in the prompt to provide context for the response.
 
 1. Take a minute to review the response from GitHub Copilot.
 
@@ -237,8 +237,8 @@ Use the following steps to complete this section of the exercise:
     ```markdown
     1. Add Project Reference:
 
-      - Open the `UnitTests.csproj` file located at `tests/UnitTests/UnitTests.csproj`.
-      - Add a reference to the `Library.Infrastructure` project.
+      - Open the UnitTests.csproj file located at tests/UnitTests/UnitTests.csproj.
+      - Add a reference to the Library.Infrastructure project.
 
     2. Identify methods to test:
 
