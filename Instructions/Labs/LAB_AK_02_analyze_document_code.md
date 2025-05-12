@@ -40,7 +40,7 @@ Use the following steps to set up the library application:
 
 1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - Analyze and document code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM2.zip)
 
-    The zip file is named **AZ2007LabAppM2.zip**.
+    The zip file is named AZ2007LabAppM2.zip.
 
 1. Extract the files from the **AZ2007LabAppM2.zip** file.
 
@@ -64,7 +64,7 @@ Use the following steps to set up the library application:
 
     1. Navigate to the Windows Desktop folder, select **AccelerateDevGHCopilot** and then select **Select Folder**.
 
-1. In the Visual Studio Code SOLUTION EXPLORER view, verify the following solution structure:
+1. In the Visual Studio Code SOLUTION EXPLORER view, expand the solution to show the following solution structure:
 
     - AccelerateDevGHCopilot\
         - src\
@@ -82,7 +82,7 @@ Use the following steps to set up the library application:
 
 ## Use GitHub Copilot to explain the library application codebase
 
-It's important to understand an application's architecture and key features before documenting the project. GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution, file, and code line levels.
+GitHub Copilot can help you to understand an unfamiliar codebase by generating explanations at the solution, file, and code line levels.
 
 ### Analyze code using prompts in the Chat view
 
@@ -94,7 +94,7 @@ GitHub Copilot's Chat view includes a chat-based interface that allows you to in
 
 Use the following steps to complete this section of the exercise:
 
-1. Ensure that the **AccelerateDevGHCopilot** solution is open in Visual Studio Code.
+1. Ensure that the AccelerateDevGHCopilot solution is open in Visual Studio Code.
 
 1. Open GitHub Copilot's Chat view.
 
@@ -112,25 +112,25 @@ Use the following steps to complete this section of the exercise:
     @workspace describe this project
     ```
 
-    Use Chat participants, such as the **@workspace**, to scope your prompt to a specific domain. Chat participants are like domain experts who have a specialty that they can help you with. Use @workspace when you want GitHub Copilot to consider the structure of your project, how different parts of your code interact, or design patterns in your project.
+    Use Chat participants, such as the **@workspace**, to scope your prompt to a specific domain. Chat participants work like domain experts who can help you in their specialized areas. Use **@workspace** when you want GitHub Copilot to consider the structure of your project, how different parts of your code interact, or design patterns in your project.
 
     To see a list of all available chat participants, type **@** in the chat prompt box.
 
 1. Take a few minutes to compare GitHub Copilot's response with the actual project files.
 
-    You should see a response similar to the following description:
+    You should see a response that's similar to the following description:
 
     ```markdown
 
     This project is a .NET solution named AccelerateDevGHCopilot that appears to be a library and application framework with a modular structure. It is organized into three main components under the *src* directory and a unit testing project under the *tests* directory. Here's a breakdown:
     
-    ## Solution Structure
+    **Solution Structure**
 
     - Solution File: AccelerateDevGHCopilot.sln
 
         - Contains references to the projects in the solution.
 
-    ## Projects
+    **Projects**
 
     1. Library.ApplicationCore:
     
@@ -158,7 +158,7 @@ Use the following steps to complete this section of the exercise:
         - Uses testing frameworks like xUnit, NSubstitute, and coverlet.collector.
         - Targets .NET 8.0.
 
-    ## Key Features
+    **Key Features**
 
     - Dependency Injection: The use of Microsoft.Extensions.DependencyInjection suggests that the project employs dependency injection for managing dependencies.
     - Configuration Management: The use of Microsoft.Extensions.Configuration and Microsoft.Extensions.Configuration.Json indicates support for configuration management, likely using JSON files.
@@ -169,11 +169,11 @@ Use the following steps to complete this section of the exercise:
 
 1. Use the SOLUTION EXPLORER view to expand the project folders.
 
-1. Locate and open the **ConsoleApp.cs** file.
+1. Locate and then open the **ConsoleApp.cs** file.
 
     The ConsoleApp.cs file is located in the **src/Library.Console** folder.
 
-1. Take a minute to examine the code file.
+1. Take a moment to review the code file.
 
 1. Enter a prompt in the Chat view that generates a description of the **ConsoleApp** class.
 
@@ -183,7 +183,7 @@ Use the following steps to complete this section of the exercise:
     @workspace #class describe the ConsoleApp class
     ```
 
-    Use chat variables, such as **#class**, to include specific context in your prompt. To see a list of all available chat variables, type **#** in the chat prompt box.
+    Use chat variables, such as **#class**, to include specific context in your prompt. To see a list of the chat variables, type **#** in the chat prompt box.
 
     > **NOTE**: GitHub Copilot considers your chat history and the code files you have open in Visual Studio Code when constructing a context for your prompt and generating a response.
 
@@ -195,7 +195,7 @@ Use the following steps to complete this section of the exercise:
 
     The ConsoleApp class in ConsoleApp.cs is responsible for managing the console-based user interface of the library management system. It handles user interactions, processes user inputs, and coordinates actions with the underlying services and repositories.
 
-    ### Fields
+    **Fields**
 
     - _currentState: Tracks the current state of the console application.
     - matchingPatrons: A list of patrons that match a search query.
@@ -206,11 +206,11 @@ Use the following steps to complete this section of the exercise:
     - _loanService: An instance of ILoanService for performing loan-related operations.
     - _patronService: An instance of IPatronService for performing patron-related operations.
 
-    ### Constructor
+    **Constructor**
 
     - ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository): Initializes the ConsoleApp with the provided services and repositories.
 
-    ### Methods
+    **Methods**
 
     - Run(): The main entry point for running the console application.
     - PatronSearch(): Handles the logic for searching patrons.
@@ -292,9 +292,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a couple minutes to examine the JSON data files that are used to simulate library records.
 
-    The JSON data files are located in the `src/Library.Console/Json` folder.
+    The JSON data files are located in the **src/Library.Console/Json** folder.
 
-    The data files use ID properties to link entities. For example, a `Loan` object has a `PatronId` property that links to a `Patron` object with the same ID. The JSON files contain data for authors, books, book items, patrons, and loans.
+    The data files use ID properties to link entities. For example, a **Loan** object has a **PatronId** property that links to a **Patron** object with the same ID. The JSON files contain data for authors, books, book items, patrons, and loans.
 
     > **NOTE**: Notice that Author names, book titles, and patron names have been anonymized for the purposes of this guided project.
 
