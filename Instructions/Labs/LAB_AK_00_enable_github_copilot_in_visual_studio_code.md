@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Enable GitHub Copilot in Visual Studio Code'
+    title: 'Prepare - Enable GitHub Copilot in Visual Studio Code'
     description: 'Complete the steps required to enable GitHub Copilot in Visual Studio Code.'
 ---
 
