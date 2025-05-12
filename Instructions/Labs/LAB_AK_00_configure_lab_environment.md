@@ -1,12 +1,12 @@
 ---
 lab:
-    title: 'Prepare - Configure your lab environment for GitHub Copilot exercises'
-    description: 'Review lab requirements and configure the resources before launching exercises that use GitHub Copilot in Visual Studio Code.'
+    title: 'Configure your lab environment for GitHub Copilot exercises'
+    description: 'Review lab requirements and configure resources before starting GitHub Copilot exercises.'
 ---
 
 # Configure your lab environment for GitHub Copilot exercises
 
-Your lab environment (either a hosted environment or a local PC) must be configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is required.
+Your lab environment must be configured for C# development using Visual Studio Code and GitHub Copilot. Access to a GitHub account with GitHub Copilot enabled is required.
 
 Complete the following steps to verify that your lab environment is configured correctly:
 
