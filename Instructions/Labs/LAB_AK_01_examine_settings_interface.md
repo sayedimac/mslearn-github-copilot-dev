@@ -10,15 +10,15 @@ Visual Studio Code provides a seamless and customizable GitHub Copilot experienc
 
 This exercise should take approximately **25** minutes to complete.
 
-> **IMPORTANT**: If you don't have a GitHub account, you can <a href="https://go.microsoft.com/fwlink/?linkid=2320148" target="_blank">sign up</a> for a free individual account and use GitHub Copilot Free to complete this exercise. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within your lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+> **IMPORTANT**: If you don't have a GitHub account, you can <a href="https://go.microsoft.com/fwlink/?linkid=2320148" target="_blank">sign up</a> for a free individual account and use a GitHub Copilot Free plan to complete this exercise. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within your lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
 
 ## Before you start
 
-Your lab environment must include the following: Git 2.48 or later, .NET 9.0 or later, Visual Studio Code with the C# Dev Kit extension, and access to a GitHub account that has GitHub Copilot enabled.
+Your lab environment must include the following: Git 2.48 or later, .NET SDK 9.0 or later, Visual Studio Code with the C# Dev Kit extension, and access to a GitHub account with GitHub Copilot enabled.
 
 - If you're using your local PC and need help configuring the lab environment, use the following instructions: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure your lab environment resources</a>.
 
-- If you're using a hosted lab environment, or you need help enabling GitHub Copilot within Visual Studio Code, use the following instructions: <a href="https://go.microsoft.com/fwlink/?linkid=2320148" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
+- If you're using a hosted lab environment, or you need help enabling GitHub Copilot within Visual Studio Code, use the following instructions: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
 
 ## Exercise scenario
 
