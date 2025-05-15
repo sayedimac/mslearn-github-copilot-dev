@@ -161,11 +161,11 @@ Use the following steps to complete this section of the exercise:
 
     - Ask Copilot: The Ask Copilot text box is where you enter your prompts. You can use the Ask Copilot text box to ask GitHub Copilot questions about your codebase, request code suggestions, or ask for help with specific tasks.
 
-    - Chat with Extension button: The Chat with Extension button is located below the Chat Mode button. GitHub Copilot Extensions are a type of GitHub App that integrates the power of external tools into GitHub Copilot Chat. You can use this button to select from a list of Copilot Extensions. The default extensions provide a combination of Chat participants and Slash commands that provide context for your prompts.
+    - Chat with Extension button: The Chat with Extension button is located below the Ask Copilot textbox. GitHub Copilot Extensions are a type of GitHub App that integrates the power of external tools into GitHub Copilot Chat. You can use this button to select from a list of Copilot Extensions. The default extensions provide a combination of Chat participants and Slash commands that provide context for your prompts.
 
         > **NOTE**: Anyone with a Copilot Pro, Copilot Pro+, or Copilot Free plan can use Copilot Extensions. For organizations or enterprises with a Copilot Business or Copilot Enterprise plan, organization owners and enterprise administrators can grant access to Copilot Extensions. Copilot Extensions is not available for GitHub Enterprise Server.
 
-    - Start Voice Chat button: The Start Voice Chat button is located to the right of the Chat with Extension button. You can use this button to enable or disable voice interactions with GitHub Copilot. When voice interactions are enabled, you can use your voice to ask GitHub Copilot questions or request code suggestions.
+    - Start Voice Chat button: The Start Voice Chat button is located below the Ask Copilot textbox. You can use this button to enable or disable voice interactions with GitHub Copilot. When voice interactions are enabled, you can use your voice to ask GitHub Copilot questions or request code suggestions.
 
     - Chat Mode menu: The Chat Mode dropdown menu is located to the right of the Start Voice Chat button. Based on your specific needs, you can choose between different modes of chat:
 
