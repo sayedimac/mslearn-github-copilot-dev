@@ -10,7 +10,7 @@ GitHub Copilot can help you understand and document a codebase by generating exp
 
 This exercise should take approximately **20** minutes to complete.
 
-> **IMPORTANT**: If you don't have a GitHub account, you can <a href="https://go.microsoft.com/fwlink/?linkid=2320148" target="_blank">sign up</a> for a free individual account and use a GitHub Copilot Free plan to complete this exercise. If you have access to a GitHub Copilot Pro, GitHub Copilot Business, or GitHub Copilot Enterprise subscription from within your lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
+> **IMPORTANT**: If you don't have a GitHub account, you can <a href="https://go.microsoft.com/fwlink/?linkid=2320148" target="_blank">sign up</a> for a free individual account and use a GitHub Copilot Free plan to complete this exercise. If you have access to a GitHub Copilot Pro, Pro+, Business, or Enterprise subscription from within your lab environment, you can use your existing GitHub Copilot subscription to complete this exercise.
 
 ## Before you start
 
@@ -37,6 +37,12 @@ This exercise includes the following tasks:
 Your colleague has developed an initial version of the library application and has made it available as a .zip file. You need to download the zip file, extract the code files, and then open the solution in Visual Studio Code.
 
 Use the following steps to set up the library application:
+
+1. Open a command terminal and then run the following command:
+
+    ```bash
+    dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    ```
 
 1. Open a browser window in your lab environment.
 
