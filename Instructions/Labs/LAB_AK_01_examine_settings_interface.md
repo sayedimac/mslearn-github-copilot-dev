@@ -87,7 +87,7 @@ Use the following steps to complete this section of the exercise:
 
     - **GitHub.Copilot.Enable**: Enable or disable Copilot completions for specified languages.
 
-        The term *languages* refers to programming languages, but accommodates other file formats as well. The languages are specified using a list of languages and a value of **true** or **false** to enable or disable GitHub Copilot for each language. By default, GitHub Copilot is enabled for all languages. This setting is specified with the wildcard character `*` on the first row and the value **true**. The subsequent rows specify languages for which GitHub Copilot is enabled or disabled. For example, GitHub Copilot is enabled for **C#**, **JavaScript**, and **Python** and disabled for **Plaintext** and **Markdown**.
+        The term *languages* refers to programming languages, but accommodates other file formats as well. The languages are specified using a list of languages and a value of **true** or **false** to enable or disable GitHub Copilot for each language. By default, GitHub Copilot is enabled for all languages. This setting is specified with the wildcard character **\*** on the first row and the value **true**. The subsequent rows specify languages for which GitHub Copilot is enabled or disabled. For example, GitHub Copilot is enabled for **C#**, **JavaScript**, and **Python** and disabled for **Plaintext** and **Markdown**.
 
         ![Screenshot showing the enable languages setting open in the editor.](./Media/m01-github-copilot-extension-settings-enable-languages.png)
 
@@ -120,6 +120,8 @@ Use the following steps to complete this section of the exercise:
 1. Take a few minutes to review the settings for GitHub Copilot Chat.
 
     We recommend keeping the default settings during this training. This helps to ensure that you have the expected experience when working on the modules in this learning path. When you have completed the training, you can experiment with these settings to customize your experience with GitHub Copilot and Copilot Chat.
+
+1. Close the settings tab.
 
 ## Explore the GitHub Copilot user interface in Visual Studio Code
 
@@ -260,7 +262,7 @@ The Inline Chat interface is designed for code interactions directly within the 
 1. Open the Chat menu and notice the following:
 
     - The Editor Inline Chat menu option is now enabled.
-    - You can open an Inline Chat session using the **Ctrl+I** keyboard shortcut.
+    - The **Ctrl+I** keyboard shortcut can be used to open an Inline Chat session.
 
 1. In the code editor, select the following code:
 
@@ -301,7 +303,7 @@ The Inline Chat interface is designed for code interactions directly within the 
 
     - Inline Chat generates a suggestion by updating the code directly.
     - You can select **Accept** to implement the suggested update, select **Close** to reject the selected update, or select **Rerun** to generate a new suggestion.
-    - There is also a **More Action** menu that provides additional options for managing the Inline Chat session, and you can rate the suggestion as "helpful" or "unhelpful".
+    - There is also a **More Actions** menu that provides additional options for managing the Inline Chat session, and you can rate the suggestion as "helpful" or "unhelpful".
 
 1. To accept the suggested code update, select **Accept**.
 
@@ -376,7 +378,7 @@ GitHub Copilot provides code completion suggestions based on the context of the 
 
 1. To generate a code completion suggestion, press **Enter**.
 
-    GitHub Copilot generates a code completion suggestion based on the context of the code in the editor. In this case, GitHub Copilot suggests a new Console.WriteLine statement that displays an age for GitHub Copilot.
+    GitHub Copilot generates a code completion suggestion based on the context of the code in the editor. In this case, GitHub Copilot suggests a new Console.WriteLine statement that's related to generating equations    .
 
     ![Screenshot showing a code completion suggestion in the editor.](./Media/m01-github-copilot-code-completion-1.png)
 
