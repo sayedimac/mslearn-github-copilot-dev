@@ -16,9 +16,9 @@ This exercise should take approximately **30** minutes to complete.
 
 Your lab environment must include the following: Git 2.48 or later, .NET SDK 9.0 or later, Visual Studio Code with the C# Dev Kit extension, and access to a GitHub account with GitHub Copilot enabled.
 
-- If you're using your local PC and need help configuring the lab environment, use the following instructions: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure your lab environment resources</a>.
+- For help configuring your local PC as your lab environment, open the following link in a browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure your lab environment resources</a>.
 
-- If you're using a hosted lab environment, or you need help enabling GitHub Copilot within Visual Studio Code, use the following instructions: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
+- For help enabling your GitHub Copilot subscription in Visual Studio Code (required for the hosted lab environment), open the following link in a browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
 
 ## Exercise scenario
 
