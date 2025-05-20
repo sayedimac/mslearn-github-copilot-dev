@@ -50,7 +50,15 @@ You need to download the existing application, extract the code files, and then 
 
 Use the following steps to set up the library application:
 
-1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - refactor existing code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM5.zip)
+1. Open a command terminal and then run the following command:
+
+    ```bash
+    dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    ```
+
+1. Open a browser window in your lab environment.
+
+1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - refactor existing code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM5.zip)
 
     The zip file is named **AZ2007LabAppM5.zip**.
 
@@ -195,7 +203,9 @@ Use the following steps to complete this section of the exercise:
 1. Enter the following prompt:
 
     ```plaintext
+
     @workspace I need to refactor the `EnumHelper` class and remove any code that uses reflection. Use static dictionaries to supply enum description attributes. Use a separate dictionary for each enum. The dictionaries should use values from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files. Explain how to update the EnumHelper class using dictionaries and show me the updated code.
+
     ```
 
     When writing any prompt, clarity and context are important. Using chat participants, slash commands, and chat variables helps to define context in a way that GitHub Copilot can understand.
@@ -313,7 +323,9 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 1. Enter the following prompt:
 
     ```plaintext
+
     @workspace I need to refactor the `EnumHelper` class and remove any code that uses reflection. Use static dictionaries to supply enum description attributes. Use a separate dictionary for each enum. The dictionaries should use values from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files.
+
     ```
 
     This prompt tells GitHub Copilot to refactor the `EnumHelper` class using dictionaries rather than reflection to assign enum description attributes. It specifies that a separate dictionary should be used for each enum, and that the enum values should be sourced from specific files.
@@ -325,7 +337,9 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
     You can open each of the enum files to verify that the enum values in the dictionaries are correct. If you find discrepancies, have GitHub Copilot update the dictionaries for each enum individually. For example, you can use the following prompt for the `LoanExtensionStatus` enum:
 
     ```plaintext
+
     @workspace Use the description values in LoanExtensionStatus.cs to update the LoanExtensionStatus dictionary in the EnumHelper class. Provide the updated code for the LoanExtensionStatus dictionary in the EnumHelper class.
+
     ```
 
 1. In the Chat view, to accept all updates, select **Keep**.
@@ -504,19 +518,25 @@ Use the following steps to complete this section of the exercise:
     For the `GetPopulatedLoan` method:
 
     ```plaintext
+
     #selection refactor selection to `return new Loan` using LINQ. Use `GetPopulatedBookItem` for the `BookItem` property. Use `Single` for BookItem and Patron properties.
+
     ```
 
     For the `GetPopulatedBookItem` method:
 
     ```plaintext
+
     #selection refactor selection to `return new BookItem` using LINQ. Use `GetPopulatedBook` and `Single` for the `BookItem` property.
+
     ```
 
     For the `GetPopulatedBook` method:
 
     ```plaintext
+
     #selection refactor selection to `return new Book` using LINQ. Use `Where` and `Select` for `Author` property. Use `First` author.
+
     ```
 
 1. After accepting the suggested updates, take a minute to review your code changes.
@@ -587,6 +607,7 @@ Use the following steps to complete this section of the exercise:
     For example, the explanation might look like this:
 
     ```plaintext
+
     The active selection is a C# code snippet that assigns a value to the Author property. This value is derived from a collection of Author objects named Authors. The code uses LINQ (Language Integrated Query) to filter and transform the data within this collection.
     
     First, the Authors! expression uses the null-forgiving operator (!) to indicate that Authors is not null, even if the compiler might think otherwise. This is a way to suppress nullable warnings. The Where method is then called on the Authors collection to filter the elements. The lambda expression a => a.Id == b.AuthorId is used to find all Author objects where the Id matches the AuthorId property of another object b.
@@ -596,6 +617,7 @@ Use the following steps to complete this section of the exercise:
     Finally, the First method is called to retrieve the first element from the resulting sequence. This means that the Author property will be assigned the first Author object that matches the filter criteria and has been projected into a new Author instance.
     
     This approach ensures that the Author property is set to a new Author object with the same Id and Name as the first matching Author in the Authors collection.
+
     ```
 
 1. Build your solution to ensure that there are no errors.
@@ -714,7 +736,9 @@ Use the following steps to complete this section of the exercise:
     For example, enter the following prompt:
 
     ```plaintext
+
     refactor selection using LINQ. find existing loan in `_jsonData.Loans!. replace existing loan.
+
     ```
 
 1. Take a minute to review the suggested update.
@@ -722,6 +746,7 @@ Use the following steps to complete this section of the exercise:
     The suggested update should look similar to the following code:
 
     ```csharp
+
     public async Task UpdateLoan(Loan loan)
     {
         Loan? existingLoan = _jsonData.Loans!.FirstOrDefault(l => l.Id == loan.Id);
@@ -739,6 +764,7 @@ Use the following steps to complete this section of the exercise:
             await _jsonData.LoadData();
         }
     }
+
     ```
 
     The updated code uses LINQ to find the existing loan in the loans collection. It then updates the existing loan with the new loan data. The method then saves the updated loans collection and reloads the data. This approach ensures that the loan data is updated correctly and that the changes are persisted to the data store.
@@ -746,6 +772,7 @@ Use the following steps to complete this section of the exercise:
     You can also add the code to ensure the data is loaded before the method is executed:
 
     ```csharp
+
     public async Task UpdateLoan(Loan loan)
     {
         await _jsonData.EnsureDataLoaded();
@@ -765,6 +792,8 @@ Use the following steps to complete this section of the exercise:
             await _jsonData.LoadData();
         }
     }
+
+    ```
 
 1. To accept the updated UpdateLoan method, select **Keep**.
 
@@ -814,6 +843,7 @@ Use the following steps to complete this section of the exercise:
 
         return searchResults;
     }
+
     ```
 
     Notice that the `SearchPatrons` method uses a foreach loop to iterate over the patrons and find matches based on the `searchInput` string. The method then sorts the results by name and returns a list of populated patrons.
@@ -821,6 +851,7 @@ Use the following steps to complete this section of the exercise:
     The `GetPatron` method is designed to return the patron matching the specified `id`.
 
     ```csharp
+
     public async Task<Patron?> GetPatron(int id)
     {
         await _jsonData.EnsureDataLoaded();
@@ -835,6 +866,7 @@ Use the following steps to complete this section of the exercise:
         }
         return null;
     }
+
     ```
 
     Notice that the `GetPatron` method uses a foreach loop to iterate over the patrons and find a match based on the `id` parameter. The method then returns the populated patron object.
@@ -867,6 +899,7 @@ Use the following steps to complete this section of the exercise:
             await _jsonData.LoadData();
         }
     }
+
     ```
 
     Notice that the `UpdatePatron` method uses a foreach loop to iterate over the patrons and find a match based on the `id` parameter. The method then updates the existing patron with the new data and saves the updated patrons collection.
@@ -886,7 +919,9 @@ Use the following steps to complete this section of the exercise:
 1. To assign the agent task, enter the following prompt:
 
     ```plaintext
+
     Review the LINQ code used in the JsonData and JsonLoanRepository classes. Notice how Where, Select, and FirstOrDefault are used. Refactor the methods in the JsonPatronRepository class, replacing foreach loops with LINQ queries that produce the same result as the original foreach code. Use OrderBy to preserve sorting in original foreach code. Use ! to suppress nullability warnings when accessing collections.
+
     ```
 
     This prompt tells the agent to refactor the `JsonPatronRepository` class. It specifies that the foreach loops should be replaced with LINQ queries that produce the same result as the original foreach code. It also specifies that `OrderBy` should be used to preserve sorting in the original foreach code, and that `!` should be used to suppress nullability warnings when accessing collections.

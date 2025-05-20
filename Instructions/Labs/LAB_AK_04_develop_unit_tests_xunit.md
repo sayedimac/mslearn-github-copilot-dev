@@ -40,7 +40,15 @@ You need to download the existing application, extract the code files, and then 
 
 Use the following steps to set up the library application:
 
-1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - develop unit tests](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM4.zip)
+1. Open a command terminal and then run the following command:
+
+    ```bash
+    dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    ```
+
+1. Open a browser window in your lab environment.
+
+1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - develop unit tests](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM4.zip)
 
     The zip file is named **AZ2007LabAppM4.zip**.
 
@@ -235,6 +243,7 @@ Use the following steps to complete this section of the exercise:
     You should see an explanation that's similar to the following example:
 
     ```markdown
+
     1. Add Project Reference:
 
       - Open the UnitTests.csproj file located at tests/UnitTests/UnitTests.csproj.
@@ -284,7 +293,9 @@ Use the following steps to complete this section of the exercise:
 1. To start an automated task that creates a test class for the JsonLoanRepository.GetLoan method, enter the following prompt:
 
     ```plaintext
+
     Add `Infrastructure\JsonLoanRepository` folders to the UnitTests project and then create a class file named `GetLoan.cs` in the `JsonLoanRepository` folder. Add a reference to the Library.Infrastructure project inside UnitTests.csproj.
+
     ```
 
     This prompt asks GitHub Copilot to create a new folder structure and class file in the UnitTests project.
@@ -432,7 +443,9 @@ Use the following steps to complete this section of the exercise:
 1. Enter the following prompt:
 
     ```plaintext
+
     @workspace Create fields and a class constructor for the `GetLoan.cs` file. The class will be used to create unit tests for the GetLoan method in the `JsonLoanRepository.cs` file. Create the following private readonly fields: `_mockLoanRepository`, `_jsonLoanRepository`, `_configuration`, and `_jsonData`. Instantiate the fields in the `GetLoanTest` constructor. Use `ConfigurationBuilder` to create a `_configuration` object that can be used to instantiate the JsonData object.
+
     ```
 
     This prompt asks GitHub Copilot to suggest fields and a class constructor.

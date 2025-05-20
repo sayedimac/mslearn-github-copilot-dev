@@ -55,7 +55,15 @@ You need to download the existing application, extract the code files, and then 
 
 Use the following steps to set up the library application:
 
-1. To download a zip file containing the library application, select the following URL: [GitHub Copilot lab - develop code features](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM3.zip)
+1. Open a command terminal and then run the following command:
+
+    ```bash
+    dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    ```
+
+1. Open a browser window in your lab environment.
+
+1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - develop code features](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM3.zip)
 
     The zip file is named **AZ2007LabAppM3.zip**.
 
