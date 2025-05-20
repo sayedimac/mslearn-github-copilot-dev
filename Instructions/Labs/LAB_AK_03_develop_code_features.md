@@ -55,10 +55,28 @@ You need to download the existing application, extract the code files, and then 
 
 Use the following steps to set up the library application:
 
-1. Open a command terminal and then run the following command:
+1. Open a command terminal and then run the following commands:
+
+    To ensure that Visual Studio Code is configured to use the correct version of .NET, run the following command:
 
     ```bash
+
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+
+    ```
+
+    To ensure that Git is configured to use your name and email address, update the following commands with your information, and then run the commands:
+
+    ```bash
+
+    git config --global user.name "John Doe"
+
+    ```
+
+    ```bash
+
+    git config --global user.email johndoe@example.com
+
     ```
 
 1. Open a browser window in your lab environment.
