@@ -87,7 +87,7 @@ Use the following steps to set up the library application:
 
 1. Open a browser window in your lab environment.
 
-1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - develop code features](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM3.zip)
+1. To download a zip file containing the library application, paste the following URL into your browser's address bar: [GitHub Copilot lab - develop code features](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM3.zip)
 
     The zip file is named **AZ2007LabAppM3.zip**.
 
@@ -151,7 +151,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Select **Publish to GitHub**.
 
-1. Name for the repository **AccelerateDevGHCopilot** and then select **Publish to GitHub private repository**.
+1. Name for the repository **AccelerateDevGHCopilot**.
 
     > **NOTE**: If you're not signed in to GitHub in Visual Studio Code, you'll be prompted to sign in. Once you're signed in, authorize Visual Studio Code with the requested permissions.
 
@@ -162,7 +162,7 @@ Use the following steps to complete this section of the exercise:
     1. Select **Allow**, and then follow the prompts to sign in with the GitHub account that you're using for this exercise.
     1. Reselect **Publish to GitHub**.
 
-1. Select **Publish to GitHub public repository**.
+1. Select **Publish to GitHub private repository**.
 
 1. Notice that Visual Studio Code displays a status messages during the publish process.
 
@@ -465,7 +465,7 @@ GitHub Copilot's Chat view provides a conversational and interactive environment
 - Edit mode: Edit mode is used to make changes to your code, such as refactoring or adding new features. Edit mode can make edits across multiple files in your project.
 - Agent mode: Agent mode is used to define a high-level task and to start an agentic code editing session to accomplish that task. In agent mode, Copilot autonomously plans the work needed and determines the relevant files and context. The agent can make changes to your code, run tests, and even deploy your application.
 
-You'll be u the Ask and Edit modes to implement the **SearchBooks** method.
+You'll be using the Ask and Edit modes to implement the **SearchBooks** method.
 
 Use the following steps to complete this section of the exercise:
 
@@ -569,11 +569,9 @@ Use the following steps to complete this section of the exercise:
     - The SearchBooks method must be updated with logic that determines the availability of the book title and displays an appropriate message. The suggested code uses LINQ queries to check the loan status.
     - The Program.cs file must be updated to pass the JsonData object to the ConsoleApp class.
 
-    The final section of the response should look similar to the following explanation:
+    The response should include the following information:
 
     ```plaintext
-
-    Explanation of Changes
 
     1. Dependency Injection:
     

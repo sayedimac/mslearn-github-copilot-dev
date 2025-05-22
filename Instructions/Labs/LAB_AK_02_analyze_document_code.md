@@ -56,7 +56,7 @@ Use the following steps to set up the library application:
 
 1. Open a browser window in your lab environment.
 
-1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - Analyze and document code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM2.zip)
+1. To download a zip file containing the library application, paste the following URL into your browser's address bar: [GitHub Copilot lab - Analyze and document code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM2.zip)
 
     The zip file named AZ2007LabAppM2.zip will be downloaded to your lab environment.
 

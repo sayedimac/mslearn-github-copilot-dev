@@ -74,7 +74,7 @@ Use the following steps to set up the library application:
 
 1. Open a browser window in your lab environment.
 
-1. To download a zip file containing the library application, navigate to the following URL: [GitHub Copilot lab - refactor existing code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM5.zip)
+1. To download a zip file containing the library application, paste the following URL into your browser's address bar: [GitHub Copilot lab - refactor existing code](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/AZ2007LabAppM5.zip)
 
     The zip file is named **AZ2007LabAppM5.zip**.
 
