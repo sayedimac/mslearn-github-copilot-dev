@@ -155,16 +155,9 @@ Use the following steps to complete this section of the exercise:
 
     > **NOTE**: If you're not signed in to GitHub in Visual Studio Code, you'll be prompted to sign in. Once you're signed in, authorize Visual Studio Code with the requested permissions.
 
-1. In the Source Control view, enter a commit message, such as "Initial commit", and then select **Publish Branch**.
-
-    If you're prompted to allow a GitHub sign-in:
-
-    1. Select **Allow**, and then follow the prompts to sign in with the GitHub account that you're using for this exercise.
-    1. Reselect **Publish to GitHub**.
-
 1. Select **Publish to GitHub private repository**.
 
-1. Notice that Visual Studio Code displays a status messages during the publish process.
+1. Notice that Visual Studio Code displays status messages during the publish process.
 
     When the publish process is finished, you'll see a message informing you that your code was successfully published to the GitHub repository that you specified.
 
@@ -607,7 +600,7 @@ Use the following steps to complete this section of the exercise:
 
     ```plaintext
 
-    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (i.e., a loan with a null ReturnDate) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs.
+    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (loan.ReturnDate == null) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs.
 
     ```
 
@@ -615,7 +608,7 @@ Use the following steps to complete this section of the exercise:
 
     ```plaintext
 
-    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (i.e., a loan with a null ReturnDate) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs. If the book has been returned, display a message stating "`book.title` is available for loan". If the book is on loan, display a message stating "`book.title` is on loan to another patron. The return due date is `loan.DueDate`".
+    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (loan.ReturnDate == null) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs. If the book has been returned, display a message stating "`book.title` is available for loan". If the book is on loan, display a message stating "`book.title` is on loan to another patron. The return due date is `loan.DueDate`".
 
     ```
 
@@ -642,7 +635,7 @@ Use the following steps to complete this section of the exercise:
 
     ```plaintext
 
-    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (i.e., a loan with a null ReturnDate) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs. If the book has been returned, display a message stating "`book.title` is available for loan". If the book is on loan, display a message stating "`book.title` is on loan to another patron. The return due date is `loan.DueDate`".
+    Add JsonData as a dependency to the ConsoleApp constructor to access the JSON data files. Use FirstOrDefault to find a book in Books.json that matches the user-supplied title (case-insensitive). Retrieve the corresponding BookItem using the BookId from BookItems.json. Check Loans.json for an active loan (loan.ReturnDate == null) for the BookItem. Display whether the book is available for loan or currently on loan with the due date. Ensure that JsonData is registered in the dependency injection container in Program.cs. If the book has been returned, display a message stating "`book.title` is available for loan". If the book is on loan, display a message stating "`book.title` is on loan to another patron. The return due date is `loan.DueDate`".
 
     ```
 
@@ -726,6 +719,12 @@ Use the following steps to complete this section of the exercise:
 
 1. In the Chat view, to keep all edits, select **Keep**.
 
+    Always review GitHub Copilot suggestions before accepting updates.
+
+    If you're unsure, you can accept changes and then ask GitHub Copilot for an explanation. You can revert the edits if you don't like the changes.
+
+1. Ensure that you've accepted updates in both the ConsoleApp.cs and Program.cs files.
+
 1. Scroll to the top of the ConsoleApp.cs file and locate the following code line:
 
     ```csharp
@@ -792,7 +791,7 @@ Use the following steps to complete this section of the exercise:
 
 1. At the "Input Options" prompt, type **b** and then press Enter.
 
-1. Type **Book Three** and then press Enter.
+1. Type **Book Nineteen** and then press Enter.
 
 1. Verify that the application displays a message indicating that the book is available for loan.
 
@@ -817,7 +816,7 @@ Use the following steps to complete this section of the exercise:
 
     The **ReturnDate** value is used to determine whether the book is currently on loan. If the **ReturnDate** value is **null**, the book is currently on loan.
 
-1. Verify that loan ID 50 is for Book Three (**"BookItemId": 3**) and that the **ReturnDate** value is set to **2023-12-29**.
+1. Verify that loan ID 34 is for Book Nineteen (**"BookItemId": 19**) and that the **ReturnDate** value is set to **2023-12-29**.
 
 ### Sync your changes with the remote repository
 
