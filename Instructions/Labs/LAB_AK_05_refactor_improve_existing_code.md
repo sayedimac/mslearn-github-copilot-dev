@@ -557,7 +557,7 @@ Use the following steps to complete this section of the exercise:
 
 1. After accepting the suggested updates, take a minute to review your code changes.
 
-    You updated code should look similar to the following code:
+    Your updated code should look similar to the following code:
 
     ```csharp
     public Loan GetPopulatedLoan(Loan l)
@@ -607,7 +607,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Use the **Explain** smart action to see an explanation of the LINQ queries.
 
-    To open the **Explain** smart action, select coe in the editor, right-click the selected code, select Copilot, and then select **Explain**. The **Explain** smart action provides a detailed explanation of the selected code. In this case, th LINQ queries used in the code.
+    To open the **Explain** smart action, select code in the editor, right-click the selected code, select Copilot, and then select **Explain**. The **Explain** smart action provides a detailed explanation of the selected code. In this case, th LINQ queries used in the code.
 
     For example, you can use the **Explain** smart action on the `GetPopulatedBook` method to see an explanation of the LINQ query used to populate the `Author` property of the `Book` object.
 
@@ -1007,7 +1007,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
 1. To clean the solution, right-click `AccelerateAppDevGitHubCopilot`, and then select **Clean**.
 
-    This action removes any build artifacts from the previous build. Cleaning the solution will effectively reset the JSON data files to their original values during (in the output directory).
+    This action removes any build artifacts from the previous build. Cleaning the solution will effectively reset the JSON data files to their original values (in the output directory).
 
 1. Ensure that the solution builds successfully.
 
