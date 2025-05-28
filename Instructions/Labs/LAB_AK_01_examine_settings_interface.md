@@ -55,6 +55,8 @@ The GitHub Copilot extensions in Visual Studio Code are enabled by default when 
 
 Use the following steps to complete this section of the exercise:
 
+1. Open a new instance of Visual Studio Code.
+
 1. In Visual Studio Code, open the **Extensions** view.
 
 1. In the list of installed extensions, scroll down until you find **GitHub Copilot**.
@@ -69,17 +71,17 @@ If you want to test the enable/disable options, you can select the disable optio
 
 Default settings are configured for you when you activate GitHub Copilot in Visual Studio Code. The settings are organized under the Extensions label, which includes settings for both GitHub Copilot and GitHub Copilot Chat. You can customize settings for the GitHub Copilot extensions using Visual Studio Code's settings tab.
 
-> **TIP**: You can use the Copilot menu to open a Settings tab that's filtered for GitHub Copilot.
+> **TIP**: You can use the Copilot Chat menu to open a Settings tab that's filtered for GitHub Copilot.
 
 Use the following steps to complete this section of the exercise:
 
-1. On Visual Studio Code's top menu bar, open the GitHub Copilot menu.
+1. On Visual Studio Code's top menu bar, open the Copilot Chat menu.
 
-    The GitHub Copilot menu includes a **Configure Code Completions** option that provides access to a filtered list of GitHub Copilot settings.
+    The Copilot Chat menu includes a **Configure Code Completions** option that provides access to a filtered list of GitHub Copilot settings.
 
-    ![Screenshot showing how to access the Copilot menu.](./Media/m01-github-copilot-menu.png)
+    ![Screenshot showing how to access the Copilot Chat menu.](./Media/m01-github-copilot-menu.png)
 
-1. On the Copilot menu, select **Configure Code Completions**, and then select **Edit Settings**.
+1. On the Copilot Chat menu, select **Configure Code Completions**, and then select **Edit Settings**.
 
 1. Take a moment to review how the GitHub Copilot settings are organized.
 
@@ -109,7 +111,7 @@ Use the following steps to complete this section of the exercise:
 
     - **GitHub.Copilot.SelectedCompletionModel**: Select the model to use for Copilot completions.
 
-        You can use the **Change Completions Model** menu option to select a model.
+        To select a completions model, open the Configure Copilot Completions menu, and then select the **Change Completions Model** menu option.
 
         ![Screenshot showing the Change Completions Model menu option.](./Media/m01-github-copilot-extension-settings-change-completions-model-menu.png)
 
@@ -119,11 +121,11 @@ Use the following steps to complete this section of the exercise:
 
 1. Under **Enable or disable Copilot completions for specified languages**, select **markdown**.
 
-    Notice that the value for Markdown is set to **false**. This means that GitHub Copilot is disabled for Markdown files.
+    The default value for Markdown is set to **false**. This means that GitHub Copilot completions are disabled for Markdown files.
 
 1. To enable Copilot for Markdown files, select **Edit Item** (pencil icon), select **false**, change the value to **true**, and then select **OK**.
 
-    You can now use GitHub Copilot to help you author or update Markdown files. For example, GitHub Copilot can suggest descriptions of code files when you're preparing project documentation or update formatting.
+    You can now use GitHub Copilot to help you author or update Markdown files. For example, GitHub Copilot can generate code completion suggestions when you're working on project documentation.
 
 1. Under the Extensions label, select GitHub Copilot Chat.
 
@@ -135,7 +137,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a few minutes to review the settings for GitHub Copilot Chat.
 
-    We recommend keeping the default settings during this training. This helps to ensure that you have the expected experience when working on the modules in this learning path. When you have completed the training, you can experiment with these settings to customize your experience with GitHub Copilot and Copilot Chat.
+    We recommend keeping the default settings during this training. This helps to ensure that you have the expected experience when working through the exercises. When you have completed the training, you can experiment with these settings to customize your experience with GitHub Copilot and Copilot Chat.
 
 1. Close the settings tab.
 
@@ -214,16 +216,16 @@ Use the following steps to complete this section of the exercise:
     More advanced prompts can be used to create a workspace with multiple files or to create different project types. For example, you can use the following prompt specify additional conditions for the console app project:
 
     ```text
-    Create a C# console app that prints Hello World to the console. Include a README file and a .gitignore file.
+    Create a C# console app that prints Hello World to the console. Include a .gitignore file.
     ```
 
 ### Explore the Quick Chat features
 
 The Quick Chat window is a simplified interface for interacting with GitHub Copilot. It provides a quick way to ask questions, request code suggestions, or get help with specific tasks without leaving the code editor.
 
-1. Open the Chat menu and notice that three Chat options are listed.
+1. Open the Copilot Chat menu and notice that three Chat options are listed.
 
-    ![Screenshot showing the Chat menu with inline chat disabled.](./Media/m01-github-copilot-menu-chat-options.png)
+    ![Screenshot showing the Copilot Chat menu with inline chat disabled.](./Media/m01-github-copilot-menu-chat-options.png)
 
     The three Chat options are:
 
@@ -233,7 +235,7 @@ The Quick Chat window is a simplified interface for interacting with GitHub Copi
 
     - Quick Chat: This option is used to interact with GitHub Copilot using a simplified interface. You can use quick chat to ask questions, request code suggestions, or get help with specific tasks without leaving the code editor.
 
-1. On the Chat menu, select **Quick Chat**.
+1. On the Copilot Chat menu, select **Quick Chat**.
 
     By default, the Quick Chat window opens at the top center of the Visual Studio Code window.
 
@@ -263,7 +265,7 @@ The Quick Chat window is a simplified interface for interacting with GitHub Copi
 
 1. In the top-right corner of the Quick Chat window, select **Open in Chat View**.
 
-    Notice that the Quick Chat window closes and the Chat view opens with responses that appeared the Quick Chat window. If the Chat view doesn't display the Quick Chat session, use the Chat menu to open the Quick Chat window, and then select **Open in Chat View**.
+    Notice that the Quick Chat window closes and the Chat view opens with responses that appeared the Quick Chat window. If the Chat view doesn't display the Quick Chat session, use the Copilot Chat menu to open the Quick Chat window, and then select **Open in Chat View**.
 
     Switching to the Chat view is useful when you need to extend and manage a chat session that started in the Quick Chat window.
 
@@ -275,7 +277,7 @@ The Inline Chat interface is designed for code interactions directly within the 
 
 1. Open the Program.cs file in the editor.
 
-1. Open the Chat menu and notice the following:
+1. Open the Copilot Chat menu and notice the following:
 
     - The Editor Inline Chat menu option is now enabled.
     - The **Ctrl+I** keyboard shortcut can be used to open an Inline Chat session.
@@ -386,6 +388,8 @@ The Chat view has three modes: **Ask**, **Edit**, and **Agent**. The Ask mode is
 
 1. In the Chat view, select **Keep** to apply the suggested code updates, and then select **Done** to end the Chat session.
 
+> **NOTE**: The Chat view's Agent mode is designed for running tasks using an autonomous agent. To conserve GitHub Copilot resources, the Agent mode isn't used in this exercise.
+
 ### Explore code completion suggestions
 
 GitHub Copilot provides code completion suggestions based on the context of the code in the editor. You can use code completion suggestions to quickly generate code snippets, refactor existing code, or implement new features.
@@ -440,7 +444,7 @@ Smart Actions are a set of predefined actions that are available from the Copilo
 
 ## Summary
 
-In this exercise, you examined GitHub Copilot settings and explored the GitHub Copilot user interface in Visual Studio Code. You learned how to configure GitHub Copilot settings, explore the Chat view, Quick Chat, and Inline Chat features. You also used GitHub Copilot to generate code completions and used Smart Actions to complete common tasks.
+In this exercise, you examined GitHub Copilot settings and explored the GitHub Copilot user interface in Visual Studio Code. You learned how to configure GitHub Copilot settings and you explored the Chat view, Quick Chat, and Inline Chat features. You also used GitHub Copilot to generate code completions and used Smart Actions to complete common tasks.
 
 ## Clean up
 
