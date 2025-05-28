@@ -698,7 +698,7 @@ Use the following steps to complete this section of the exercise:
         }
         else
         {
-            Console.WriteLine($"\"{book.Title}\" is on loan to another patron. The return due date is {loan.DueDate.ToString("d", CultureInfo.InvariantCulture)}.");
+            Console.WriteLine($"\"{book.Title}\" is on loan to another patron. The return due date is {loan.DueDate.ToString()}.");
         }
 
         return ConsoleState.PatronDetails;
@@ -721,7 +721,9 @@ Use the following steps to complete this section of the exercise:
 
     Always review GitHub Copilot suggestions before accepting updates.
 
-    If you're unsure, you can accept changes and then ask GitHub Copilot for an explanation. You can revert the edits if you don't like the changes.
+    If you're unsure about the suggested updates, you can accept changes and then ask GitHub Copilot for an explanation. You can revert the edits if you decide against the updates.
+
+    > **NOTE**: If GitHub Copilot suggests formatting dates using culture-specific formats, you may need to add the following using statement to the ConsoleApp.cs file: `using System.Globalization;`
 
 1. Ensure that you've accepted updates in both the ConsoleApp.cs and Program.cs files.
 
