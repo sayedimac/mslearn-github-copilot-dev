@@ -698,7 +698,7 @@ Use the following steps to complete this section of the exercise:
         }
         else
         {
-            Console.WriteLine($"\"{book.Title}\" is on loan to another patron. The return due date is {loan.DueDate.ToString()}.");
+            Console.WriteLine($"\"{book.Title}\" is on loan to another patron. The return due date is {loan.DueDate}.");
         }
 
         return ConsoleState.PatronDetails;
@@ -723,7 +723,7 @@ Use the following steps to complete this section of the exercise:
 
     If you're unsure about the suggested updates, you can accept changes and then ask GitHub Copilot for an explanation. You can revert the edits if you decide against the updates.
 
-    > **NOTE**: If GitHub Copilot suggests formatting dates using culture-specific formats, you may need to add the following using statement to the ConsoleApp.cs file: `using System.Globalization;`
+    > **NOTE**: If GitHub Copilot suggests formatting the return date using a culture-specific format, ensure that a `using System.Globalization;` statement is added to top of the ConsoleApp.cs file.
 
 1. Ensure that you've accepted updates in both the ConsoleApp.cs and Program.cs files.
 
@@ -801,9 +801,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Stop the debug session.
 
-1. Open the **Loans.json** file.
+1. Use the EXPLORER view to locate and then open the **Loans.json** file.
 
-    The Loans.json file is used to track the loan status of each book. You can use the Loans.json file to verify that the availability status of Book One and Book Two is correct.
+    The Loans.json file is used to track the loan status of each book. You can use the Loans.json file to verify that the availability status for Book One and Book Nineteen is correct.
 
     The updated Loans.json file should be located in either the **Library.Console\bin\Debug\net8.0\Json** folder or **Library.Console\Json** folder.
 
@@ -813,12 +813,14 @@ Use the following steps to complete this section of the exercise:
 
 1. Verify that loan ID 37 and loan ID 46 are both for Book One (**"BookItemId": 1**).
 
+    The loan IDs are listed sequentially in the Loans.json file.
+
     - Loan ID 37 should have a **ReturnDate** value of **2024-01-17**, indicating that the book was returned on that date.
     - Loan ID 46 should have a **ReturnDate** value **null**, indicating that the book is currently on loan (loaned on **2024-07-09** but not returned).
 
     The **ReturnDate** value is used to determine whether the book is currently on loan. If the **ReturnDate** value is **null**, the book is currently on loan.
 
-1. Verify that loan ID 34 is for Book Nineteen (**"BookItemId": 19**) and that the **ReturnDate** value is set to **2023-12-29**.
+1. Verify that loan ID 34 is for Book Nineteen (**"BookItemId": 19**) and that the **ReturnDate** has been assigned a value.
 
 ### Sync your changes with the remote repository
 
@@ -826,7 +828,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Ensure that the files you updated are listed under **Changes**.
 
-    You should see the CommonActions.cs and ConsoleApp.cs files listed under **Changes**.
+    You should see the CommonActions.cs and ConsoleApp.cs files listed under **Changes**. The Program.cs file may also be listed.
 
 1. Use GitHub Copilot to generate a message for the **Commit**.
 
@@ -855,13 +857,33 @@ Use the following steps to complete this section of the exercise:
 
 1. Under **Add a description**, select the Copilot Actions button (the GitHub Copilot icon), and then select the option to generate a summary.
 
-    > **NOTE**: If you're using a GitHub Copilot Free account, you won't see the option to automatically generate a pull request summary using Copilot. You can still create the pull request, but you'll need to write your own summary.
+    > **NOTE**: The GitHub Copilot Free plan doesn't support the pull request summary feature at this time.
+
+    If you're using the GitHub Copilot Free plan, you can write your own summary, or use the summary below to complete the pull request.
+
+    ```plaintext
+
+    This pull request introduces a new feature to the library console application: the ability to search for books and check their availability. It also includes updates to dependency injection and the CommonActions enumeration to support this functionality. Below are the most important changes grouped by theme.
+
+    New Feature: Book Search
+
+    Added a new SearchBooks action to the CommonActions enumeration (src/Library.Console/CommonActions.cs).
+
+    Updated PatronDetails method to handle the SearchBooks action, including a new SearchBooks method that allows users to search for a book by title and check its availability (src/Library.Console/ConsoleApp.cs).
+
+    Modified ReadInputOptions and WriteInputOptions methods to include the new SearchBooks option (src/Library.Console/ConsoleApp.cs).
+
+    Dependency Injection Updates
+
+    Added JsonData as a dependency in the ConsoleApp constructor and ensured it is registered in the DI container before ConsoleApp (src/Library.Console/ConsoleApp.cs, src/Library.Console/Program.cs).
+
+    ```
 
 1. Once the summary is generated, select **Preview**.
 
 1. Take a minute to review the summary.
 
-    The generated pull request summary should be similar to the following example:
+    The pull request summary generated by GitHub Copilot should be similar to the following example:
 
     ![Screenshot showing a pull request summary generated using a GitHub Copilot Enterprise account.](./Media/m03-github-copilot-pull-request-summary.png)
 
