@@ -393,7 +393,7 @@
     },
     {
       "Id": 50,
-      "BookItemId": 3,
+      "BookItemId": 2,
       "PatronId": 45,
       "LoanDate": "2023-12-13T00:40:43.1809514",
       "DueDate": "2023-12-27T00:40:43.1809514",
