@@ -853,6 +853,8 @@ Use the following steps to complete this section of the exercise:
 
 1. Under **Add a description**, select the Copilot Actions button (the GitHub Copilot icon), and then select the option to generate a summary.
 
+    > **NOTE**: If you're using a GitHub Copilot Free account, you won't see the option to automatically generate a pull request summary using Copilot. You can still create the pull request, but you'll need to write your own summary.
+
 1. Once the summary is generated, select **Preview**.
 
 1. Take a minute to review the summary.
