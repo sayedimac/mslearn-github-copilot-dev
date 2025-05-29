@@ -152,9 +152,9 @@ Use the following steps to complete this section of the exercise:
 
     This prompt asks GitHub Copilot to explain the approach to unit testing in the context of the workspace. Adding relevant files to the Chat context improves the response.
 
-1. Take a few minutes to review GitHub Copilot's response.
+1. Take a minute to review GitHub Copilot's response.
 
-    You should see a detailed description that's similar to the following example:
+    You should see a description that's similar to the following example:
 
     ```markdown
 
@@ -304,7 +304,7 @@ Use the following steps to complete this section of the exercise:
 
     ```plaintext
 
-    Add `Infrastructure\JsonLoanRepository` folders to the UnitTests project and then create a class file named `GetLoan.cs` in the `JsonLoanRepository` folder. Add a reference to the Library.Infrastructure project inside UnitTests.csproj.
+    Add `Infrastructure\JsonLoanRepository` folders to the UnitTests project. Create a class file named `GetLoan.cs` in the `JsonLoanRepository` folder and create a stub class named `GetLoan`. Add a reference to the Library.Infrastructure project inside UnitTests.csproj.
 
     ```
 
@@ -321,15 +321,15 @@ Use the following steps to complete this section of the exercise:
 
     Notice the following updates in the Chat view and code editor:
 
-    - The agent displays status messages as it completes the requested tasks. The first task will be to create the folder structure in the UnitTests project. The agent may create the required folders, or it may pause to ask for confirmation before proceeding.
+    - The agent displays status messages as it completes the requested tasks. The first task will be to create the folder structure in the UnitTests project. The agent may pause and ask you for confirmation before creating the folder structure.
 
         ![Screenshot showing the Chat view in Agent mode.](./Media/m04-github-copilot-agent-mode-terminal-command-mkdir.png)
 
-    - The UnitTests.csproj file is open in the code editor with the following changes:
+    - The UnitTests.csproj file is open in the code editor with edits similar to the following update:
 
         ![Screenshot showing updates to the UnitTests.csproj file in the code editor.](./Media/m04-github-copilot-agent-mode-code-editor-update.png)
 
-1. If the agent asks fr permission to run the make directory command in the terminal, select **Continue**.
+1. If the agent pauses the task and asks you for permission to run a make directory command in the terminal, select **Continue**.
 
     When you select **Continue**, GitHub Copilot completes the following actions:
 
@@ -347,7 +347,7 @@ Use the following steps to complete this section of the exercise:
 
 1. In the SOLUTION EXPLORER view, expand the **Infrastructure\JsonLoanRepository** folder structure.
 
-    The folder structure should look like this:
+    You should see the following folder structure:
 
     - UnitTests\
       - Infrastructure\
@@ -362,7 +362,7 @@ Use the following steps to complete this section of the exercise:
 
 1. In the Chat view, select the **Set Mode** button, and then select **Edit**.
 
-    The Chat view is now in Edit mode.
+    Use the Edit mode to update selected files. Responses are displayed as code suggestions in the code editor.
 
 1. Open the **JsonLoanRepository.cs** file.
 
@@ -449,11 +449,19 @@ Use the following steps to complete this section of the exercise:
 
 1. Add the following files to the Chat context:
 
-    - JsonLoanRepository.cs
-    - ReturnLoan.cs
+    (under the Library.ApplicationCore project)
+
     - LoanService.cs
-    - LoanFactory.cs
+
+    (under the Library.Infrastructure project)
+
     - JsonData.cs
+    - JsonLoanRepository.cs
+
+    (under the UnitTests project)
+
+    - ReturnLoan.cs
+    - LoanFactory.cs
 
 1. Enter the following prompt:
 
@@ -514,7 +522,9 @@ Use the following steps to complete this section of the exercise:
 
     - If a **using Library.ApplicationCore.Interfaces** is suggested by GitHub Copilot, you can delete it from the top of the file.
 
-1. Update the **GetLoan.cs** file to match the following code snippet:
+1. Update the **GetLoan.cs** file to address the issues you identified in the previous step.
+
+    You can use the following code snippet as a reference:
 
     ```csharp
     using NSubstitute;
@@ -545,12 +555,20 @@ Use the following steps to complete this section of the exercise:
 
 1. Add the following files to the Chat context:
 
-    - JsonLoanRepository.cs
-    - ReturnLoan.cs
+    (under the Library.ApplicationCore project)
+
     - LoanService.cs
-    - LoanFactory.cs
-    - JsonData.cs
     - Loans.json.
+
+    (under the Library.Infrastructure project)
+
+    - JsonData.cs
+    - JsonLoanRepository.cs
+
+    (under the UnitTests project)
+
+    - ReturnLoan.cs
+    - LoanFactory.cs
 
 1. Select the contents of the **GetLoan.cs** file, and then enter the following prompt in the Chat view:
 
