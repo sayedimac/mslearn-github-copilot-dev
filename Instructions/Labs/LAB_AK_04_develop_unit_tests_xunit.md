@@ -321,7 +321,7 @@ Use the following steps to complete this section of the exercise:
 
     Notice the following updates in the Chat view and code editor:
 
-    - The Chat view displays a message indicating that it wants to run a command in the terminal:
+    - The agent displays status messages as it completes the requested tasks. The first task will be to create the folder structure in the UnitTests project. The agent may create the required folders, or it may pause to ask for confirmation before proceeding.
 
         ![Screenshot showing the Chat view in Agent mode.](./Media/m04-github-copilot-agent-mode-terminal-command-mkdir.png)
 
@@ -329,7 +329,7 @@ Use the following steps to complete this section of the exercise:
 
         ![Screenshot showing updates to the UnitTests.csproj file in the code editor.](./Media/m04-github-copilot-agent-mode-code-editor-update.png)
 
-1. In the Chat view, to run the command in the terminal, select **Continue**.
+1. If the agent asks fr permission to run the make directory command in the terminal, select **Continue**.
 
     When you select **Continue**, GitHub Copilot completes the following actions:
 
@@ -338,7 +338,12 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a moment to review the updates.
 
-1. In the Chat view, to accept all changes, select **Keep**, and then select **Done**.
+    You should see the following updates in the editor:
+
+    - The `UnitTests` project now includes a reference to `Library.Infrastructure.csproj`.
+    - The `GetLoan.cs` file is created in the `Infrastructure\JsonLoanRepository` folder.
+
+1. In the Chat view, to accept all changes, select **Keep**.
 
 1. In the SOLUTION EXPLORER view, expand the `Infrastructure\JsonLoanRepository` folder structure.
 
@@ -454,7 +459,7 @@ Use the following steps to complete this section of the exercise:
 
     ```plaintext
 
-    @workspace Create fields and a class constructor for the `GetLoan.cs` file. The class will be used to create unit tests for the GetLoan method in the `JsonLoanRepository.cs` file. Create the following private readonly fields: `_mockLoanRepository`, `_jsonLoanRepository`, `_configuration`, and `_jsonData`. Instantiate the fields in the `GetLoanTest` constructor. Use `ConfigurationBuilder` to create a `_configuration` object that can be used to instantiate the JsonData object.
+    #codebase Create fields and a class constructor for the `GetLoan.cs` file. The class will be used to create unit tests for the GetLoan method in the `JsonLoanRepository.cs` file. Create the following private readonly fields: `_mockLoanRepository`, `_jsonLoanRepository`, `_configuration`, and `_jsonData`. Instantiate the fields in the `GetLoanTest` constructor. Use `ConfigurationBuilder` to create a `_configuration` object that can be used to instantiate the JsonData object.
 
     ```
 
@@ -501,7 +506,7 @@ Use the following steps to complete this section of the exercise:
 
     > **NOTE**: Sample code in the following step shows updates that correct the following issues:
   
-    - If there's a conflict between the `UnitTests.Infrastructure.JsonLoanRepository` namespace and the `JsonLoanRepository` type specified in the code, you should update the namespace in GetLoans.cs to eliminate the conflict. The pattern used in the `ReturnLoan.cs` and `RenewMembership.cs` files.
+    - If there's a conflict between the `UnitTests.Infrastructure.JsonLoanRepository` namespace and the `JsonLoanRepository` type specified in the code, you should update the namespace in GetLoans.cs to eliminate the conflict. Follow the pattern used in the `ReturnLoan.cs` and `RenewMembership.cs` files.
 
     - If `ILoanRepository` isn't recognized in your code, you may need to add a `using` directive for `Library.ApplicationCore` to the top of the file.
 
