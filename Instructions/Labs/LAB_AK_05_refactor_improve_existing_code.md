@@ -187,9 +187,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to review the response.
 
-    The `GetDescription` method uses reflection to retrieve the description attribute of an enum parameter named `value`.
+    The **GetDescription** method uses reflection to retrieve the description attribute of an enum parameter named **value**.
 
-    The method checks if the `value` parameter is null. If it is, the method returns an empty string. Otherwise, it uses reflection to get the field information for the enum value and retrieves the attributes of type `DescriptionAttribute`. If any attributes are found, it returns the description; otherwise, it returns the string representation of the enum value.
+    The method checks if the **value** parameter is null. If it is, the method returns an empty string. Otherwise, it uses reflection to get the field information for the enum value and retrieves the attributes of type **DescriptionAttribute**. If any attributes are found, it returns the description; otherwise, it returns the string representation of the enum value.
 
 1. Enter the following prompt:
 
@@ -197,7 +197,7 @@ Use the following steps to complete this section of the exercise:
     @workspace Which files in this workspace are used to store the enum values passed to the GetDescription method?
     ```
 
-    The response should tell you to check the Enums folder. The enum values are defined in the `LoanExtensionStatus`, `LoanReturnStatus`, and `MembershipRenewalStatus` files.
+    The response should tell you to check the Enums folder. The enum values are defined in the **LoanExtensionStatus**, **LoanReturnStatus**, and **MembershipRenewalStatus** files.
 
 1. Add the following files to the Chat context:
 
@@ -222,7 +222,7 @@ Use the following steps to complete this section of the exercise:
 
     When writing a prompt that asks GitHub Copilot how to solve a problem, start with the problem that you're trying to solve. Use concise sentences to describe details, specify constraints, and identify resources. Finally, be sure to tell GitHub Copilot what to include in the response.
 
-    In this case, your prompt begins with a description of your problem/goal. You tell GitHub Copilot that you need to refactor the `EnumHelper` class and remove any code that uses reflections. You tell GitHub Copilot that you want to use dictionaries to supply enum description attributes. You specify that you want a separate dictionary for each enum, and you tell GitHub Copilot that the enum values should be sourced from the files that you name. You finish by asking GitHub Copilot to explain how to update the `EnumHelper` class, and you ask for a code sample containing the updated code.
+    In this case, your prompt begins with a description of your problem/goal. You tell GitHub Copilot that you need to refactor the **EnumHelper** class and remove any code that uses reflections. You tell GitHub Copilot that you want to use dictionaries to supply enum description attributes. You specify that you want a separate dictionary for each enum, and you tell GitHub Copilot that the enum values should be sourced from the files that you name. You finish by asking GitHub Copilot to explain how to update the **EnumHelper** class, and you ask for a code sample containing the updated code.
 
 1. Take a minute to review the response provided by GitHub Copilot.
 
@@ -232,7 +232,7 @@ Use the following steps to complete this section of the exercise:
 
     To refactor the EnumHelper class and remove reflection, you can create static dictionaries for each enum type. These dictionaries will map each enum value to its description. The dictionaries will be initialized with the descriptions defined in the Description attributes of the enums.
 
-    Here's how to update the `EnumHelper` class:
+    Here's how to update the **EnumHelper** class:
 
     1. Create a static dictionary for each enum (LoanExtensionStatus, LoanReturnStatus, and MembershipRenewalStatus).
     2. Populate these dictionaries with the enum values as keys and their descriptions as values.
@@ -311,7 +311,7 @@ Use the following steps to complete this section of the exercise:
 
     The first two buttons copies code into the editor. The third button copies code to the clipboard.
 
-> **NOTE**: You could use the Ask mode to update the `EnumHelper` class. However, the Edit mode refactors your code directly within the code editor and provides more options for accepting updates.
+> **NOTE**: You could use the Ask mode to update the **EnumHelper** class. However, the Edit mode refactors your code directly within the code editor and provides more options for accepting updates.
 
 ### Refactor the EnumHelper class using the Chat view in Edit mode
 
@@ -338,13 +338,13 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
     ```
 
-    This prompt tells GitHub Copilot to refactor the `EnumHelper` class using dictionaries rather than reflection to assign enum description attributes. It specifies that a separate dictionary should be used for each enum, and that the enum values should be sourced from specific files.
+    This prompt tells GitHub Copilot to refactor the **EnumHelper** class using dictionaries rather than reflection to assign enum description attributes. It specifies that a separate dictionary should be used for each enum, and that the enum values should be sourced from specific files.
 
 1. Take a minute to review the suggested code updates.
 
-    Review the suggested updates to ensure that the enum values are coming from the `LoanExtensionStatus.cs`, `LoanReturnStatus.cs`, and `MembershipRenewalStatus.cs` files.
+    Review the suggested updates to ensure that the enum values are coming from the **LoanExtensionStatus.cs**, **LoanReturnStatus.cs**, and **MembershipRenewalStatus.cs** files.
 
-    You can open each of the enum files to verify that the enum values in the dictionaries are correct. If you find discrepancies, have GitHub Copilot update the dictionaries for each enum individually. For example, you can use the following prompt for the `LoanExtensionStatus` enum:
+    You can open each of the enum files to verify that the enum values in the dictionaries are correct. If you find discrepancies, have GitHub Copilot update the dictionaries for each enum individually. For example, you can use the following prompt for the **LoanExtensionStatus** enum:
 
     ```plaintext
 
@@ -358,7 +358,7 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
 1. To end the Chat session, select **Done**.
 
-1. Take a minute to review the updated `GetDescription` method.
+1. Take a minute to review the updated **GetDescription** method.
 
     ```csharp
 
@@ -375,7 +375,7 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
     ```
 
-    This code uses pattern matching to determine the type of the enum and retrieve the description from the appropriate dictionary. The `switch` statement checks the type of the enum `value` and returns the corresponding description from the dictionary. If the enum value isn't found in the dictionary, the method falls back to calling ToString() on the enum value, which returns the name of the enum member as a string.
+    This code uses pattern matching to determine the type of the enum and retrieve the description from the appropriate dictionary. The **switch** statement checks the type of the enum **value** and returns the corresponding description from the dictionary. If the enum value isn't found in the dictionary, the method falls back to calling ToString() on the enum value, which returns the name of the enum member as a string.
 
     If you have GitHub Copilot refactor the GetDescription method to eliminate the lambda expressions, the underlying logic is easier to follow:
 
@@ -422,7 +422,7 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
 ## Refactor code using inline chat and the Chat view in Edit and Agent modes
 
-LINQ (Language Integrated Query) is a powerful feature in C# that allows you to query collections, databases, and XML documents in a uniform way. LINQ provides a more concise and readable way to query data compared to traditional foreach loops.
+LINQ is a powerful feature in C# that allows you to query collections, databases, and XML documents in a uniform way. LINQ provides a more concise and readable way to query data compared to traditional foreach loops.
 
 This section of the exercise includes the following tasks:
 
@@ -440,11 +440,11 @@ Use the following steps to complete this section of the exercise:
 
 1. Open the JsonData.cs file.
 
-1. Scroll down to locate the `GetPopulatedPatron` method.
+1. Scroll down to locate the **GetPopulatedPatron** method.
 
-    The `GetPopulatedPatron` method is designed to create a fully populated library `Patron` object. It copies the basic properties of the `Patron` and populates its `Loans` collection with detailed `Loan` objects.
+    The **GetPopulatedPatron** method is designed to create a fully populated library **Patron** object. It copies the basic properties of the **Patron** and populates its **Loans** collection with detailed **Loan** objects.
 
-1. Select the `GetPopulatedPatron` method.
+1. Select the **GetPopulatedPatron** method.
 
     ```csharp
 
@@ -501,31 +501,31 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-    Notice that a LINQ query is used to replace the `foreach (Loan loan in Loans!)` loop.
+    Notice that a LINQ query is used to replace the **foreach (Loan loan in Loans!)** loop.
 
-    The LINQ code uses the object initializer to assign object properties to the new `Patron` object. This removes the requirement for a separate `populated` instance of the `Patron` object. Overall, the updated code is shorter and more readable.
+    The LINQ code uses the object initializer to assign object properties to the new **Patron** object. This removes the requirement for a separate **populated** instance of the **Patron** object. Overall, the updated code is shorter and more readable.
 
-    The code uses the patron `p` to assign some basic properties to the new `Patron` object. Then it populates the `Loans` collection with loans that are associated with the Patron parameter `p`, transforming each loan using the `GetPopulatedLoan` method.
+    The code uses the patron **p** to assign some basic properties to the new **Patron** object. Then it populates the **Loans** collection with loans that are associated with the Patron parameter **p**, transforming each loan using the **GetPopulatedLoan** method.
 
-    You can break down the LINQ code line that populates the `Loans` collection:
+    You can break down the LINQ code line that populates the **Loans** collection:
 
-    - `Loans!`: The `Loans!` expression accesses the `Loans` collection. The `!` operator is a null-forgiving operator, indicating that the developer is confident that `Loans` is not null. You should ensure that `Loans` is properly initialized before calling the `GetPopulatedPatron` method.
+    - **Loans!**: The **Loans!** expression accesses the **Loans** collection. The **!** operator is a null-forgiving operator, indicating that the developer is confident that **Loans** is not null. You should ensure that **Loans** is properly initialized before calling the **GetPopulatedPatron** method.
 
-    - `.Where(loan => loan.PatronId == p.Id)`: This code filters the loans to include only those that belong to the input patron `p`.
+    - **.Where(loan => loan.PatronId == p.Id)**: This code filters the loans to include only those that belong to the input patron **p**.
 
-    - `.Select(GetPopulatedLoan)`: This code transforms each filtered loan using the `GetPopulatedLoan` method.
+    - **.Select(GetPopulatedLoan)**: This code transforms each filtered loan using the **GetPopulatedLoan** method.
 
-    - `.ToList()`: Converts the result to a `List<Loan>`.
+    - **.ToList()**: Converts the result to a **List\<Loan\>**.
 
 1. To accept the suggested update, select **Accept**.
 
     You're going to use this same approach to refactor three other methods.
 
-1. Refactor the `GetPopulatedLoan`, `GetPopulatedBookItem`, and `GetPopulatedBook` methods using the same approach.
+1. Refactor the **GetPopulatedLoan**, **GetPopulatedBookItem**, and **GetPopulatedBook** methods using the same approach.
 
     For example, use the following prompts to refactor the three methods:
 
-    For the `GetPopulatedLoan` method:
+    For the **GetPopulatedLoan** method:
 
     ```plaintext
 
@@ -533,7 +533,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    For the `GetPopulatedBookItem` method:
+    For the **GetPopulatedBookItem** method:
 
     ```plaintext
 
@@ -541,7 +541,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    For the `GetPopulatedBook` method:
+    For the **GetPopulatedBook** method:
 
     ```plaintext
 
@@ -603,7 +603,7 @@ Use the following steps to complete this section of the exercise:
 
     To open the **Explain** smart action, select code in the editor, right-click the selected code, select Copilot, and then select **Explain**. The **Explain** smart action provides a detailed explanation of the selected code. In this case, th LINQ queries used in the code.
 
-    For example, you can use the **Explain** smart action on the `GetPopulatedBook` method to see an explanation of the LINQ query used to populate the `Author` property of the `Book` object.
+    For example, you can use the **Explain** smart action on the **GetPopulatedBook** method to see an explanation of the LINQ query used to populate the **Author** property of the **Book** object.
 
     ```csharp
     Author = Authors!.Where(a => a.Id == b.AuthorId).Select(a => new Author {
@@ -612,13 +612,13 @@ Use the following steps to complete this section of the exercise:
     }).First()
     ```
 
-    The **Explain** smart action provides a detailed explanation of the LINQ query used to populate the `Author` property of the `Book` object.
+    The **Explain** smart action provides a detailed explanation of the LINQ query used to populate the **Author** property of the **Book** object.
 
     For example, the explanation might look like this:
 
     ```plaintext
 
-    The active selection is a C# code snippet that assigns a value to the Author property. This value is derived from a collection of Author objects named Authors. The code uses LINQ (Language Integrated Query) to filter and transform the data within this collection.
+    The active selection is a C# code snippet that assigns a value to the Author property. This value is derived from a collection of Author objects named Authors. The code uses LINQ to filter and transform the data within this collection.
     
     First, the Authors! expression uses the null-forgiving operator (!) to indicate that Authors is not null, even if the compiler might think otherwise. This is a way to suppress nullable warnings. The Where method is then called on the Authors collection to filter the elements. The lambda expression a => a.Id == b.AuthorId is used to find all Author objects where the Id matches the AuthorId property of another object b.
     
@@ -634,15 +634,15 @@ Use the following steps to complete this section of the exercise:
 
 ### Refactor the JsonLoanRepository class using the Chat view in Edit mode
 
-The JsonLoanRepository class includes the `GetLoan` and `UpdateLoan` data access methods. You'll refactor these two methods, replacing foreach loops with LINQ to improve code readability and maintainability.
+The JsonLoanRepository class includes the **GetLoan** and **UpdateLoan** data access methods. You'll refactor these two methods, replacing foreach loops with LINQ to improve code readability and maintainability.
 
 Use the following steps to complete this section of the exercise:
 
-1. Open the `JsonLoanRepository.cs` file.
+1. Open the **JsonLoanRepository.cs** file.
 
-1. Select the `GetLoan` method.
+1. Select the **GetLoan** method.
 
-    The `GetLoan` method is designed to retrieve a loan by its ID.
+    The **GetLoan** method is designed to retrieve a loan by its ID.
 
     ```csharp
     public async Task<Loan?> GetLoan(int id)
@@ -691,7 +691,7 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-    The updated code uses LINQ to filter the loans collection to include only the loan with the specified ID. Notice that `loan` should be declared as nullable (`Loan? loan`). It then transforms the loan using the `GetPopulatedLoan` method and returns the first result. If no matching loan is found, `FirstOrDefault` returns `null`. The method then returns this loan object, which may be null if no loan with the specified `id` exists. This approach ensures that the returned loan is fully populated with all necessary related data, providing a comprehensive view of the loan record.
+    The updated code uses LINQ to filter the loans collection to include only the loan with the specified ID. Notice that **loan** should be declared as nullable (**Loan? loan**). It then transforms the loan using the **GetPopulatedLoan** method and returns the first result. If no matching loan is found, **FirstOrDefault** returns **null**. The method then returns this loan object, which may be null if no loan with the specified **id** exists. This approach ensures that the returned loan is fully populated with all necessary related data, providing a comprehensive view of the loan record.
 
     GitHub Copilot could also suggest the following code, which is functionally equivalent:
 
@@ -711,7 +711,7 @@ Use the following steps to complete this section of the exercise:
 
 1. To accept the updated GetLoan method, select **Keep**.
 
-1. Select the `UpdateLoan` method.
+1. Select the **UpdateLoan** method.
 
     ```csharp
     public async Task UpdateLoan(Loan loan)
@@ -813,7 +813,7 @@ Use the following steps to complete this section of the exercise:
 
 ### Refactor the JsonPatronRepository class using the Chat view in Agent mode
 
-The `JsonPatronRepository` class includes the following three methods:
+The **JsonPatronRepository** class includes the following three methods:
 
 - SearchPatrons: The SearchPatrons method is used to search for patrons by name. This method returns a sorted list of patrons.
 - GetPatron: The GetPatron method is used to retrieve a patron by ID. This method returns a populated patron object.
@@ -821,17 +821,17 @@ The `JsonPatronRepository` class includes the following three methods:
 
 Each of the three methods uses a foreach loop to iterate over the patrons and find matches based on the search input or ID.
 
-You'll use the Chat view in Agent mode to refactor the methods, replacing foreach loops with LINQ queries, in the same way that you did for the `JsonData` and `JsonLoanRepository` classes.
+You'll use the Chat view in Agent mode to refactor the methods, replacing foreach loops with LINQ queries, in the same way that you did for the **JsonData** and **JsonLoanRepository** classes.
 
 Use the following steps to complete this section of the exercise:
 
-1. Open the `JsonPatronRepository.cs` file.
+1. Open the **JsonPatronRepository.cs** file.
 
-    The `JsonPatronRepository` class is designed to manage library patrons.
+    The **JsonPatronRepository** class is designed to manage library patrons.
 
-1. Take a minute to review three methods included in the `JsonPatronRepository` class.
+1. Take a minute to review three methods included in the **JsonPatronRepository** class.
 
-    The `SearchPatrons` method is designed to search for patrons by name.
+    The **SearchPatrons** method is designed to search for patrons by name.
 
     ```csharp
 
@@ -856,9 +856,9 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    Notice that the `SearchPatrons` method uses a foreach loop to iterate over the patrons and find matches based on the `searchInput` string. The method then sorts the results by name and returns a list of populated patrons.
+    Notice that the **SearchPatrons** method uses a foreach loop to iterate over the patrons and find matches based on the **searchInput** string. The method then sorts the results by name and returns a list of populated patrons.
 
-    The `GetPatron` method is designed to return the patron matching the specified `id`.
+    The **GetPatron** method is designed to return the patron matching the specified **id**.
 
     ```csharp
 
@@ -879,9 +879,9 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    Notice that the `GetPatron` method uses a foreach loop to iterate over the patrons and find a match based on the `id` parameter. The method then returns the populated patron object.
+    Notice that the **GetPatron** method uses a foreach loop to iterate over the patrons and find a match based on the **id** parameter. The method then returns the populated patron object.
 
-    The `UpdatePatron` method is designed to update the patron with the specified `id`.
+    The **UpdatePatron** method is designed to update the patron with the specified **id**.
 
     ```csharp
 
@@ -912,7 +912,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    Notice that the `UpdatePatron` method uses a foreach loop to iterate over the patrons and find a match based on the `id` parameter. The method then updates the existing patron with the new data and saves the updated patrons collection.
+    Notice that the **UpdatePatron** method uses a foreach loop to iterate over the patrons and find a match based on the **id** parameter. The method then updates the existing patron with the new data and saves the updated patrons collection.
 
 1. In the Chat view, change the mode to **Agent**
 
@@ -922,9 +922,9 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to consider the task that you need to assign to the agent.
 
-    The task is to refactor the `JsonPatronRepository` class. The goal is to replace the foreach loops with LINQ queries that produce the same result as the original foreach code.
+    The task is to refactor the **JsonPatronRepository** class. The goal is to replace the foreach loops with LINQ queries that produce the same result as the original foreach code.
 
-    You can use your experience with the `JsonData` and `JsonLoanRepository` classes to help you write the task for the agent. The LINQ queries should use `Where`, `Select`, and `FirstOrDefault` to find matching patrons. The LINQ queries should also use `OrderBy` to preserve sorting in the original foreach code.
+    You can use your experience with the **JsonData** and **JsonLoanRepository** classes to help you write the task for the agent. The LINQ queries should use **Where**, **Select**, and **FirstOrDefault** to find matching patrons. The LINQ queries should also use **OrderBy** to preserve sorting in the original foreach code.
 
 1. To assign the agent task, enter the following prompt:
 
@@ -934,7 +934,7 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    This prompt tells the agent to refactor the `JsonPatronRepository` class. It specifies that the foreach loops should be replaced with LINQ queries that produce the same result as the original foreach code. It also specifies that `OrderBy` should be used to preserve sorting in the original foreach code, and that `!` should be used to suppress nullability warnings when accessing collections.
+    This prompt tells the agent to refactor the **JsonPatronRepository** class. It specifies that the foreach loops should be replaced with LINQ queries that produce the same result as the original foreach code. It also specifies that **OrderBy** should be used to preserve sorting in the original foreach code, and that **!** should be used to suppress nullability warnings when accessing collections.
 
 1. Monitor the agent's progress as it refactors the code.
 
@@ -999,7 +999,7 @@ Use the following steps to complete this section of the exercise:
 
 Now that you've refactored the code, it's time to build and run the application to ensure that everything is working correctly. You'll also test the application to ensure that the refactored code is functioning as expected.
 
-1. To clean the solution, right-click `AccelerateAppDevGitHubCopilot`, and then select **Clean**.
+1. To clean the solution, right-click **AccelerateAppDevGitHubCopilot**, and then select **Clean**.
 
     This action removes any build artifacts from the previous build. Cleaning the solution will effectively reset the JSON data files to their original values (in the output directory).
 
@@ -1037,7 +1037,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
 1. Verify that the message "Book was successfully returned." is displayed.
 
-    The message "Book was successfully returned." should be followed by the book details. Returned books are marked with `Returned: True`.
+    The message "Book was successfully returned." should be followed by the book details. Returned books are marked with **Returned: True**.
 
 1. To begin a new search, type **s** and then press Enter.
 
@@ -1045,7 +1045,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
 1. At the "Input Options" prompt, type **2** and then press Enter.
 
-1. Verify that first book loan is marked `Returned: True`.
+1. Verify that first book loan is marked **Returned: True**.
 
 1. At the "Input Options" prompt, type **q** and then press Enter.
 
@@ -1053,7 +1053,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
 ## Summary
 
-In this exercise, you learned how to refactor code using GitHub Copilot. You used the Chat view in Edit mode to refactor the `EnumHelper` class, replacing reflection with static dictionaries. You also used the Chat view in Edit mode to refactor the `JsonData` and `JsonLoanRepository` classes, replacing foreach loops with LINQ queries. Finally, you used the Chat view in Agent mode to refactor the `JsonPatronRepository` class, replacing foreach loops with LINQ queries.
+In this exercise, you learned how to refactor code using GitHub Copilot. You used the Chat view in Edit mode to refactor the **EnumHelper** class, replacing reflection with static dictionaries. You also used the Chat view in Edit mode to refactor the **JsonData** and **JsonLoanRepository** classes, replacing foreach loops with LINQ queries. Finally, you used the Chat view in Agent mode to refactor the **JsonPatronRepository** class, replacing foreach loops with LINQ queries.
 
 ## Clean up
 

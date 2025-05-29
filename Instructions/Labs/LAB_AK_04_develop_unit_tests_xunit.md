@@ -261,15 +261,15 @@ Use the following steps to complete this section of the exercise:
 
     2. Identify methods to test:
 
-      - Identify the methods in the `Library.Infrastructure` project that need to be tested. For example, if you want to test the `LoanService` class, identify the methods in the `LoanService` class that need to be tested.
+      - Identify the methods in the **Library.Infrastructure** project that need to be tested. For example, if you want to test the **LoanService** class, identify the methods in the **LoanService** class that need to be tested.
 
     3. Create Test Classes:
 
-      - Create new test classes in the `tests/UnitTests` directory to test the methods in the `Library.Infrastructure` project. For example, if you want to test `LoanService`, create a file named `LoanServiceTests.cs`.
+      - Create new test classes in the **tests/UnitTests** directory to test the methods in the **Library.Infrastructure** project. For example, if you want to test **LoanService**, create a file named **LoanServiceTests.cs**.
 
     4. Write Unit Tests:
 
-      - In the newly created test classes, write unit tests for the methods in the `Library.Infrastructure` project. Use the xUnit framework for writing tests and NSubstitute for mocking dependencies.
+      - In the newly created test classes, write unit tests for the methods in the **Library.Infrastructure** project. Use the xUnit framework for writing tests and NSubstitute for mocking dependencies.
 
     5. Run Tests:
 
@@ -282,7 +282,7 @@ Use the following steps to complete this section of the exercise:
 
 ## Extend the UnitTests project to begin testing data access classes
 
-The `Library.Infrastructure` project contains data access classes that interact with the file system to load and save data. The project includes the following classes:
+The **Library.Infrastructure** project contains data access classes that interact with the file system to load and save data. The project includes the following classes:
 
 - JsonData: A class that loads and saves JSON data.
 - JsonLoanRepository: A class that implements the ILoanRepository interface and uses the JsonData class to load and save loan data.
@@ -333,19 +333,19 @@ Use the following steps to complete this section of the exercise:
 
     When you select **Continue**, GitHub Copilot completes the following actions:
 
-    - Runs the mkdir command in the terminal to create the `Infrastructure\JsonLoanRepository` folders in the UnitTests project.
-    - Creates a new file named `GetLoan.cs` in the `JsonLoanRepository` folder.
+    - Runs the mkdir command in the terminal to create the **Infrastructure\JsonLoanRepository** folders in the UnitTests project.
+    - Creates a new file named **GetLoan.cs** in the **JsonLoanRepository** folder.
 
 1. Take a moment to review the updates.
 
     You should see the following updates in the editor:
 
-    - The `UnitTests` project now includes a reference to `Library.Infrastructure.csproj`.
-    - The `GetLoan.cs` file is created in the `Infrastructure\JsonLoanRepository` folder.
+    - The **UnitTests** project now includes a reference to **Library.Infrastructure.csproj**.
+    - The **GetLoan.cs** file is created in the **Infrastructure\JsonLoanRepository** folder.
 
 1. In the Chat view, to accept all changes, select **Keep**.
 
-1. In the SOLUTION EXPLORER view, expand the `Infrastructure\JsonLoanRepository` folder structure.
+1. In the SOLUTION EXPLORER view, expand the **Infrastructure\JsonLoanRepository** folder structure.
 
     The folder structure should look like this:
 
@@ -356,7 +356,7 @@ Use the following steps to complete this section of the exercise:
 
 ### Use the Edit mode to create unit tests for the GetLoan method
 
-In this section of the exercise, you use GitHub Copilot's Edit mode to create unit tests for the `GetLoan` method in the `JsonLoanRepository` class.
+In this section of the exercise, you use GitHub Copilot's Edit mode to create unit tests for the **GetLoan** method in the **JsonLoanRepository** class.
 
 Use the following steps to complete this section of the exercise:
 
@@ -364,11 +364,11 @@ Use the following steps to complete this section of the exercise:
 
     The Chat view is now in Edit mode.
 
-1. Open the `JsonLoanRepository.cs` file.
+1. Open the **JsonLoanRepository.cs** file.
 
-    `JsonLoanRepository.cs` is located in the `src/Library.Infrastructure/Data/` folder.
+    **JsonLoanRepository.cs** is located in the **src/Library.Infrastructure/Data/** folder.
 
-1. Take a minute to review the `JsonLoanRepository.cs` file.
+1. Take a minute to review the **JsonLoanRepository.cs** file.
 
     ```csharp
     using Library.ApplicationCore;
@@ -428,22 +428,22 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-1. Notice the following details about the `JsonLoanRepository` class:
+1. Notice the following details about the **JsonLoanRepository** class:
 
-    - The `JsonLoanRepository` class contains two methods: `GetLoan` and `UpdateLoan`.
-    - The `JsonLoanRepository` class uses a `JsonData` object to load and save loan data.
+    - The **JsonLoanRepository** class contains two methods: **GetLoan** and **UpdateLoan**.
+    - The **JsonLoanRepository** class uses a **JsonData** object to load and save loan data.
 
-1. Take a minute to consider the field and constructor requirements for the `GetLoan` test class.
+1. Take a minute to consider the field and constructor requirements for the **GetLoan** test class.
 
-    The `JsonLoanRepository.GetLoan` method receives a loan ID parameter when it's called. The method uses `_jsonData.EnsureDataLoaded` to get the latest JSON data, and `_jsonData.Loans` to search for a matching loan. If the method finds a matching loan ID, it returns a populated loan object (`populated`). If the method is unable to find a matching loan ID, it returns `null`.
+    The **JsonLoanRepository.GetLoan** method receives a loan ID parameter when it's called. The method uses **_jsonData.EnsureDataLoaded** to get the latest JSON data, and **_jsonData.Loans** to search for a matching loan. If the method finds a matching loan ID, it returns a populated loan object (**populated**). If the method is unable to find a matching loan ID, it returns **null**.
 
     For the GetLoan unit tests:
 
-    - You can use a mock loan repository object (`_mockLoanRepository`) to help test the case where a matching ID is found. Load the mock with the ID you want to find. The `ReturnLoanTest` class demonstrates how to mock the `ILoanRepository` interface and instantiate a mock loan repository object.
+    - You can use a mock loan repository object (**_mockLoanRepository**) to help test the case where a matching ID is found. Load the mock with the ID you want to find. The **ReturnLoanTest** class demonstrates how to mock the **ILoanRepository** interface and instantiate a mock loan repository object.
 
-    - You can use a non-mock loan repository object (`_jsonLoanRepository`) to test the case where no matching ID is found. Just specify a loan ID that you know isn't in the file (anything over 100 should work).
+    - You can use a non-mock loan repository object (**_jsonLoanRepository**) to test the case where no matching ID is found. Just specify a loan ID that you know isn't in the file (anything over 100 should work).
 
-    - You'll need a `JsonData` object to create a non-mock `JsonLoanRepository` object. Since the `UnitTests` project doesn't have access to the `JsonData` object created by the `ConsoleApp` project, you'll need to create one using the `IConfiguration` interface.
+    - You'll need a **JsonData** object to create a non-mock **JsonLoanRepository** object. Since the **UnitTests** project doesn't have access to the **JsonData** object created by the **ConsoleApp** project, you'll need to create one using the **IConfiguration** interface.
 
 1. Open the GetLoan.cs test file and select the GetLoan class.
 
@@ -506,15 +506,15 @@ Use the following steps to complete this section of the exercise:
 
     > **NOTE**: Sample code in the following step shows updates that correct the following issues:
   
-    - If there's a conflict between the `UnitTests.Infrastructure.JsonLoanRepository` namespace and the `JsonLoanRepository` type specified in the code, you should update the namespace in GetLoans.cs to eliminate the conflict. Follow the pattern used in the `ReturnLoan.cs` and `RenewMembership.cs` files.
+    - If there's a conflict between the **UnitTests.Infrastructure.JsonLoanRepository** namespace and the **JsonLoanRepository** type specified in the code, you should update the namespace in GetLoans.cs to eliminate the conflict. Follow the pattern used in the **ReturnLoan.cs** and **RenewMembership.cs** files.
 
-    - If `ILoanRepository` isn't recognized in your code, you may need to add a `using` directive for `Library.ApplicationCore` to the top of the file.
+    - If **ILoanRepository** isn't recognized in your code, you may need to add a **using** directive for **Library.ApplicationCore** to the top of the file.
 
-    - If the `_configuration` object isn't instantiated correctly, you may need to update the code line containing `ConfigurationBuilder`. You can simplify the code to use `_configuration = new ConfigurationBuilder().Build();`.
+    - If the **_configuration** object isn't instantiated correctly, you may need to update the code line containing **ConfigurationBuilder**. You can simplify the code to use **_configuration = new ConfigurationBuilder().Build();**.
 
-    - If a `using Library.ApplicationCore.Interfaces` is suggested by GitHub Copilot, you can delete it from the top of the file.
+    - If a **using Library.ApplicationCore.Interfaces** is suggested by GitHub Copilot, you can delete it from the top of the file.
 
-1. Update the `GetLoan.cs` file to match the following code snippet:
+1. Update the **GetLoan.cs** file to match the following code snippet:
 
     ```csharp
     using NSubstitute;
@@ -552,13 +552,13 @@ Use the following steps to complete this section of the exercise:
     - JsonData.cs
     - Loans.json.
 
-1. Select the contents of the `GetLoan.cs` file, and then enter the following prompt in the Chat view:
+1. Select the contents of the **GetLoan.cs** file, and then enter the following prompt in the Chat view:
 
     ```plaintext
     @workspace Update the selection to include a unit test for the `JsonLoanRepository.GetLoan` method. The unit test should test the case where a loan ID is found in the data. Use `_mockLoanRepository` to arrange the expected return loan. Use `_jsonLoanRepository` to return an actual loan. Asserts should verify that the return loan ID matches the expected loan ID. Use a loan ID that exists in the `Loans.json` file.
     ```
 
-    This prompt asks GitHub Copilot to suggest a unit test for the `JsonLoanRepository.GetLoan` method. The unit test should test the case where a loan ID is found in the data. The test should use `_mockLoanRepository` to arrange the expected return loan, `_jsonLoanRepository` to return an actual loan, and asserts to verify that the return loan ID matches the expected loan ID. The loan ID should exist in the `Loans.json` file.
+    This prompt asks GitHub Copilot to suggest a unit test for the **JsonLoanRepository.GetLoan** method. The unit test should test the case where a loan ID is found in the data. The test should use **_mockLoanRepository** to arrange the expected return loan, **_jsonLoanRepository** to return an actual loan, and asserts to verify that the return loan ID matches the expected loan ID. The loan ID should exist in the **Loans.json** file.
 
 1. Take a minute to review the updates suggested by GitHub Copilot.
 
@@ -618,13 +618,13 @@ Use the following steps to complete this section of the exercise:
 
 1. In the Chat view, to accept all updates, select **Keep**.
 
-    If the `Loan` class isn't recognized in your code, ensure that you have a `using Library.ApplicationCore.Entities;` statement at the top of the GetLoan.cs file. The `Loan` class is located in the `Library.ApplicationCore.Entities` namespace.
+    If the **Loan** class isn't recognized in your code, ensure that you have a **using Library.ApplicationCore.Entities;** statement at the top of the GetLoan.cs file. The **Loan** class is located in the **Library.ApplicationCore.Entities** namespace.
 
-1. Build the `AccelerateDevGitHubCopilot` solution to ensure there are no errors.
+1. Build the **AccelerateDevGitHubCopilot** solution to ensure there are no errors.
 
 1. Use GitHub Copilot's autocompletion feature to create a test for the case where the loan ID isn't found.
 
-    Create a blank line after the `GetLoan_ReturnsLoanWhenLoanIdIsFound` method.
+    Create a blank line after the **GetLoan_ReturnsLoanWhenLoanIdIsFound** method.
 
     Accept the autocompletion suggestions to create a new test method.
 
@@ -673,17 +673,17 @@ Use the following steps to complete this section of the exercise:
 
     ```
 
-    You can delete the code that mocks an expected loan, but you need a loan ID that doesn't exist in the `Loans.json` file.
+    You can delete the code that mocks an expected loan, but you need a loan ID that doesn't exist in the **Loans.json** file.
 
-    Ensure that your "Returns null when loan ID is not found" unit test assigns a `loanId` value that isn't in the data set.
+    Ensure that your "Returns null when loan ID is not found" unit test assigns a **loanId** value that isn't in the data set.
 
 1. Notice that the unit tests require access to the JSON data files.
 
-    The `JsonLoanRepository.GetLoan` method uses a `JsonData` object to load and save loan data.
+    The **JsonLoanRepository.GetLoan** method uses a **JsonData** object to load and save loan data.
 
-    The JSON data files are located in the `Library.Console\Json` folder. You need to update the `UnitTests.csproj` file to include these files in the test project.
+    The JSON data files are located in the **Library.Console\Json** folder. You need to update the **UnitTests.csproj** file to include these files in the test project.
 
-1. Add the following XML snippet to the `UnitTests.csproj` file:
+1. Add the following XML snippet to the **UnitTests.csproj** file:
 
     ```xml
     <ItemGroup>
@@ -698,7 +698,7 @@ Use the following steps to complete this section of the exercise:
 
 ## Run the unit tests
 
-There are several ways to run the unit tests for the `JsonLoanRepository` class. You can use Visual Studio Code's Test Explorer, the integrated terminal, or the `dotnet test` command.
+There are several ways to run the unit tests for the **JsonLoanRepository** class. You can use Visual Studio Code's Test Explorer, the integrated terminal, or the **dotnet test** command.
 
 Use the following steps to complete this section of the exercise:
 
@@ -716,7 +716,7 @@ Use the following steps to complete this section of the exercise:
 
     The Test Explorer is a tree view that shows all the test cases in your workspace. You can run/debug your test cases and view the test results using Test Explorer.
 
-1. Expand **UnitTests** and the underlying nodes to locate `GetLoanTest`.
+1. Expand **UnitTests** and the underlying nodes to locate **GetLoanTest**.
 
 1. Run the **JsonLoanRepository.GetLoan: Returns loan when loan ID is found** test case.
 

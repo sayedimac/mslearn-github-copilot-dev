@@ -215,8 +215,8 @@ To implement the book availability feature, you'll need to complete the followin
     - The **SearchBooks** method should read a user provided book title.
     - Check if a book is available for loan, and display a message stating either:
 
-        - "`book.title` is available for loan", or
-        - "`book.title` is on loan to another patron. The return due date is `loan.DueDate`."
+        - "**book.title** is available for loan", or
+        - "**book.title** is on loan to another patron. The return due date is **loan.DueDate**."
 
 GitHub Copilot Chat can help you implement the code updates needed to complete the new feature.
 
@@ -473,8 +473,8 @@ Use the following steps to complete this section of the exercise:
     1. Check if a book is available for loan.
     1. Display a message stating one of the following options:
 
-        - "`book.title` is available for loan"
-        - "`book.title` is on loan to another patron. The return due date is `loan.DueDate`."
+        - "**{book.title}** is available for loan"
+        - "**{book.title}** is on loan to another patron. The return due date is **{loan.DueDate}**."
 
     To build the message options, your code will need to access the following JSON files:
 
@@ -495,7 +495,7 @@ Use the following steps to complete this section of the exercise:
 
     > **NOTE**: Be sure to remove any code comments created by GitHub Copilot. Unnecessary and inaccurate comments can negatively influence GitHub Copilot's suggestions.
 
-1. Select the `SearchBooks` method.
+1. Select the **SearchBooks** method.
 
 1. Open the Chat view and then enter the following prompt:
 
