@@ -124,7 +124,7 @@ You need to:
 GitHub Copilot's Chat view has three modes: **Ask**, **Edit**, and **Agent**. Each mode is designed for different types of interactions with GitHub Copilot.
 
 - **Ask**: Use this mode to ask GitHub Copilot questions about your codebase. You can ask GitHub Copilot to explain code, suggest changes, or provide information about the codebase.
-- **Edit**: Use this mode to edit code in your workspace. You can use GitHub Copilot to refactor code, add comments, or make other changes to your code.
+- **Edit**: Use this mode to edit selected code files. You can use GitHub Copilot to refactor code, add comments, or make other changes to your code.
 - **Agent**: Use this mode to run GitHub Copilot as an agent. You can use GitHub Copilot to run commands, execute code, or perform other tasks in your workspace.
 
 In this section of the exercise, you use the Chat view in Ask mode to analyze your coding assignment.
@@ -179,7 +179,9 @@ Use the following steps to complete this section of the exercise:
 
     The current Chat mode is displayed near the bottom-right corner of the Chat view. Chat responses are displayed in the Chat view when you're working in **Ask** mode.
 
-1. Select the code in the EnumHelper.cs file, and then enter the following prompt:
+1. Select the code in the EnumHelper.cs file.
+
+1. Review and then submit the following prompt:
 
     ```plaintext
     @workspace Explain how the GetDescription method uses reflection to assign the return value.
@@ -191,7 +193,7 @@ Use the following steps to complete this section of the exercise:
 
     The method checks if the **value** parameter is null. If it is, the method returns an empty string. Otherwise, it uses reflection to get the field information for the enum value and retrieves the attributes of type **DescriptionAttribute**. If any attributes are found, it returns the description; otherwise, it returns the string representation of the enum value.
 
-1. Enter the following prompt:
+1. Review and then submit the following prompt:
 
     ```plaintext
     @workspace Which files in this workspace are used to store the enum values passed to the GetDescription method?
@@ -210,7 +212,7 @@ Use the following steps to complete this section of the exercise:
 
     > **NOTE**: Adding files to the Chat context ensures that GitHub Copilot considers those files when generating a response. The relevance and accuracy of responses increase when GitHub Copilot understands the context associated with your prompts.
 
-1. Enter the following prompt:
+1. Review and then submit the following prompt:
 
     ```plaintext
 
@@ -226,7 +228,7 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to review the response provided by GitHub Copilot.
 
-    The response should be similar to the following example:
+    The response should be similar to the following markdown and code samples:
 
     ```markdown
 
@@ -330,7 +332,7 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
     - LoanReturnStatus.cs
     - MembershipRenewalStatus.cs
 
-1. Enter the following prompt:
+1. Review and then submit the following prompt:
 
     ```plaintext
 
@@ -348,7 +350,7 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
     ```plaintext
 
-    @workspace Use the description values in LoanExtensionStatus.cs to update the LoanExtensionStatus dictionary in the EnumHelper class. Provide the updated code for the LoanExtensionStatus dictionary in the EnumHelper class.
+    #codebase Use the description values in LoanExtensionStatus.cs to update the LoanExtensionStatus dictionary in the EnumHelper class. Provide the updated code for the LoanExtensionStatus dictionary in the EnumHelper class.
 
     ```
 
@@ -356,9 +358,31 @@ The Chat view's Edit mode is designed for editing code in your workspace. You ca
 
     You could also use the Chat Edits toolbar near the bottom of the code editor tab to accept or reject code updates.
 
-1. To end the Chat session, select **Done**.
-
 1. Take a minute to review the updated **GetDescription** method.
+
+    GitHub Copilot should have updated the **GetDescription** method to use pattern matching and static dictionaries instead of reflection. The updated method should look similar to one of the following examples:
+
+    ```csharp
+
+    public static string GetDescription(Enum value)
+    {
+        if (value == null)
+            return string.Empty;
+
+        // Use type checks to select the correct dictionary
+        if (value is LoanExtensionStatus les && LoanExtensionStatusDescriptions.TryGetValue(les, out var lesDesc))
+            return lesDesc;
+        if (value is LoanReturnStatus lrs && LoanReturnStatusDescriptions.TryGetValue(lrs, out var lrsDesc))
+            return lrsDesc;
+        if (value is MembershipRenewalStatus mrs && MembershipRenewalStatusDescriptions.TryGetValue(mrs, out var mrsDesc))
+            return mrsDesc;
+
+        return value.ToString();
+    }
+
+    ```
+
+    or
 
     ```csharp
 
@@ -501,7 +525,7 @@ Use the following steps to complete this section of the exercise:
     }
     ```
 
-    Notice that a LINQ query is used to replace the **foreach (Loan loan in Loans!)** loop.
+    Notice that a LINQ query is used to replace the foreach loop.
 
     The LINQ code uses the object initializer to assign object properties to the new **Patron** object. This removes the requirement for a separate **populated** instance of the **Patron** object. Overall, the updated code is shorter and more readable.
 
@@ -753,7 +777,26 @@ Use the following steps to complete this section of the exercise:
 
 1. Take a minute to review the suggested update.
 
-    The suggested update should look similar to the following code:
+    The suggested update should look similar to one of the following examples:
+
+    ```csharp
+
+    public async Task UpdateLoan(Loan loan)
+    {
+        var loans = _jsonData.Loans!;
+        var index = loans.FindIndex(l => l.Id == loan.Id);
+
+        if (index >= 0)
+        {
+            loans[index] = loan;
+            await _jsonData.SaveLoans(loans);
+            await _jsonData.LoadData();
+        }
+    }
+
+    ```
+
+    or
 
     ```csharp
 
@@ -1053,7 +1096,7 @@ Now that you've refactored the code, it's time to build and run the application 
 
 ## Summary
 
-In this exercise, you learned how to refactor code using GitHub Copilot. You used the Chat view in Edit mode to refactor the **EnumHelper** class, replacing reflection with static dictionaries. You also used the Chat view in Edit mode to refactor the **JsonData** and **JsonLoanRepository** classes, replacing foreach loops with LINQ queries. Finally, you used the Chat view in Agent mode to refactor the **JsonPatronRepository** class, replacing foreach loops with LINQ queries.
+In this exercise, you learned how to refactor code using GitHub Copilot. You used the Chat view in Edit mode to refactor the **EnumHelper** class, replacing reflection with static dictionaries. You also used the inline chat and Edit mode to refactor the **JsonData** and **JsonLoanRepository** classes, replacing foreach loops with LINQ queries. Finally, you used the Agent mode to refactor the **JsonPatronRepository** class, replacing foreach loops with LINQ queries.
 
 ## Clean up
 
