@@ -40,7 +40,7 @@ If you're using a hosted lab environment for this exercise:
 
 You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
-You handed off an initial version of the library application for review. The review team identified opportunities to improve code quality, performance, readability, maintainability, and security. 
+You handed off an initial version of the library application for review. The review team identified opportunities to improve code quality, performance, readability, maintainability, and security.
 
 The following updates are assigned to you:
 
@@ -963,6 +963,8 @@ Use the following steps to complete this section of the exercise:
 
     Agent mode uses a combination of code editing and tool invocation to accomplish the task you specified. As it processes your request, it monitors the outcome of edits and tools, and iterates to resolve any issues that arise. If the agent is unable to resolve an issue, it will ask you to intervene. For example, if the agent uses several iterations working to resolve the same issue, it will pause the process and ask you to provide additional context to clarify your request or cancel the process.
 
+    > **IMPORTANT**: When you use the Chat view in agent mode, GitHub Copilot may make multiple premium requests to complete a single task. Premium requests can be used by user-initiated prompts and follow-up actions Copilot takes on your behalf. The total number of premium requests used is based on the complexity of the task, the number of steps involved, and the model selected.
+
 1. Take a minute to consider the task that you need to assign to the agent.
 
     The task is to refactor the **JsonPatronRepository** class. The goal is to replace the foreach loops with LINQ queries that produce the same result as the original foreach code.
@@ -1035,8 +1037,6 @@ Use the following steps to complete this section of the exercise:
     ```
 
 1. To accept all updates, select **Keep**.
-
-1. To end the Chat session, select **Done**.
 
 ### Build and run the application
 

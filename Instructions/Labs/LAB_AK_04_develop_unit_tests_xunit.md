@@ -300,6 +300,8 @@ Use the following steps to complete this section of the exercise:
 
 1. In the Chat view, select the **Set Mode** button, and then select **Agent**.
 
+    > **IMPORTANT**: When you use the Chat view in agent mode, GitHub Copilot may make multiple premium requests to complete a single task. Premium requests can be used by user-initiated prompts and follow-up actions Copilot takes on your behalf. The total number of premium requests used is based on the complexity of the task, the number of steps involved, and the model selected.
+
 1. To start an automated task that creates a test class for the JsonLoanRepository.GetLoan method, enter the following prompt:
 
     ```plaintext

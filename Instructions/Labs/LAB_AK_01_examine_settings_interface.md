@@ -386,7 +386,7 @@ The Chat view has three modes: **Ask**, **Edit**, and **Agent**. The Ask mode is
 
     In addition to the edit controls displayed the editor tab, the Chat view displays a **Keep** button that you can use to apply all edits and an **Undo** button to cancel the edits, and an abbreviated description of the suggested update.
 
-1. In the Chat view, select **Keep** to apply the suggested code updates, and then select **Done** to end the Chat session.
+1. In the Chat view, select **Keep** to apply the suggested code updates.
 
 > **NOTE**: The Chat view's Agent mode is designed for running tasks using an autonomous agent. To conserve GitHub Copilot resources, the Agent mode isn't used in this exercise.
 
